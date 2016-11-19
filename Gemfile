@@ -58,7 +58,7 @@ gem 'materialize-sass'
 
 group :production do
   # Version de ruby para usar en heroku
-  gem 'ruby' ,"2.3.1"
+ 
   # Base de datos postgreSQL
   gem 'pg'
   #Gema para archivos estaticos
