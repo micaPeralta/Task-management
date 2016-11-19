@@ -57,8 +57,10 @@ gem 'simple_form'
 gem 'materialize-sass'
 
 group :production do
+  # Version de ruby para usar en heroku
+  gem 'ruby' ,"2.3.1"
   # Base de datos postgreSQL
-  gem 'pg' ,'0.15.01'
+  gem 'pg'
   #Gema para archivos estaticos
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor',
 end
