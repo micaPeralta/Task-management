@@ -10,6 +10,8 @@ default: &default
   timeout: 5000
 
 development:
+  username: mika
+  password: mikadb
   <<: *default
   database: db/development.sqlite3
 

@@ -1,0 +1,9 @@
+class CreateToDoLists < ActiveRecord::Migration[5.0]
+  def change
+    create_table :to_do_lists do |t|
+      t.string :name, null: false 
+      t.string :url, null: false
+      t.timestamps
+    end
+  end
+end

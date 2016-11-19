@@ -1,0 +1,102 @@
+
+<div class="container" style="width: 100%">
+			<!-- COVER IMAGE AND FLOATING BUTTON -->
+			<div class="cover-image"></div>	
+			<div class="desktop-fab-container ">
+				<!-- REPLACE WITH YOUR APP URL -->
+     			<a href="YOUR_APP_URL_HERE">
+     				<paper-fab class="wow fadeInUp desktop-fab" icon="shop"></paper-fab>
+     			</a>
+			</div>
+			
+			<!-- ICON, NAME AND DESCRIPTION -->
+			<div class="wow fadeInUp content-card">
+				<!-- REPLACE WITH YOUR APP URL -->
+				<a href="YOUR_APP_URL_HERE">
+					<paper-fab class="mobile-fab" icon="shop"></paper-fab>
+				</a>
+				
+				<div class="icon-and-title-flex">
+					<img src="<%= image_path('post.it.png')%>" class="appicon"></img>
+					<div class="title-container">
+			
+						<span class="text-title" style=" text-shadow: 4px 4px 4px #aaa;
+; font-family: 'Pacifico', cursive;  font-size:3.5em">Task Manament</span>
+						<br><div class="intertext-padding"></div>
+						
+						<span class="text-subtitle">Gestioná tus tareas de manera rápida y sencilla</span>
+						<br><div class="intertext-padding"></div>
+						
+					</div>	
+				</div><br><br>
+				<!-- REPLACE WITH YOUR APP DESCRIPTION -->
+				<span class="text-description" style="font-size: 1.1em">
+
+				<input type="text" name="">
+				 <input type="submit" name="" class="waves-effect blue darken-3 btn">
+
+					
+			</div>
+			
+			
+			
+			<!-- OTHER APPS BY YOU -->
+			<div class="wow fadeInUp content-works"> 
+			  		
+			  <% for tdl in @to_do_lists %>
+               	<div class="screenshot-item">	
+			 		<%= tdl.name %>
+			 	</div>
+			   <% end %>
+
+     	    </div>
+		
+		
+		<!-- APP DETAILS -->
+		<div class="wow fadeInUp content-card" style="margin-top: 0;">
+     		<span class="text-subtitle" style="font-size: 2em; font-weight: 300; color: #333">Details</span>
+			<br><br>
+			<div>
+				<!-- REPLACE WITH YOUR APP DETAILS ACCORDINGLY -->
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="mail"></iron-icon>
+					<span class="text-description">Entertainment</span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="star"></iron-icon>
+					<span class="text-description">Average Rating 4.4</span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="info"></iron-icon>
+					<span class="text-description">Version 1.0.295<span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="mail"></iron-icon>
+					<span class="text-description">malkanifaiz@gmail.com</span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="android"></iron-icon>
+					<span class="text-description">Android 4.0.3+</span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="assessment"></iron-icon>
+					<span class="text-description">10,000+ downloads</span>
+				</div>
+				<div class="detail-item">
+					<iron-icon class="details-icon" icon="extension"></iron-icon>
+					<span class="text-description">Contains in-app purchases</span>
+				</div>
+			</div>	
+     	</div>
+		
+		<!-- SPACE BELOW DETAILS -->	
+		<div class="empty-space">
+			<div class="meta-container wow fadeInUp">
+				<div class="wow fadeInUp detail-item watermark credits">
+						<span class="text-description credits-text"  style="color: #fff; font-weight: 700">Taller de ruby -UNLP - Micaela Peralta</a></span>
+				</div>
+			</div>	
+		</div>
+			
+
+	</body>
