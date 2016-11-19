@@ -62,5 +62,5 @@ group :production do
   # Base de datos postgreSQL
   gem 'pg'
   #Gema para archivos estaticos
-  gem 'rails_12factor',
+  gem 'rails_12factor'
 end
