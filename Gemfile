@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
@@ -31,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-
+ 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # generacion de atos random para los seeders
@@ -56,10 +55,10 @@ gem 'simple_form'
 #materialize framework frontend
 gem 'materialize-sass'
 
+
 group :production do
-  ruby "~> 2.3.0"
-   # Base de datos postgreSQL
-  gem 'pg' 
-  #Gema para archivos estaticos
-  gem 'rails_12factor', '0.0.2'
+
+ gem 'pg'
+ gem 'rails_12factor'
+ ruby ">=2.3.1" 
 end
