@@ -25,4 +25,5 @@ production:
   database: ttps-ruby
   username: mika
   password: pass
+  host: 127.0.0.1
   database: db/production
