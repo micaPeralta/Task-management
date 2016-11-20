@@ -24,4 +24,5 @@ production:
   <<: *default
   database: ttps-ruby
   username: mika
+  password: pass
   database: db/production
