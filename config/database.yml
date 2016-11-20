@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
+  database: ttps-ruby
+  username: mika
   database: db/production
