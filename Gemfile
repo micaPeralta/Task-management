@@ -57,7 +57,8 @@ gem 'simple_form'
 gem 'materialize-sass'
 
 group :production do
-
+  ruby "~> 2.3.0"
+  gem 'puma', '~> 3.0'
    # Base de datos postgreSQL
   gem 'pg' 
   #Gema para archivos estaticos
