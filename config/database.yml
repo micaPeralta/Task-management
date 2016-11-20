@@ -25,5 +25,8 @@ test:
 
 production:
   <<: *default
-  database: production
-   url: postgresql://localhost/production?pool=5
+  database: d757hppt7051e0
+  host: ec2-54-225-93-34.compute-1.amazonaws.com
+  user: dhspotuyxzqyak
+  password: HnlcrU816ZGr-LAWU7WVXcm3C3
+  uri: postgres://dhspotuyxzqyak:HnlcrU816ZGr-LAWU7WVXcm3C3@ec2-54-225-93-34.compute-1.amazonaws.com:5432/d757hppt7051e0
