@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # generacion de atos random para los seeders
@@ -58,7 +58,6 @@ gem 'materialize-sass'
 
 group :production do
   ruby "~> 2.3.0"
-  gem 'puma', '~> 3.0'
    # Base de datos postgreSQL
   gem 'pg' 
   #Gema para archivos estaticos
