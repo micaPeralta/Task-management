@@ -11,6 +11,8 @@
 #  progress      :integer
 #  date_begin    :date
 #  date_end      :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class TaskLong < Task

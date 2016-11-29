@@ -11,11 +11,13 @@
 #  progress      :integer
 #  date_begin    :date
 #  date_end      :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class Task < ApplicationRecord
 	#una tarea debe estar asociada a una lista para que sea valida
-	belongs_to :to_do_list
+	belongs_to :list
 
 	PRIORITIES={
 		:alta => 1,

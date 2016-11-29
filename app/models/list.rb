@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: to_do_lists
+# Table name: lists
 #
 #  id         :integer          not null, primary key
 #  name       :string           not null
