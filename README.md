@@ -1,11 +1,10 @@
-# README
+# TRABAJO INTEGRADOR - TTPS OPCIÓN RUBY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version => 5.0.1
 
 * System dependencies
 
@@ -22,3 +21,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Para empezar 
+1) Clonar este repositorio a 

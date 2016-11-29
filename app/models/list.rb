@@ -9,12 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+class List < ApplicationRecord
 
-one:
-  name: MyString
-  url: MyString
-
-two:
-  name: MyString
-  url: MyString
+	#una lista puede crearse sin ningúna tarea
+	has_many :tasks 
+	validates :name, presence: true,uniqueness: true
+	validates :url, presence: true
+end

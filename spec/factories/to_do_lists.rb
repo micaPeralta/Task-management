@@ -9,12 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  url: MyString
-
-two:
-  name: MyString
-  url: MyString
+FactoryGirl.define do
+  factory :to_do_list do
+    n= Faker::Lorem.sentence(3,true)
+    name n
+    url  Faker::Internet.slug(n , '-')
+  end
+end

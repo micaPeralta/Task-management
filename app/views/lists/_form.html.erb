@@ -1,0 +1,26 @@
+
+  <div class="row">
+   
+
+      <%= simple_form_for @list, url: lists_create_path, html: { class: "col s12"} do |f| %>
+          <% if @list.errors.any? %>
+          <div id="error_explanation">
+            <%= pluralize(@list.errors.count, "error") %> prohibited this To do list from being saved:
+
+            <ul>
+            <% @list.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      	   <%= f.hidden_field :authenticity_token, :value => form_authenticity_token %>
+           <div class="input-field col s10">
+      	     <%= f.input :name, label: false,:placeholder => 'Crear una nueva lista' %>
+           </div>
+           <div class="input-field col s2">
+      	     <%= f.button :submit, :class => "waves-effect blue darken-3 btn",:value => 'Crear'  %>
+           </div>
+
+       <% end %>

@@ -8,9 +8,9 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes" name="viewport">
 		<link rel="icon" type="image/png" href="/favicon.png">
-	    <%= stylesheet_link_tag    'application', 'animate', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-	    <%= javascript_include_tag 'application','wow', 'data-turbolinks-track': 'reload' %>
+	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag "application" %> 
+	
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
@@ -18,14 +18,50 @@
         <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
         <script src="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
   <body>
-    <%= yield %>
+      <div class="container" style="width: 100%">
+              <!-- COVER IMAGE AND FLOATING BUTTON -->
+              <div class="cover-image"></div> 
+                <div class="wow fadeInUp content-card">
+                <!-- REPLACE WITH YOUR APP URL -->
+                <a href="YOUR_APP_URL_HERE">
+                  <paper-fab class="mobile-fab" icon="shop"></paper-fab>
+                </a>
+                
+                <div class="icon-and-title-flex">
+                  <img  src="<%= image_path('post.it.png')%>" class="appicon"></img>
+                  <div class="title-container">
+              
+                    <span class="text-title" style=" text-shadow: 4px 4px 4px #aaa; font-family: 'Pacifico', cursive;  font-size:3.5em">Task Manament</span>
+                    <br><div class="intertext-padding"></div>
+                    
+                    <span class="text-subtitle">Gestioná tus tareas de manera rápida y sencilla</span> 
+                    <br><div class="intertext-padding"></div>
+                    
+                  </div>  
+                </div>
+              </div>
+
+              <div id="list" class="wow fadeInUp content-works"> </div>
+    
+               <%= yield %>
+              
+               <!-- Footer -->  
+              <div class="empty-space">
+                <div class="meta-container wow fadeInUp">
+                  <div class="wow fadeInUp detail-item watermark credits">
+                      <span class="text-description credits-text"  style="color: #fff; font-weight: 700">Taller de ruby -UNLP - Micaela Peralta</a></span>
+                  </div>
+                </div>  
+              </div>
       
+
+  
+ 
     <!-- ===================================================================================================== -->
       
     <!-- JAVASCRIPT -->
     
-    <!-- Animations -->
-    <script src="./javascripts/wow.min.js"></script>
+
     <script>
       new WOW().init();
     </script>

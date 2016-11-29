@@ -12,23 +12,25 @@
 
 ActiveRecord::Schema.define(version: 20161115183157) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.string  "description",   null: false
-    t.string  "priority",      null: false
-    t.string  "state",         null: false
-    t.string  "type"
-    t.integer "to_do_list_id"
-    t.integer "progress"
-    t.date    "date_begin"
-    t.date    "date_end"
-    t.index ["to_do_list_id"], name: "index_tasks_on_to_do_list_id"
-  end
-
-  create_table "to_do_lists", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "url",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "description",   null: false
+    t.string   "priority",      null: false
+    t.string   "state",         null: false
+    t.string   "type"
+    t.integer  "to_do_list_id"
+    t.integer  "progress"
+    t.date     "date_begin"
+    t.date     "date_end"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["to_do_list_id"], name: "index_tasks_on_to_do_list_id"
   end
 
 end

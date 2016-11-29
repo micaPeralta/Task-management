@@ -13,12 +13,8 @@
 #  date_end      :date
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  date_begin: 2016-11-15
-  date_end: 
-
-two:
-  date_begin: 2016-11-15
-  date_end: 
+FactoryGirl.define do
+  factory :task do
+    
+  end
+end

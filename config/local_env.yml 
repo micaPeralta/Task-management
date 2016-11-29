@@ -1,0 +1,5 @@
+DATABASE_NAME: d757hppt7051e0
+DATABASE_HOST: ec2-54-225-93-34.compute-1.amazonaws.com
+DATABASE_USER: dhspotuyxzqyak
+DATABASE_PASS: HnlcrU816ZGr-LAWU7WVXcm3C3
+DATABASE_URI:  postgres://dhspotuyxzqyak:HnlcrU816ZGr-LAWU7WVXcm3C3@ec2-54-225-93-34.compute-1.amazonaws.com:5432/d757hppt7051e0
