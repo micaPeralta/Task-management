@@ -13,16 +13,16 @@ Faker::Config.locale='es'
 
 50.times do |i|
 	name=Faker::Lorem.sentence(3,true)
-	tdl=ToDoList.create!(name: name, 
+	tdl=List.create!(name: name, 
 						 url: Faker::Internet.slug(name , '-'))
 	5.times do 
 		Task.create!( description:Faker::Lorem.paragraph,
 				  state:['pendiente','hecha'].sample,
 				  priority:['alta','media','baja'].sample,
-				  to_do_list: tdl)
+				  list: tdl)
 	end
 end
 
 
-p "Created #{ToDoList.count} ToDoLists"
+p "Created #{List.count} ToDoLists"
 p "Created #{Task.count} Tasks"
