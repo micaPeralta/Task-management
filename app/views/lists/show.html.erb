@@ -1,6 +1,35 @@
-	<h2><%=	@list.name %></h2>
-
+	
 	<div class="wow fadeInUp content-card" style="margin-top: 0;">	
-		<strong>Nombre:</strong>			
+		<span style="font-family: 'Indie Flower', strong; font-size: 2em;">
+				<%=	@list.name %></span>  <a href=""> Volver</a>
+		<hr>
+		<br>
+
+
+		<table>
+			<thead>
+			 	<tr>
+			 		<
+			 		<th> Descripcion</th>
+			 		<th> Estado </th>
+			 		<th> Prioridad </th>
+
+			 	</tr>
+			</thead>
+			<tbody>				
+				<% for t in @tasks %>
+				<tr>
+					<td><%= t.description %> </td>
+					 <td> <%= t.state.capitalize%></td>
+					 <td> <%= t.priority.capitalize %></td>
+				</tr>
+				<% end %> 
+
+			</tbody>
+			
+
+
+		</table>
+		
+			
 	</div>
-</div>

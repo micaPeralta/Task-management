@@ -18,7 +18,7 @@ Faker::Config.locale='es'
 	5.times do 
 		Task.create!( description:Faker::Lorem.paragraph,
 				  state:['pendiente','hecha'].sample,
-				  priority:['alta','media','baja'].sample,
+				  priority:rand(0..2),
 				  list: tdl)
 	end
 end

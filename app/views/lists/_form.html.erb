@@ -4,9 +4,7 @@
 
       <%= simple_form_for @list, url: lists_create_path, html: { class: "col s12"} do |f| %>
           <% if @list.errors.any? %>
-          <div id="error_explanation">
-            <%= pluralize(@list.errors.count, "error") %> prohibited this To do list from being saved:
-
+          <div id="error_explanation" class="card-panel red lighten-2">
             <ul>
             <% @list.errors.full_messages.each do |message| %>
               <li><%= message %></li>

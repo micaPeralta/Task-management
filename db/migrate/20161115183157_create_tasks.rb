@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
   def change
     create_table :tasks do |t|
       t.string :description, null: false
-      t.string :priority , null: false     
+      t.integer :priority , null: false     
       t.string :state  , null: false
      
       t.string :type

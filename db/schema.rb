@@ -20,17 +20,17 @@ ActiveRecord::Schema.define(version: 20161115183157) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "description",   null: false
-    t.string   "priority",      null: false
-    t.string   "state",         null: false
+    t.string   "description", null: false
+    t.integer  "priority",    null: false
+    t.string   "state",       null: false
     t.string   "type"
-    t.integer  "to_do_list_id"
+    t.integer  "list_id"
     t.integer  "progress"
     t.date     "date_begin"
     t.date     "date_end"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["to_do_list_id"], name: "index_tasks_on_to_do_list_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
 end

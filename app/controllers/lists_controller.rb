@@ -22,19 +22,18 @@ class ListsController < ApplicationController
   end
 
   def show
-    
+    @tasks= @list.tasks  
   end
 
   def create
   	
     n=person_params['name']
-    @list= List.new(name: n.capitalize,url:n.downcase.split(' ').join('-'))
+    @list= List.new(name: n.capitalize,url:'')
     
     if @list.save 
         redirect_to @list, notice: 'Person was successfully created.' 
     else 
-      redirect_to to_do_lists_index_url
-
+      render :index 
     end
   end
 
@@ -42,13 +41,10 @@ end
 
 
   def destroy
-
-
   end
 
 
-  def update
-    
+  def update    
   end
 
 
@@ -59,7 +55,7 @@ private
   end
 
   def set_list
-    @list= List.find(params[:id])
+    @list= List.find_by_url(params[:id])
   end
 
   def person_params
