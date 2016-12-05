@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require noty/packaged/jquery.noty.packaged.min
+//= require noty/themes/relax
+//= require functions
+//= require clipboard

@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
- # generacion de atos random para los seeders
-  gem 'faker'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -59,7 +58,14 @@ gem 'simple_form'
 
 #materialize framework frontend
 gem 'materialize-sass'
+# icons  font-awesome
+gem "font-awesome-rails"
 
+# copiar al porta papeles
+gem 'clipboard-rails'
+
+# generacion de atos random para los seeders
+gem 'faker'
 
 group :production do
 

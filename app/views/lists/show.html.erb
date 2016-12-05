@@ -1,35 +1,111 @@
 	
 	<div class="wow fadeInUp content-card" style="margin-top: 0;">	
-		<span style="font-family: 'Indie Flower', strong; font-size: 2em;">
-				<%=	@list.name %></span>  <a href=""> Volver</a>
-		<hr>
+				
+				<div class="row">
+					<div class="col s12">
+						<div class="col s10">
+						<button id="clipboard" data-clipboard-text="<%= @list.url%>"  >
+								<%= fa_icon "link"	%>	
+
+						</button>
+							
+							<h5 id="title-list">			
+							<%=	@list.name %> </h5>
+
+						</div>
+
+						<div class="col s2"  >
+						<a class="tooltipped" href="<%= lists_path %>" data-position="bottom" data-delay="50" data-tooltip="Volver">	<i id="edit" class="material-icons ">replay</i>
+
+						</a>
+						
+						<a class="tooltipped" href="#modal1" data-position="bottom" data-delay="50" data-tooltip="Cambiar nombre">	<i id="edit" class="material-icons ">edit</i>
+
+						</a>
+							
+						</div>
+					</div>					
+				</div>
+				<hr id="line">
 		<br>
 
+		<strong>Fecha de creación:</strong> <%= @list.created_at.to_date %> 
 
-		<table>
-			<thead>
-			 	<tr>
-			 		<
-			 		<th> Descripcion</th>
-			 		<th> Estado </th>
-			 		<th> Prioridad </th>
+		<strong>Última modificación:</strong> 
 
-			 	</tr>
-			</thead>
-			<tbody>				
-				<% for t in @tasks %>
-				<tr>
-					<td><%= t.description %> </td>
-					 <td> <%= t.state.capitalize%></td>
-					 <td> <%= t.priority.capitalize %></td>
-				</tr>
-				<% end %> 
-
-			</tbody>
-			
-
-
-		</table>
 		
-			
+
+
+		<% if @tasks.count  == 0%>	
+				<div> Esta lista no contiene tareas</div>
+
+		<% else %>
+			<table>
+				<thead>
+				 	<tr>
+				 		
+				 		<th> Descripción</th>
+				 		<th> Estado </th>
+				 		<th> Prioridad </th>
+				 		<th>Accción </th>
+
+				 	</tr>
+				</thead>
+				<tbody>			
+
+					<% @tasks.each do |task| %>
+					<tr id="<%= task.id %>">
+
+						<td><%= task.id %> </td>
+						 <td> <%= task.state.capitalize%></td>
+						 <td> <%= task.priority.capitalize %></td>
+						 <td>
+
+						 	 <a href="#modal2">
+						 	 	<i class="material-icons">edit</i>
+						 	 </a>
+
+						 	
+						 	
+						 	<%= link_to  task, method: :delete, data: { confirm: 'Are you sure?' },:remote => true  do %>
+						 	<i class="material-icons">delete</i>
+						 	<% end %>
+
+						 </td>
+					</tr>
+
+					<% end %> 
+
+				</tbody>
+			</table>
+		<%end%>
+
+
+		
 	</div>
+  <!-- Modal  edit name -->
+		  <div id="modal1" class="modal bottom-sheet">
+		    <div class="modal-content">
+		      <h4>Modal Header</h4>
+		        	
+				<%= render 'form', list: @list%>
+
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+		   
+		    </div>
+		  </div>
+		
+		<!-- Modal  edit task -->
+		  <div id="modal2" class="modal modal-fixed-footer">
+		    <div class="modal-content">
+		      <h4>Modal Header</h4>
+		     <%= %>
+
+		     </div>
+		    <div class="modal-footer">
+		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+		    </div>
+		  </div>
+          

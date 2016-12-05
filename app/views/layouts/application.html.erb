@@ -5,20 +5,29 @@
     <%= csrf_meta_tags %>
 
   		<meta name="author" content="Faiz Malkani">
-		<meta name="theme-color" content="#ffffff">
-		<meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes" name="viewport">
-		<link rel="icon" type="image/png" href="/favicon.png">
+		  <meta name="theme-color" content="#ffffff">
+		  <meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes" name="viewport">
+		  
+
+      <link rel="icon" type="image/png" href="/favicon.png">
 	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      
       <%= javascript_include_tag "application" %> 
-	 <!--GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+  	  <!--GOOGLE FONTS -->
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+      
+
+      <!-- ICONS MATERIALIZE -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-        <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
-        <script src="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+  		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+      <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+      <script src="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+      
+
   <body>
       <div class="container" style="width: 100%">
               <!-- COVER IMAGE AND FLOATING BUTTON -->
@@ -41,6 +50,11 @@
                     
                   </div>  
                 </div>
+
+
+                <%= render 'form', list: @list %>
+
+                
               </div>
 
                  <div id="list" class="wow fadeInUp content-works"> </div>
