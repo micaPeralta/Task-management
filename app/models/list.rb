@@ -30,7 +30,7 @@ class List < ApplicationRecord
 	private
 		 
 		def assign_slug
-		    self.url = "#{ name.parameterize }-#{id}"
+		    self.url = name.parameterize
 		end
 		 
 		def update_slug

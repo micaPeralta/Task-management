@@ -4,24 +4,19 @@ class ListsController < ApplicationController
   before_action :set_list, only:[:destroy, :update, :show, :edit]
 
   def index
-   #@lists= Array.new
+   
     @list= List.new 
-=begin  
-    if (cookies[:user].blank?)
-       cookies[:last] = {
-      :value => "0",
-      :expires => Time.now + 3600} 
-      
+
+    if (cookies[:lasts].blank?)
+       cookies[:lasts] = {
+      :value => ""} 
+      @lists= Array.new()   
     else 
-    
-      @lists << List.find[cookies[:uno].to_i]
-    
-
+      
+      lasts=cookies[:lasts].split(',').last(5)
+      @lists= List.find(lasts)
     end
-=end
-
-  
-  	
+	
   end
 
   def show
@@ -32,11 +27,12 @@ class ListsController < ApplicationController
   	
     n=lists_params['name']
     @list= List.new(name: n.capitalize,url:'')
+
+
    
     if @list.save 
-       cookies[:uno] = @list.id.to_s
-       cookies[:last]= (cookies[:last].to_i + 1).to_s
-        redirect_to @list, notice: 'Person was successfully created.' 
+       cookies[:lasts]+= ','+@list.id.to_s
+       redirect_to @list, notice: 'Person was successfully created.' 
     else 
       render :index 
     end
@@ -64,7 +60,7 @@ class ListsController < ApplicationController
 private
 
   def set_lists
-    @lists= List.order('created_at').reverse_order
+   # @lists= List.order('created_at').reverse_order
   end
 
   def set_list

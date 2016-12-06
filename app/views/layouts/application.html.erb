@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>TaskManagement</title>
-    <%= csrf_meta_tags %>
+      <%= csrf_meta_tags %>
 
   		<meta name="author" content="Faiz Malkani">
 		  <meta name="theme-color" content="#ffffff">
@@ -50,6 +50,8 @@
                     
                   </div>  
                 </div>
+                 <%= render 'form', list: @list %>
+
               </div>
 
                  <div id="list" class="wow fadeInUp content-works"> </div>

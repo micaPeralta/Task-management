@@ -1,6 +1,12 @@
 
 	<div class="wow fadeInUp content-works"> 
-	 	<%= render @lists %>
+		<% if @lists.count == 0%>
+			<div class="content-card" >
+			Todavia no has creado ninguns lista
+			</div>
+		<% else %>
+	 		<%= render @lists %>
+	 	<% end %>
     </div>
 
 			
