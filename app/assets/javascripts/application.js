@@ -17,3 +17,4 @@
 //= require noty/themes/relax
 //= require functions
 //= require clipboard
+//= require wow.min

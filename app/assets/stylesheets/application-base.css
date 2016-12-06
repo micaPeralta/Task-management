@@ -118,7 +118,7 @@ a:active
 	width: 80%; 
 	background-color: transparent; 
 	margin: auto;
-	overflow: auto;
+	/*overflow: auto;*/
 	position: relative;
     padding: 10px 0 10px 0;
     display: -ms-flexbox;
@@ -319,7 +319,7 @@ background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, F
 {
 	.content-card 
 	{
-        margin-top: 20%;
+        margin-top: 5%;
 		width:90%;
 		padding:20px;
 	}
@@ -367,7 +367,7 @@ background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, F
 	
 	.content-card 
 	{
-		margin-top:45%;
+		margin-top:5%;
 		width:95%;
 		padding:20px;
 		box-shadow: 10em;
