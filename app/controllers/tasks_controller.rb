@@ -8,6 +8,13 @@ class TasksController < ApplicationController
 	    end
   	end
 
+  	def show 
+
+  		 respond_to do |format|
+  		 	format.json { render json: @task}
+  		 end
+  	end	
+
 	private 
 	
 	  def set_task

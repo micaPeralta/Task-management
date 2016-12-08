@@ -1,13 +1,39 @@
+	  <div class="wow fadeInUp content-card">
+                <!-- REPLACE WITH YOUR APP URL -->
+                <a href="YOUR_APP_URL_HERE">
+                  <paper-fab class="mobile-fab" icon="shop"></paper-fab>
+                </a>
+                
+                <div class="icon-and-title-flex">
+                  <img id='logo' src="<%= image_path('post.it.png')%>" class="appicon"></img>
+                  <div class="title-container">
+              
+                    <span class="text-title" style=" text-shadow: 4px 4px 4px #aaa; font-family: 'Pacifico', cursive; ">Task Management</span>
+                    <br><div class="intertext-padding"></div>
+                    
+                    <span class="text-subtitle">Gestioná tus tareas de manera rápida y sencilla</span> 
+                    <br><div class="intertext-padding"></div>
+                    
+                  </div>  
+                </div>
 
-	<div class="wow fadeInUp content-works"> 
+               <%= render 'form', list: @list %>
+              
+                
+
+              </div>
+	<div class="wow fadeInUp content-works "> 
 		<% if @lists.count == 0%>
-			<div class="content-card" >
-			Todavia no has creado ninguns lista
-			</div>
+		<div class="wow fadeInUp content-card" style="margin-top: 0;">
+			Todavia no has creado ninguna tarea
+		</div>
 		<% else %>
-	 		<%= render @lists %>
-	 	<% end %>
+    <div class="row">
+      <%= render @lists %>
     </div>
+	 		
+	 	<% end %>
+ </div>
 
 			
 		

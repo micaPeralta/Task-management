@@ -13,6 +13,10 @@ class List < ApplicationRecord
 
 	#una lista puede crearse sin ningúna tarea
 	has_many :tasks 
+	has_many :task_temporaries
+	has_many :task_longs
+	
+
 	validates :name, presence: true,uniqueness: true
 	#validates :url, presence: true
 

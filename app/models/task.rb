@@ -19,7 +19,7 @@ class Task < ApplicationRecord
 	#una tarea debe estar asociada a una lista para que sea valida
 	belongs_to :list
 
-	enum priority: {baja:2 ,media:1 ,alta:0}
+	enum priority: {Baja:2 ,Media:1 ,Alta:0}
 
 
 	validates :description, 

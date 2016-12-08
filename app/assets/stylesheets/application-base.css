@@ -64,7 +64,10 @@ a:active
 	text-decoration: none;
 	color: #333;
 }
-
+#logo {
+	height: 20%;
+	width: 20%;
+}
 .content-card	
 {
 	width: 80%; 
@@ -130,12 +133,12 @@ a:active
     -webkit-flex-wrap: wrap;
 }
 
-.screenshot-item
+/*.screenshot-item
 {
     width: 48%;
 
 }
-
+*/
 
 
 .featherlight .featherlight-image
@@ -153,8 +156,8 @@ a:active
 .cover-image 
 {	
     background: #3a6186; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-size:cover;
 	background-position:center;
 	height:100%;
@@ -190,7 +193,7 @@ background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, F
 
 .text-title
 {
-	font-size: 2.5em;
+	font-size: 3.5em;
 	font-weight: 300;
 	color: #555;
 }
@@ -305,12 +308,12 @@ background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, F
 {
     .content-card, .content-works
     {
-        width: 70%
+        width: 80%
     }
 
     .desktop-fab-container
     {
-        width: 15%
+        width: 10%
     }
 
 }
@@ -346,23 +349,37 @@ background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, F
 	}
 }
 
-@media (max-width: 480px) 
+@media (min-width: 600px) and (max-width: 770px) 
 {
+	#logo {
+ 		width: 15%;
+ 		height: 15%;
+}
 	.title-container .text-title
 	{
-		font-size: 1.9em;
+		font-size: 2em;
+	}
+}
+@media (max-width: 580px) 
+{
+	#logo {
+ 		display: none;
+}
+	.title-container .text-title
+	{
+		font-size: 2em;
 	}
 
 	.title-container .text-subtitle
 	{
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
-    .screenshot-item
+   /* .screenshot-item
     {
         width: 49% !important;
         margin-bottom: 10px;
-    }
+    }*/
 
 	
 	.content-card 
