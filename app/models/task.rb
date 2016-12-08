@@ -27,8 +27,8 @@ class Task < ApplicationRecord
 	
 	validates :priority,
 		presence: true,
-	 inclusion: { in: %w(Alta Media Baja alta media baja),
-				 message: "%La prioridad de debe ser 'Alta' , 'media' o 'baja'" }
+	 inclusion: { in: %w(Alta Media Baja ),
+				 message: "%La prioridad de debe ser 'Alta' , 'Media' o 'Baja'" }
 	
 	#consultar validacion para las subclases
 	validates :state,

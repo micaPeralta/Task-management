@@ -28,7 +28,7 @@ class ListsController < ApplicationController
     @list= List.new(name: n.capitalize,url:'')
     
     if @list.save 
-       cookies[:lasts]+= ','+@list.id.to_s
+       #cookies[:lasts]+= ','+@list.id.to_s
        redirect_to @list, notice: 'Person was successfully created.' 
     else 
       render :index 

@@ -16,14 +16,14 @@ Faker::Config.locale='es'
 	tdl=List.create!(name: name, 
 						 url: Faker::Internet.slug(name , '-'))
 	2.times do 
-		Task.create!( description:Faker::Lorem.characters,
+		Task.create!( description:Faker::Lorem.paragraph,
 				  state:['pendiente','hecha'].sample,
 				  priority:rand(0..2),
 				  list: tdl)
 	end
 
 	2.times do 
-		TaskTemporary.create!( description:Faker::Lorem.paragraph,
+		TaskTemporary.create!( description:Faker::Lorem.characters(50),
 				  state:['pendiente','hecha'].sample,
 				  priority:rand(0..2),
 				  list: tdl,
