@@ -1,0 +1,9 @@
+ <% if @task.errors.any? %>
+	<div id="error_explanation" class="card-panel red lighten-2">
+	  	 <ul>
+		   <% @task.errors.full_messages.each do |message| %>
+		   <li><%= message %></li>
+			<% end %>
+      	 </ul>
+	 </div>
+<% end %>

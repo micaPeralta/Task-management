@@ -1,6 +1,6 @@
 
 			  	<%= simple_form_for task do |f| %>
-
+			  		 <%=  render 'errors', task: task %>
 			  		<%= f.input :list_id, :as => :hidden, :input_html => { :value => task.list.id}  %>
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => task.type }  %>
 

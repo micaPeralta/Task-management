@@ -11,8 +11,6 @@
             	<a href= "<%= edit_task_path(task)%>" ><i class="material-icons">edit</i></a>
                
 					
-			   
-
 			  <%= link_to task_path(task), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
 			 	<i class="material-icons">delete</i>
 				<% end %>

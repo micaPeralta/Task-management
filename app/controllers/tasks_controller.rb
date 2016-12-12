@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   		@task= Task.new(tasks_params)
     
 	    if @task.save 
-	       redirect_to @task, notice: 'Person was successfully created.' 
+	       redirect_to @task, notice: 'Task was successfully created.' 
 	    else 
 	      render :index 
 	    end
@@ -35,8 +35,8 @@ class TasksController < ApplicationController
 
  	def update
 
-	      if @task.update!(tasks_params)
-	         redirect_to list_path(@task.list) , notice: 'Person was successfully updated.' 
+	      if @task.update(tasks_params)
+	         redirect_to list_path(@task.list) , notice: 'Task was successfully updated.' 
 	      else
 	         render :edit 
 	      end
