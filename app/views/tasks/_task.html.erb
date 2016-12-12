@@ -5,19 +5,28 @@
              <p> <%= task.description %><p>
              <strong> Tipo de Tarea:</strong> <%= task.type %> 
 			  <strong> Estado: </strong> <%= task.state.capitalize%>
-			  <strong> Prioridad: </strong> <%= task.priority.capitalize %>
-             
+			
             </div>
             <div class="card-action">
-               <a onclick="showTask(<%=task.id%>)">
-					<i class="material-icons">edit</i>
-			   </a>
+            	<a href= "<%= edit_task_path(task)%>" ><i class="material-icons">edit</i></a>
+               
+					
+			   
 
-			 
-						
-			  <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' },:remote => true  do %>
+			  <%= link_to task_path(task), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
 			 	<i class="material-icons">delete</i>
 				<% end %>
+
+				<% case task.priority %>
+				<%  when "Alta" then %>
+				     <span class="new badge red" data-badge-caption="Prioridad <%= task.priority.capitalize %>" > </span>
+				<%  when "Media"  then  %>
+					 <span class="new badge orange" data-badge-caption="
+					 Prioridad <%= task.priority.capitalize %>" ></span>
+				<% when "Baja"  then  %>
+				     <span class="new badge gren" data-badge-caption="
+				     Prioridad <%= task.priority.capitalize %>" > </span>
+			 	<% end %>
 
             </div>
           </div>

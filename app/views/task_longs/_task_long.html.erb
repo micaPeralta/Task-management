@@ -1,0 +1,46 @@
+<div class="row " style="margin-bottom: 0px">
+        <div class="col s12" id="<%= task_long.id%>">
+          <div class="card grey lighten-3">
+            <div class="card-content ">
+             <p> <%= task_long.description %><p>
+             <strong> Tipo de Tarea:</strong> <%= task_long.type %> <br>
+			  <strong> Estado: </strong> <%= task_long.state.capitalize%><br>
+
+			  <strong>Fecha Inicio:</strong> <%= task_long.date_begin%>
+
+			  <strong>Fecha Fin: </strong> <%= task_long.date_end %>
+			
+			  
+			
+            </div>
+            <div class="card-action">
+            	<a href= "<%= edit_task_path(task_long)%>" ><i class="material-icons">edit</i></a>
+               
+					
+			   
+
+			  <%= link_to task_path(task_long), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
+			 	<i class="material-icons">delete</i>
+				<% end %>
+
+				<% case task_long.priority %>
+				<%  when "Alta" then %>
+				     <span class="new badge red" data-badge-caption="Prioridad <%= task_long.priority.capitalize %>" > </span>
+				<%  when "Media"  then  %>
+					 <span class="new badge orange" data-badge-caption="
+					 Prioridad <%= task_long.priority.capitalize %>" ></span>
+				<% when "Baja"  then  %>
+				     <span class="new badge gren" data-badge-caption="
+				     Prioridad <%= task_long.priority.capitalize %>" > </span>
+			 	<% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+		
+
+
+						
+
+						 	

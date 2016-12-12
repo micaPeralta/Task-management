@@ -11,32 +11,33 @@
 
 Faker::Config.locale='es'
 
-20.times do |i|
+10.times do |i|
 	name=Faker::Lorem.sentence(3,true)
 	tdl=List.create!(name: name, 
 						 url: Faker::Internet.slug(name , '-'))
 	2.times do 
 		Task.create!( description:Faker::Lorem.paragraph,
-				  state:['pendiente','hecha'].sample,
+				  state:['Pendiente','Hecha'].sample,
 				  priority:rand(0..2),
 				  list: tdl)
 	end
 
 	2.times do 
 		TaskTemporary.create!( description:Faker::Lorem.characters(50),
-				  state:['pendiente','hecha'].sample,
+				  state:['Pendiente','Hecha','Expirada'].sample,
 				  priority:rand(0..2),
 				  list: tdl,
 				  progress: rand(0..100)				  )
 	end
 
 	2.times do 
-		TaskLong.create!( description:Faker::Lorem.paragraph,
-				  state:['pendiente','en_curso','hecha'].sample,
+		t=TaskLong.create!( description:Faker::Lorem.paragraph,
+				  state:['Pendiente','En_curso','Hecha'].sample,
 				  priority:rand(0..2),
 				  list: tdl,
 				  date_begin: Faker::Time.between(DateTime.now - 1, DateTime.now),
 				  date_end: Faker::Time.between(DateTime.now - 1, DateTime.now)			  )
+	p t.state
 	end
 
 

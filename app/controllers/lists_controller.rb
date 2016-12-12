@@ -19,6 +19,12 @@ class ListsController < ApplicationController
 
   def show
     @tasks=@list.tasks
+    maxTask=@list.tasks.select('updated_at').maximum(:updated_at)
+    unless maxTask.nil?
+       @date=[maxTask,@list.updated_at].max 
+    else
+      @date=@list.updated_at
+    end
    
   end
 

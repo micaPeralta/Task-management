@@ -1,3 +1,25 @@
+set_datepicker = function(){
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 3, // Creates a dropdown of 15 years to control year
+     container: 'body',
+     monthsFull: ['Enero','Febrero','Marzo','Abril','Mayo',
+     'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+     monthsShort:['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'],
+     weekdaysLetter: [ 'L', 'M', 'M', 'J', 'V', 'S', 'D' ],
+     weekdaysFull:['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'],
+     //Today and clear
+    today: 'Hoy',
+    clear: 'Limpiar',
+    close: 'Cerrar',
+    dateFormat: 'dd-mm-yyyy',
+    format:'dd-mm-yyyy'
+  }).pickadate("setDate", new Date());
+
+}
+
+$( document ).ready(set_datepicker); 
+ $(document).on('turbolinks:load',set_datepicker );
 
 
 $(document).ready(function(){
@@ -7,15 +29,15 @@ $(document).ready(function(){
 
 
 $('#clipboard').click(function(){  
-
   var clip = new Clipboard('#clipboard');
-
 
 });
 
- $(document).ready(function() {
-    $('select').material_select();
-  });
+var show_selects = function(){
+     $('select').material_select();
+}
+ $(document).ready(show_selects);
+ $(document).on('turbolinks:load',show_selects );
 
 
 
@@ -36,7 +58,7 @@ $('#clipboard').click(function(){
            	 $('#modal2').modal('open');
              $("#respuesta").html(res.priority);
              $('#description').val(res.description);
-
+             $('#myselect')
              $('#myselect').append('<option value=1 selected="true">'+ res.priority +'</option>');
 			
            }else{

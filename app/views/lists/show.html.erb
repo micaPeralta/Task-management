@@ -3,7 +3,7 @@
 				
 				<div class="row " >
 					<div class="col s12" >
-						<div class="col s10">
+						<div class="col s9">
 						<button id="clipboard" data-clipboard-text="<%= @list.url%>"  >
 								<%= fa_icon "link"	%>	
 
@@ -14,11 +14,25 @@
 
 						</div>
 
-						<div class="col s2"  >
-						<a class="tooltipped" href="<%= lists_path %>" data-position="bottom" data-delay="50" data-tooltip="Volver">	<i id="edit" class="material-icons ">replay</i>	</a>
+						<div class="col s3"  >
+						<a class="tooltipped btn-floating waves-effect waves-light" href="<%= lists_path %>" data-position="bottom" data-delay="50" data-tooltip="Volver">	<i id="edit" class="material-icons ">replay</i>	</a>
 						
-						<a class="tooltipped" href="#modal1" data-position="bottom" data-delay="50" data-tooltip="Cambiar nombre">	<i id="edit" class="material-icons ">edit</i></a>
+						<a class="tooltipped  btn-floating waves-effect waves-light" href="#modal1" data-position="bottom" data-delay="50" data-tooltip="Cambiar nombre">	<i id="edit" class="material-icons ">edit</i></a>
 							
+
+		                  <a class="tooltipped  dropdown-button btn-floating waves-effect waves-light " href="#!" data-activates="dropdown2"
+		                  data-tooltip="Crear tarea" >
+
+		                  <i class="mdi-editor-vertical-align-bottom material-icons left " > add</i></a>
+		                          <ul id="dropdown2" class="dropdown-content">
+		                            <li><a href="#modal2" class="-text">Tarea simple</a>
+		                            </li>
+		                            <li><a href="#!" class="-text">Tarea Larga</a>
+		                            </li>
+		                            <li><a href="#!" class="-text">Tarea Temporal</a>
+		                            </li>
+		                          </ul>
+
 						</div>
 					</div>					
 				</div>
@@ -31,23 +45,24 @@
 				<strong>Fecha de creación:</strong> <%= @list.created_at.strftime("%d/%m/%Y")%> 
 			</div>
 			<div class="col s4">
-				<strong>Última modificación:</strong>  <br>
+				<strong>Última modificación:</strong>
+				<%= @date.strftime("%d/%m/%Y")%>  <br>
 			</div>
 			<div class="col s4">
-				<a class="waves-effect blue darken-3  btn"><i class="material-icons left">add</i>Nueva tarea</a>
+		
 			</div>
 		</div>
 			</div>
 		
+ 
+        
 
 		
 		<% if @tasks.count  == 0%>	
 				<div class="card-panel lime accent-1"> Esta lista no contiene tareas</div>
 		<% else %>
-					
-					<% @tasks.each do |task| %>
-						<%= render 'tasks/task', task: task%>
-					<% end %> 
+
+			<%= render @tasks %>				
 				
 		<%end%>
 
@@ -59,7 +74,7 @@
   <!-- Modal  edit name -->
 		  <div id="modal1" class="modal bottom-sheet">
 		    <div class="modal-content">
-		      <h4>Modal Header</h4>
+		      <h4>Renombrar tarea</h4>
 		        	
 				<%= render 'form', list: @list%>
 
@@ -70,20 +85,4 @@
 		    </div>
 		  </div>
 		
-	 <div id="modal2" class="modal modal-fixed-footer">
-			 <div class="modal-content">
-			 <h4>Modal Header</h4>
-			  	<%= simple_form_for task_path do |f| %>
-			      	 <%= f.input :description, label: false,:placeholder => 'Descripcion', input_html: {id: "description"} %>
-					 <select id='myselect'  name="/tasks/vindico-ter-ars-acquiro-libero[priority]" id="priority">
-				      	<option value="2">Baja</option>
-				        <option value="1">Media</option>
-						<option value="0">Alta</option>
-					</select>
-				<% end %>
-
-						     </div>
-				<div class="modal-footer">
-		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-			    </div>
-	  </div>	
+	

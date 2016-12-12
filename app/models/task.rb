@@ -7,7 +7,7 @@
 #  priority      :string           not null
 #  state         :string           not null
 #  type          :string
-#  list_id :integer
+#  list_id		 :integer
 #  progress      :integer
 #  date_begin    :date
 #  date_end      :date
@@ -21,6 +21,8 @@ class Task < ApplicationRecord
 
 	enum priority: {Baja:2 ,Media:1 ,Alta:0}
 
+	#enum state: [:Pendiente,:Hecha, :En_curso ,:Expirada]
+
 
 	validates :description, 
 		presence: true
@@ -33,8 +35,8 @@ class Task < ApplicationRecord
 	#consultar validacion para las subclases
 	validates :state,
 	 	presence: true,
-	 	inclusion: { in: %w(pendiente en_curso hecha expirada),
-	 				message:  "%{value} no es un estado válido "}
+	 	inclusion: { in: %w(Pendiente En_curso Hecha Expirada ),
+	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
 	
 	self.default_scope {order ('tasks.priority')}
 

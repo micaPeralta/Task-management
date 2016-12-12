@@ -19,8 +19,15 @@ class TaskLong < Task
 
 	validates :date_begin, presence: true
 	validates :date_end, presence: true
-	#state -> pendiente, en curso, hecha
-	#consultar validacion
+
+	before_validation :set_dates
+
+
+
+	def set_dates
+    	self.date_begin= DateTime.strptime(self.date_begin, "%m/%d/%Y").strftime("%Y/%m/%d")
+    	self.date_end= DateTime.strptime(self.date_end, "%m/%d/%Y").strftime("%Y/%m/%d")
+    end
 
 	def to_s 
 		super + ", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"

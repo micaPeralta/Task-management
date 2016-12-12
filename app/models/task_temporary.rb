@@ -16,7 +16,7 @@
 #
 
 class TaskTemporary < Task
-	
+   
 	validates :progress, 
 		presence: true,
 		:inclusion => { :in => 0..100,
@@ -25,6 +25,7 @@ class TaskTemporary < Task
 
 	validates :description,
 		length: { maximum: 255 }
+
 
 
 	def to_s 
