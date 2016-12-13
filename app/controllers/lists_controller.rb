@@ -6,14 +6,14 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    @lists= List.all
-=begin
+  
+
     if (!cookies[:lasts].blank?)
       cookies[:lasts][0]=""
       lasts=cookies[:lasts].split(',').last(5)
       @lists= List.find(lasts)
     end
-=end
+
 	
   end
 

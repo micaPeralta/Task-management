@@ -2,12 +2,9 @@
 <div class="wow fadeInUp content-card " style="margin-top: 0;">	
 	
 
-	 <a class=" btn-floating waves-effect waves-light right" href="<%= lists_path %>"  data-delay="50" >	<i  class="material-icons ">replay</i>	</a>
+	 <a class=" btn-floating waves-effect waves-light right" href="<%= list_path(@task.list) %>"  data-delay="50" >	<i  class="material-icons ">replay</i>	</a>
+ 	 <h4>Editar Tarea</h4>
+
 		 <%= render 'form' ,task:@task %>			
-		 <h4>Editar Tarea</h4>
-
-
-
-
-
+	
  </div>

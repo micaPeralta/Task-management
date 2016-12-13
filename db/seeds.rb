@@ -11,7 +11,7 @@
 
 Faker::Config.locale='es'
 
-10.times do |i|
+5.times do |i|
 	name=Faker::Lorem.sentence(3,true)
 	tdl=List.create!(name: name, 
 						 url: Faker::Internet.slug(name , '-'))
