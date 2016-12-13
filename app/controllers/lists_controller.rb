@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-  
+    @lists= Array.new()
 
     if (!cookies[:lasts].blank?)
       cookies[:lasts][0]=""
