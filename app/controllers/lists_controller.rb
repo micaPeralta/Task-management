@@ -6,12 +6,14 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    @lists= Array.new()
+    @lists= Array.new
 
     if (!cookies[:lasts].blank?)
       cookies[:lasts][0]=""
       lasts=cookies[:lasts].split(',').last(5)
       @lists= List.find(lasts)
+    else 
+      cookies[:lasts]=""
     end
 
 	
@@ -34,7 +36,7 @@ class ListsController < ApplicationController
     @list= List.new(name: n.capitalize,url:'')
     
     if @list.save 
-       #cookies[:lasts]+= ','+@list.id.to_s
+       cookies[:lasts] += ','+@list.id.to_s
        redirect_to @list, notice: 'Person was successfully created.' 
     else 
       render :index 
