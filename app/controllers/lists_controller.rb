@@ -7,7 +7,7 @@ class ListsController < ApplicationController
    
     @list= List.new 
     #@lists= Array.new
-    @lists=List.all
+    @lists=ListDecorator.new(List.all)
 =begin
     if (!cookies[:lasts].blank?)
       cookies[:lasts][0]=""
@@ -24,7 +24,7 @@ class ListsController < ApplicationController
     @task_simples=@list.task_simples
     @task= Task.new
     @task_temporaries=@list.task_temporaries
-    @task_longs=@list.task_longs
+    @task_longs=TaskLongDecorator.decorate_collection( @list.task_longs)
   end
 
   def create
@@ -62,7 +62,7 @@ class ListsController < ApplicationController
 private
 
   def set_list
-    @list= List.find_by_url(params[:id])
+    @list= List.find_by_url(params[:id]).decorate
   end
 
   def lists_params

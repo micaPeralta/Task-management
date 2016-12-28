@@ -18,7 +18,6 @@ class TasksController < ApplicationController
 
   	def edit
 
-  		
   		case params['type']
 	  		when 'TaskLong'
 	  			render 'task_longs/edit'
@@ -71,7 +70,7 @@ class TasksController < ApplicationController
 	  end
 	
 	  def set_task
-	    @task= Task.find(params[:id])
+	    @task= Task.find(params[:id]).decorate
 	  end
 
 	  def tasks_params()
@@ -81,9 +80,8 @@ class TasksController < ApplicationController
 			  when 'TaskLong'
 			 	 params.require('task_long').permit(:list_id, :type, :date_begin, :date_end,:description,
 			  	:state,:priority)
-			  when nil
-			 	 params.require('task_simple').permit(:list_id, :type,:description,
-			  	:state,:priority)
+			  when 'TaskSimple'
+			 	 params.require('task_simple').permit(:list_id, :type,:description,:state,:priority)
 			  when 'TaskTemporary'
 			  	 params.require('task_temporary').permit(:list_id, :type,:description,
 			  	:state,:priority,:progress)

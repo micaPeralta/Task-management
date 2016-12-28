@@ -1,0 +1,21 @@
+class TaskLongDecorator < Draper::Decorator
+  delegate_all
+
+  # Define presentation-specific methods here. Helpers are accessed through
+  # `helpers` (aka `h`). You can override attributes, for example:
+  #
+  #   def created_at
+  #     helpers.content_tag :span, class: 'time' do
+  #       object.created_at.strftime("%a %m/%d/%y")
+  #     end
+  #   end
+
+  def date_begin      
+         object.date_begin.strftime( "%d/%m/%Y")     
+  end
+
+   def date_end
+         object.date_end.strftime( "%d/%m/%Y")
+  end
+
+end

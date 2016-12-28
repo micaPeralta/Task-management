@@ -62,11 +62,15 @@ gem 'materialize-sass'
 # icons  font-awesome
 gem "font-awesome-rails"
 
-# copiar al porta papeles
+# copiar al clipboard
 gem 'clipboard-rails'
 
 # generacion de atos random para los seeders
 gem 'faker'
+
+#decoradores
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: "audionerd/draper" ,branch: "rails5"
 
 group :production do
 

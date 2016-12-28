@@ -38,11 +38,11 @@
 			<div class="row">
 						<div class="col s12"> 
 			<div class="col s4">
-				<strong>Fecha de creación:</strong> <%= @list.created_at.strftime("%d/%m/%Y")%> 
+				<strong>Fecha de creación:</strong> <%= @list.created_at%> 
 			</div>
 			<div class="col s4">
 				<strong>Última modificación:</strong>
-				<%= @list.last_update.strftime("%d/%m/%Y")%>  <br>
+				<%= @list.last_update%>  <br>
 			</div>
 			<div class="col s4">
 			<%= link_to :hoaooa,new_list_task_temporary_path(@list,@task)%>
