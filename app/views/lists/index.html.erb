@@ -23,17 +23,8 @@
 
               </div>
 	<div class="wow fadeInUp content-works "> 
-		<% if @lists.count == 0%>
-		<div class="wow fadeInUp content-card" style="margin-top: 0;">
-			Todavia no has creado ninguna lista
-		</div>
-		<% else %>
-    
-      <%= render @lists %>
-    
-	 	<% end %>
- </div>
-
+		<%= render(@lists) || render('empty-collection') %>
+  </div>
 			
 		
 		

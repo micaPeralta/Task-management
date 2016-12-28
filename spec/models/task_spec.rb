@@ -20,7 +20,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   
   	let(:task){FactoryGirl.build(:task)}
-  	let(:to_do_list){FactoryGirl.build(:to_do_list)}
+  	let(:list){FactoryGirl.build(:list)}
 	
 	describe '#create' do
 
@@ -30,9 +30,9 @@ RSpec.describe Task, type: :model do
 
 		it 'con datos validos' do
 			task.description= 'Una descripcion'
-			task.priority='alta'
-			task.state='hecha'
-			task.to_do_list= to_do_list
+			task.priority='Alta'
+			task.state='Hecha'
+			task.to_do_list= list
 			expect(task.valid?).to be true
 
 		end

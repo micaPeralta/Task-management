@@ -42,25 +42,65 @@
 			</div>
 			<div class="col s4">
 				<strong>Última modificación:</strong>
-				<%= @date.strftime("%d/%m/%Y")%>  <br>
+				<%= @list.last_update.strftime("%d/%m/%Y")%>  <br>
 			</div>
 			<div class="col s4">
-		
+			<%= link_to :hoaooa,new_list_task_temporary_path(@list,@task)%>
 			</div>
 		</div>
 			</div>
 		
- 
-        
 
-		
-		<% if @tasks.count  == 0%>	
-				<div class="card-panel lime accent-1"> Esta lista no contiene tareas</div>
-		<% else %>
+		 	<table>
+		 		<thead> 
+			 		<tr>
+			 			<th>#</th>
+			 			<th>Tareas Temporales</th>
+			 		</tr>
+			 		
+		 		</thead>
+		 		<tbody>
+		 					<%= render @task_temporaries || "render('empty-collection')" %>
+		 		</tbody>
+		 	</table>				
+			
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Tareas Largas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render @task_longs|| 'en blanco' %>
+				</tbody>
 
-			<%= render @tasks %>				
+
+			</table>
+			
+
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Tareas Comunes</th>
+
+					</tr>
+				</thead>
+
+				<tbody>
+						<%= render @task_simples|| 'en blanco' %>
+					
+				</tbody>
+
+			</table>
+
 				
-		<%end%>
+						
+
+		 	
+
+
 
 	
 		<div id="respuesta"> </div>

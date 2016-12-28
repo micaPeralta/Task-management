@@ -1,10 +1,9 @@
- 
 <div class="wow fadeInUp content-card " style="margin-top: 0;">	
 	
 
 	 <a class=" btn-floating waves-effect waves-light right" href="<%= list_path(@task.list) %>"  data-delay="50" >	<i  class="material-icons ">replay</i>	</a>
- 	 <h4>Editar Tarea</h4>
+ 	 <h4>Editar Tarea larga </h4>
 
-		 <%= render 'form' ,task:@task %>			
+		 <%= render partial: '/task_temporaries/form' ,task:@task %>			
 	
  </div>

@@ -1,0 +1,58 @@
+			<tr> 
+
+
+
+			<td> <input type="checkbox" name="vehicle" value="Bike"></td>
+			<td>
+
+				<div><%= task_simple.description %></div>
+				
+				<div class="footer-div" ">
+					<strong> Estado: </strong> <%= task_simple.state.capitalize%>
+
+
+             	<a href= "<%= edit_list_task_simple_path(id:task_simple.id,list_id:task_simple.list.url)%>" ><i class="material-icons">edit</i></a>
+               
+			    <%= link_to list_task_simple_url(@list.url,task_simple.id), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
+			 	<i class="material-icons">delete</i>
+				<% end %>
+			
+           
+
+				<% case task_simple.priority %>
+				<%  when "Alta" then %>
+				     <span class="new badge red" data-badge-caption=" <%= task_simple.priority.capitalize %>" > </span>
+				<%  when "Media"  then  %>
+					 <span class="new badge orange" data-badge-caption="
+					  <%= task_simple.priority.capitalize %>" ></span>
+				<% when "Baja"  then  %>
+				     <span class="new badge gren" data-badge-caption="
+				      <%= task_simple.priority.capitalize %>" > </span>
+			 	<% end %>
+
+				</div>
+				
+             
+
+
+          
+			</td>
+           
+
+			</tr>
+
+
+     
+		
+
+
+						
+
+						 	
+
+						 	
+						 	
+						 
+
+						
+				

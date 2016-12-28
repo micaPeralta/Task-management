@@ -6,8 +6,9 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    @lists= Array.new
-
+    #@lists= Array.new
+    @lists=List.all
+=begin
     if (!cookies[:lasts].blank?)
       cookies[:lasts][0]=""
       lasts=cookies[:lasts].split(',').last(5)
@@ -15,31 +16,27 @@ class ListsController < ApplicationController
     else 
       cookies[:lasts]=""
     end
-
+=end
 	
   end
 
   def show
-    @tasks=@list.tasks
-    maxTask=@list.tasks.select('updated_at').maximum(:updated_at)
-    unless maxTask.nil?
-       @date=[maxTask,@list.updated_at].max 
-    else
-      @date=@list.updated_at
-    end
-   
+    @task_simples=@list.task_simples
+    @task= Task.new
+    @task_temporaries=@list.task_temporaries
+    @task_longs=@list.task_longs
   end
 
   def create
   	
     n=lists_params['name']
-    @list= List.new(name: n.capitalize,url:'')
+    @list= List.new(name: n.capitalize)
     
     if @list.save 
-       cookies[:lasts] += ','+@list.id.to_s
+      # cookies[:lasts] += ','+@list.id.to_s
        redirect_to @list, notice: 'Person was successfully created.' 
     else 
-      render :index 
+      redirect_to lists_url
     end
   end
 
@@ -63,8 +60,6 @@ class ListsController < ApplicationController
 
 
 private
-
-
 
   def set_list
     @list= List.find_by_url(params[:id])

@@ -1,0 +1,18 @@
+
+			  	<%= simple_form_for ([@list,@task]) do |f| %>
+			  		 <%=  render 'errors', task_simple: @task_simple %>
+			  		
+			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
+
+			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
+			      	
+			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
+
+			      	
+			      	<%= f.select :state, [['Pendiente', 'Pendiente'], ['En curso', 'En_curso'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
+					  
+					
+					 <%= f.button :submit, :class => "waves-effect blue darken-3 btn",:value => 'Enviar' %>
+					 <% end %>
+
+		     	

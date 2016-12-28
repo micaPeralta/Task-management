@@ -16,29 +16,37 @@ $('.datepicker').pickadate({
   })
 
 }
-
 $( document ).ready(set_datepicker); 
- $(document).on('turbolinks:load',set_datepicker );
+$(document).on('turbolinks:load',set_datepicker );
 
 
-$(document).ready(function(){
+// cargar modal
+load_modal= function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-});
-
+     $('.modal').modal();
+}
+$(document).ready(load_modal);
+//--------------------------------
 
 $('#clipboard').click(function(){  
   var clip = new Clipboard('#clipboard');
 
 });
 
+//Cargar selects 
 var show_selects = function(){
      $('select').material_select();
 }
  $(document).ready(show_selects);
  $(document).on('turbolinks:load',show_selects );
 
+ //-------------------------------
 
+var load_best_in_place=function(){
+  $(".best_in_place").best_in_place();
+} 
+$(document).on("ready page:change", load_best_in_place);
+  
 
   function showTask(id){
   	   var task = id

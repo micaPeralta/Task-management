@@ -11,20 +11,29 @@
 
 class List < ApplicationRecord
 
-	#una lista puede crearse sin ningúna tarea
-	has_many :tasks 
+	has_many :tasks
+	has_many :task_simples 
 	has_many :task_temporaries
 	has_many :task_longs
 	
 
 	validates :name, presence: true,uniqueness: true
-	#validates :url, presence: true
+
 
 
 	#callbacks
- 	after_create :update_slug
- 	before_update :assign_slug
+ 	
+ 	before_create :assign_slug
 
+ 	def last_update
+
+ 		maxTask=self.tasks.select('updated_at').maximum(:updated_at)
+	    unless maxTask.nil?
+	        return [maxTask,self.updated_at].max 
+	    else
+	      return self.updated_at
+	    end
+ 	end
 
  	def to_param
       url
@@ -37,9 +46,8 @@ class List < ApplicationRecord
 		    self.url = name.parameterize
 		end
 		 
-		def update_slug
-		    update_attributes url: assign_slug
-		end
+
+		
 end
 
 

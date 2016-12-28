@@ -27,7 +27,13 @@ class TaskTemporary < Task
 		length: { maximum: 255 }
 
 
-
+			#consultar validacion para las subclases
+	validates :state,
+	 	presence: true,
+	 	inclusion: { in: %w(Pendiente Hecha Expirada ),
+	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
+	
+	
 	def to_s 
 		super + ", Porcentaje de avance: #{self.progress}% "
 	

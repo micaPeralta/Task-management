@@ -24,6 +24,12 @@ class TaskLong < Task
 	validates :date_end, presence: true
 
 
+	validates :state,
+	 	presence: true,
+	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
+	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
+	
+	
 
 	def set_dates
     	self.date_begin= Date.strptime(self.date_begin, "%d/%m/%Y").strftime("%Y/%m/%d")

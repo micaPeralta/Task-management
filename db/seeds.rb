@@ -16,7 +16,7 @@ Faker::Config.locale='es'
 	tdl=List.create!(name: name, 
 						 url: Faker::Internet.slug(name , '-'))
 	2.times do 
-		Task.create!( description:Faker::Lorem.paragraph,
+		TaskSimple.create!( description:Faker::Lorem.paragraph,
 				  state:['Pendiente','Hecha'].sample,
 				  priority:rand(0..2),
 				  list: tdl)
@@ -37,7 +37,7 @@ Faker::Config.locale='es'
 				  list: tdl,
 				  date_begin: Faker::Time.between(DateTime.now - 1, DateTime.now),
 				  date_end: Faker::Time.between(DateTime.now - 1, DateTime.now)			  )
-	p t.state
+	
 	end
 
 

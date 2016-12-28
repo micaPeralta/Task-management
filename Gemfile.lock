@@ -42,6 +42,9 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     builder (3.2.2)
     byebug (9.0.6)
     clipboard-rails (1.5.15)
@@ -205,6 +208,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  best_in_place (~> 3.0.1)
   byebug
   clipboard-rails
   coffee-rails (~> 4.2)

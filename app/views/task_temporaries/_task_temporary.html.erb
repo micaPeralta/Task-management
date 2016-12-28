@@ -1,39 +1,51 @@
-<div class="row " style="margin-bottom: 0px">
-        <div class="col s12" id="<%= task_temporary.id%>">
-          <div class="card grey lighten-3">
-            <div class="card-content ">
-             <p> <%= task_temporary.description %><p>
-             <strong> Tipo de Tarea:</strong> <%= task_temporary.type %> 
-			  <strong> Estado: </strong> <%= task_temporary.state.capitalize%>
-				<strong>Progreso: </strong> <%= task_temporary.progress%>
-
-            </div>
-            <div class="card-action">
-            	<a href= "<%= edit_task_path(task_temporary)%>" ><i class="material-icons">edit</i></a>
-               
-					
-			   
-
-			  <%= link_to task_path(task_temporary), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
-			 	<i class="material-icons">delete</i>
-				<% end %>
-
-				<% case task_temporary.priority %>
-				<%  when "Alta" then %>
-				     <span class="new badge red" data-badge-caption="Prioridad <%= task_temporary.priority.capitalize %>" > </span>
-				<%  when "Media"  then  %>
-					 <span class="new badge orange" data-badge-caption="
-					 Prioridad <%= task_temporary.priority.capitalize %>" ></span>
-				<% when "Baja"  then  %>
-				     <span class="new badge gren" data-badge-caption="
-				     Prioridad <%= task_temporary.priority.capitalize %>" > </span>
-			 	<% end %>
-
-            </div>
-          </div>
-        </div>
-      </div>
 		
 
+			<tr>
+				<td> <input type="checkbox" name="vehicle" value="Bike"></td>
+				<td>
 
-						
+					<div>  <%=  best_in_place  [@list,task_temporary], :description, :as => :input %> </div>
+					<div class="footer-div">
+						<strong> Estado: </strong> <%= 
+					  best_in_place [@list,task_temporary], :state, :as => :select, :collection => %w(Pendiente En_curso Hecha Expirada)
+					  %>
+				
+				
+				
+					<a href= "<%= edit_list_task_temporary_path(@list,task_temporary)%>" ><i class="material-icons">edit</i></a>
+					 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
+			 		<i class="material-icons">delete</i>
+					<% end %>
+
+
+					<strong>Progreso: </strong> <%= task_temporary.progress%>
+				
+				
+					<% case task_temporary.priority %>
+					<%  when "Alta" then %>
+					     <span class="new badge red" data-badge-caption=" <%= task_temporary.priority.capitalize %>" > </span>
+					<%  when "Media"  then  %>
+						 <span class="new badge orange" data-badge-caption="
+						  <%= task_temporary.priority.capitalize %>" ></span>
+					<% when "Baja"  then  %>
+					     <span class="new badge gren" data-badge-caption="
+					      <%= task_temporary.priority.capitalize %>" > </span>
+				 	<% end %>
+					</div>
+				
+				 
+				</td>
+				
+					
+				
+			</tr>
+
+             
+          
+			   
+
+			 
+
+			
+
+      

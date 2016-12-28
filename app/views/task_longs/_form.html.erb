@@ -1,8 +1,8 @@
 
-			  	<%= simple_form_for task do |f| %>
-			  		 <%=  render 'errors', task: task %>
-			  		<%= f.input :list_id, :as => :hidden, :input_html => { :value => task.list.id}  %>
-			  		<%= f.input :type, :as => :hidden, :input_html => { :value => task.type }  %>
+			  	<%= simple_form_for ([@list,@task]) do |f| %>
+			  		 <%=  render 'errors', task: @task %>
+			  		
+			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
 			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
 			      	
@@ -11,7 +11,7 @@
 			      	
 			      	<%= f.select :state, [['Pendiente', 'Pendiente'], ['En curso', 'En_curso'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 					  
-					<% if task.type == 'TaskLong'%>
+					
 
 						<%= f.input :date_begin ,as: :string,input_html:{ class: 'datepicker',
 						data_value: '' } %>
@@ -20,18 +20,7 @@
 						<%= f.input :date_end ,as: :string,input_html:{ class: 'datepicker',
 							data_value: ''} %>
 
-						
 
-					<% end %>
-
-					<% if task.type == 'TaskTemporary'%>
-						<div class="input-field">
-						 <p class="range-field">
-							<%= f.input :progress ,as: :range %>
-						</p>
-						</div>
-					<% end %>
-					
 
 					 <%= f.button :submit, :class => "waves-effect blue darken-3 btn",:value => 'Enviar' %>
 					 <% end %>
