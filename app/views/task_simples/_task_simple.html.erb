@@ -1,4 +1,4 @@
-			<tr> 
+			<tr id="<%=task_simple.id %>"> 
 				<td> 
 				<% case task_simple.priority %>
 					<%  when "Alta" then %>
@@ -15,15 +15,14 @@
 
 					<div><%= task_simple.description %></div>
 					
-					<div class="footer-div" ">
+					<div class="footer-div" >
 						<strong> Estado: </strong> <%= task_simple.state.capitalize%>
-
 					</div>
 				</td>
-				<td>
+				<td width="100px">
 					<a href= "<%= edit_list_task_simple_path(id:task_simple.id,list_id:task_simple.list.url)%>" ><i class="material-icons">edit</i></a>
 		               
-					    <%= link_to list_task_simple_url(@list.url,task_simple.id), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
+					    <%= link_to list_task_simple_url(@list.url,task_simple.id), method: :delete, data: { confirm: '¿ Quieres borrar ? ' },:remote => true  do %>
 					 	<i class="material-icons">delete</i>
 						<% end %>
 

@@ -1,5 +1,5 @@
 		
-		<tr>
+		<tr id="<%= task_temporary.id%> ">
 				<td>
 					<% case task_temporary.priority %>
 					<%  when "Alta" then %>
@@ -30,7 +30,7 @@
 
 				<td>
 						<a href= "<%= edit_list_task_temporary_path(@list,task_temporary)%>" ><i class="material-icons">edit</i></a>
-						 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
+						 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: '¿ Quieres borrar ? ' },:remote => true  do %>
 				 		<i class="material-icons">delete</i>
 						<% end %>
 

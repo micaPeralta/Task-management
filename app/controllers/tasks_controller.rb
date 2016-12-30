@@ -70,7 +70,7 @@ class TasksController < ApplicationController
 	  end
 	
 	  def set_task
-	    @task= Task.find(params[:id]).decorate
+	    @task= Task.find(params[:id])
 	  end
 
 	  def tasks_params()
