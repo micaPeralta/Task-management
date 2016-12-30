@@ -1,5 +1,18 @@
 
 			<tr>
+				<td>
+					 	<% case task_long.priority %>
+						<%  when "Alta" then %>
+						     <span class="new badge red" data-badge-caption="<%= task_long.priority.capitalize %>" > </span>
+						<%  when "Media"  then  %>
+							 <span class="new badge orange" data-badge-caption="
+							 <%= task_long.priority.capitalize %>" ></span>
+						<% when "Baja"  then  %>
+						     <span class="new badge gren" data-badge-caption="
+						     <%= task_long.priority.capitalize %>" > </span>
+					 	<% end %>
+
+				</td>
 				<td> 
 					<div>
 						<%=  best_in_place  [@list,task_long], :description, :as => :input %> 
@@ -13,29 +26,18 @@
 					
 						 <strong>Fecha Fin: </strong> <%= task_long.date_end %>		    
 			    
+			 
+					</div>
+ 
+			   </td>
+			   <td>
+			   		
 			    		<a href= "<%= edit_list_task_long_path(@list,task_long)%>" ><i class="material-icons">edit</i></a>
 			    	 	
 			    	 	 <%= link_to list_task_long_path(@list,task_long), method: :delete, data: { confirm: 'Quieres borrar ? ' },:remote => true  do %>
 			 			<i class="material-icons">delete</i> 
 			 			<%end%>
-			       
-			       	<% case task_long.priority %>
-						<%  when "Alta" then %>
-						     <span class="new badge red" data-badge-caption="<%= task_long.priority.capitalize %>" > </span>
-						<%  when "Media"  then  %>
-							 <span class="new badge orange" data-badge-caption="
-							 <%= task_long.priority.capitalize %>" ></span>
-						<% when "Baja"  then  %>
-						     <span class="new badge gren" data-badge-caption="
-						     <%= task_long.priority.capitalize %>" > </span>
-					 	<% end %>
 
-        
-					</div>
-
-
-
-				 
 			   </td>
 			 </tr>
 
