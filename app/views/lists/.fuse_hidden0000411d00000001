@@ -54,28 +54,21 @@
 		 	<table>
 		 		<thead> 
 			 		<tr>
-			 			
-			 			<th>
-			 			<i class="fa fa-clock-o" aria-hidden='true'></i>
-			 			Tareas Temporales
-			 			</th>
+			 			<th>#</th>
+			 			<th>Tareas Temporales</th>
 			 		</tr>
 			 		
 		 		</thead>
 		 		<tbody>
-
-			 			<%= render @task_temporaries or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>	 			
-			 		
+		 					<%= render @task_temporaries or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>
 		 		</tbody>
 		 	</table>				
 			
 			<table>
 				<thead>
-					<tr>						
-						<th>
-						<i class="fa fa-arrows-h" aria-hidden='true'></i>
-						Tareas Largas
-						</th>
+					<tr>
+						<th>#</th>
+						<th>Tareas Largas</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -89,10 +82,8 @@
 			<table>
 				<thead>
 					<tr>
-						
-						<th>
-						<i class="fa fa-file-text-o" aria-hidden='true'></i>
-						Tareas Comunes</th>
+						<th>#</th>
+						<th>Tareas Comunes</th>
 
 					</tr>
 				</thead>
