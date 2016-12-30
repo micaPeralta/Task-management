@@ -28,11 +28,27 @@ load_modal= function(){
 $(document).ready(load_modal);
 //--------------------------------
 
-$('#clipboard').click(function(){  
-  var clip = new Clipboard('#clipboard');
+//clipboard 
+$(document).ready(function(){  
 
+  var clipboard = new Clipboard('#clipboard-btn');
+  console.log(clipboard);
+
+  clipboard.on('success', function(e) {
+      console.info('Action:', e.action);
+      console.info('Text:', e.text);
+      console.info('Trigger:', e.trigger);
+       Materialize.toast('Copiado!', 4000);
+      e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+      console.error('Action:', e.action);
+      console.error('Trigger:', e.trigger);
+  });
 });
 
+//------------------------------
 //Cargar selects 
 var show_selects = function(){
      $('select').material_select();

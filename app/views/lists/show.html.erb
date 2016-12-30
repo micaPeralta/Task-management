@@ -4,7 +4,7 @@
 				<div class="row " >
 					<div class="col s12" >
 						<div class="col s9">
-													
+											
 							<h5 id="title-list">			
 							<%=	@list.name %> </h5>
 
@@ -45,11 +45,18 @@
 				<%= @list.last_update%>  <br>
 			</div>
 			<div class="col s4">
+			 <div class="chip" id="clipboard-btn" data-clipboard-text="<%= request.url %>">
+			 	Copiar url
+			 	<i id  class="fa fa-clipboard" aria-hidden="true"></i>
+
+			 </div>
 			<%= link_to :hoaooa,new_list_task_temporary_path(@list,@task)%>
 			</div>
 		</div>
 			</div>
-		
+	
+
+
 
 		 	<table>
 		 		<thead> 

@@ -19,10 +19,11 @@
 					</div>
 					<div class="footer-div">
 						
-						<strong> Estado: </strong> <%= 
-						  best_in_place [@list,task_long], :state, :as => :select, :collection => %w(Pendiente En_curso Hecha ) %>
-			
-						 <strong>Fecha Inicio:</strong> <%= task_long.date_begin %>
+						<strong> Estado: </strong> <%=  task_long.state %>
+
+
+
+						 <strong class="chip">Fecha Inicio:</strong> <%= task_long.date_begin %>
 					
 						 <strong>Fecha Fin: </strong> <%= task_long.date_end %>		    
 			    

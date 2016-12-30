@@ -62,7 +62,12 @@ class TasksController < ApplicationController
 	  end
 	
 	  def set_task
-	    @task= Task.find(params[:id])
+	  	 if params[:type] == 'TaskLong'
+	  	 	 @task= Task.find(params[:id]).decorate
+	  	 else 
+	   	 	@task= Task.find(params[:id])
+	   	 end
+	
 	  end
 
 	  def tasks_params()
