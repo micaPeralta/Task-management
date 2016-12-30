@@ -22,12 +22,18 @@ class TaskLong < Task
 	validates :date_begin, presence: true
 	validates :date_end, presence: true
 
+	validates_date :date_begin, :before =>   lambda{|m| m.date_end}
+                            
+   	validates_date :date_end, :after =>   lambda{|m| m.date_begin}
+                               
+
+	
+
 
 	validates :state,
 	 	presence: true,
 	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
 	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
-	
 	
 
 

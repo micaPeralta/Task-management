@@ -75,6 +75,9 @@ gem 'autosize-rails'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: "audionerd/draper" ,branch: "rails5"
 
+#validacion de fechas
+gem 'validates_timeliness', '~> 4.0'
+
 group :production do
 
  gem 'pg'

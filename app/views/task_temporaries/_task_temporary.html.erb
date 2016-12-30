@@ -3,26 +3,25 @@
 				<td>
 					<% case task_temporary.priority %>
 					<%  when "Alta" then %>
-					     <span class="new badge red" data-badge-caption=" <%= task_temporary.priority.capitalize %>" > </span>
+					     <span class="new badge red" data-badge-caption="" >
+					     	<i class="fa fa-star" aria-hidden="true"></i>
+					      </span>
 					<%  when "Media"  then  %>
-						 <span class="new badge orange" data-badge-caption="
-						  <%= task_temporary.priority.capitalize %>" ></span>
+						 <span class="new badge orange" data-badge-caption="" >
+						 	<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						 </span>
 					<% when "Baja"  then  %>
-					     <span class="new badge gren" data-badge-caption="
-					      <%= task_temporary.priority.capitalize %>" > </span>
-				 	<% end %>
+					     <span class="new badge gren" data-badge-caption="" >
+					     	<i class="fa fa-star-o" aria-hidden="true"></i>
+					      </span>
+				 	<% end %> 
 				</td>
 				<td>
 
 					<div>  <%=  best_in_place  [@list,task_temporary], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> </div>
 					<div class="footer-div">
-						<strong> Estado: </strong> <%= 
-						  best_in_place [@list,task_temporary], :state, :as => :select, :collection => %w(Pendiente En_curso Hecha Expirada)
-						  %>
-					
-					
-					
-						<strong>Progreso: </strong> <%= task_temporary.progress%>
+						<strong> Estado: </strong> <%= task_temporary.state  %>
+						<strong>Progreso: </strong> <%= task_temporary.progress%>%
 				
 					</div>
 				

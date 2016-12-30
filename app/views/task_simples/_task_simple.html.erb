@@ -2,13 +2,17 @@
 				<td> 
 				<% case task_simple.priority %>
 					<%  when "Alta" then %>
-					     <span class="new badge red" data-badge-caption=" <%= task_simple.priority.capitalize %>" > </span>
+					     <span class="new badge red" data-badge-caption="" >
+					     	<i class="fa fa-star" aria-hidden="true"></i>
+					      </span>
 					<%  when "Media"  then  %>
-						 <span class="new badge orange" data-badge-caption="
-						  <%= task_simple.priority.capitalize %>" ></span>
+						 <span class="new badge orange" data-badge-caption="" >
+						 	<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						 </span>
 					<% when "Baja"  then  %>
-					     <span class="new badge gren" data-badge-caption="
-					      <%= task_simple.priority.capitalize %>" > </span>
+					     <span class="new badge gren" data-badge-caption="" >
+					     	<i class="fa fa-star-o" aria-hidden="true"></i>
+					      </span>
 				 	<% end %> 
 				 </td>
 				<td>

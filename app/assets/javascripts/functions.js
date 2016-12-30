@@ -26,6 +26,7 @@ load_modal= function(){
      $('.modal').modal();
 }
 $(document).ready(load_modal);
+$(document).on('turbolinks:load',load_modal);
 //--------------------------------
 
 //clipboard 
@@ -87,6 +88,15 @@ $(document).ready(focus_textarea);
  $(document).on("ready page:change",focus_textarea);
  $(document).on('turbolinks:load',focus_textarea );
 
+// focus del input
+var focus_input= function() {
+    var data = $('#input-text').val();
+    $('#input-text').focus().val('').val(data);
+}
+
+$(document).ready(focus_textarea); 
+ $(document).on("ready page:change",focus_input);
+ $(document).on('turbolinks:load',focus_input );
 
 
   function showTask(id){
