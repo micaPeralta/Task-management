@@ -60,7 +60,7 @@
 			 		
 		 		</thead>
 		 		<tbody>
-		 					<%= render @task_temporaries || "render('empty-collection')" %>
+		 					<%= render @task_temporaries or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>
 		 		</tbody>
 		 	</table>				
 			
@@ -72,7 +72,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<%= render @task_longs|| 'en blanco' %>
+					<%= render @task_longs or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>
 				</tbody>
 
 
@@ -89,7 +89,7 @@
 				</thead>
 
 				<tbody>
-						<%= render @task_simples|| 'en blanco' %>
+						<%= render @task_simples or content_tag(:tr,content_tag(:td, 'Elementos no disponibles'))%>
 					
 				</tbody>
 
