@@ -17,15 +17,7 @@ class TasksController < ApplicationController
   	end	
 
   	def edit
-
-  		case params['type']
-	  		when 'TaskLong'
-	  			render 'task_longs/edit'
-	  		when 'TaskTemporary'
-	  			render 'task_temporaries/edit'
-	  		when 'TaskSimple'
-	  			render 'task_simples/edit'
-  		end
+  		case_task  	
   	end
 
   	def new 
@@ -55,7 +47,7 @@ class TasksController < ApplicationController
 	      		format.html {redirect_to list_path(@task.list) , notice: 'Task was successfully updated.' }
 	      		format.json {render json: @task, status: :ok}
 	      else
-	          format.html {render :edit }
+	          format.html {case_task}
 	          format.json {render json: @task.errors, status: :unprocessable_entity } 
 	      end
 
@@ -88,8 +80,19 @@ class TasksController < ApplicationController
 
 			  end
 		 	
-	
-		
+	  end
+
+	  def case_task
+
+	  	case params['type']
+	  		when 'TaskLong'
+	  			render 'task_longs/edit'
+	  		when 'TaskTemporary'
+	  			render 'task_temporaries/edit'
+	  		when 'TaskSimple'
+	  			render 'task_simples/edit'
+  		end
+
 	  end
 
 

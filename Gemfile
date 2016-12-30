@@ -68,6 +68,9 @@ gem 'clipboard-rails'
 # generacion de atos random para los seeders
 gem 'faker'
 
+#ajustar textarea al contenido
+gem 'autosize-rails'
+
 #decoradores
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: "audionerd/draper" ,branch: "rails5"

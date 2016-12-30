@@ -14,7 +14,7 @@
 				</td>
 				<td>
 
-					<div>  <%=  best_in_place  [@list,task_temporary], :description, :as => :input %> </div>
+					<div>  <%=  best_in_place  [@list,task_temporary], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> </div>
 					<div class="footer-div">
 						<strong> Estado: </strong> <%= 
 						  best_in_place [@list,task_temporary], :state, :as => :select, :collection => %w(Pendiente En_curso Hecha Expirada)
@@ -28,7 +28,7 @@
 				
 				</td>
 
-				<td>
+				<td width="100px">
 						<a href= "<%= edit_list_task_temporary_path(@list,task_temporary)%>" ><i class="material-icons">edit</i></a>
 						 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: '¿ Quieres borrar ? ' },:remote => true  do %>
 				 		<i class="material-icons">delete</i>

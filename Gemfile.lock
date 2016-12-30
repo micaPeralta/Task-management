@@ -63,6 +63,8 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
+    autosize-rails (1.18.17)
+      rails (>= 3.1)
     best_in_place (3.0.3)
       actionpack (>= 3.2)
       railties (>= 3.2)
@@ -231,6 +233,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml!
   annotate
+  autosize-rails
   best_in_place (~> 3.0.1)
   byebug
   clipboard-rails

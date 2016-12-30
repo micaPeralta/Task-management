@@ -48,6 +48,31 @@ var load_best_in_place=function(){
 $(document).on("ready page:change", load_best_in_place);
   
 
+// ajustar selects al contenido
+
+var resize_textarea = function(){
+   $('textarea').autosize();
+}
+
+$(document).ready(resize_textarea);
+$(document).on("ready page:change", resize_textarea);
+ $(document).on('turbolinks:load', resize_textarea );
+
+
+//---------------------------------
+
+// focus del textarea
+var focus_textarea= function() {
+    var data = $('textarea').val();
+    $('textarea').focus().val('').val(data);
+}
+
+$(document).ready(focus_textarea); 
+ $(document).on("ready page:change",focus_textarea);
+ $(document).on('turbolinks:load',focus_textarea );
+
+
+
   function showTask(id){
   	   var task = id
      $.ajax({

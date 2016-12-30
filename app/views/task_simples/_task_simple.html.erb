@@ -13,7 +13,7 @@
 				 </td>
 				<td>
 
-					<div><%= task_simple.description %></div>
+					<div><%=  best_in_place  [@list,task_simple], :description, :as => :textarea,:inner_class => 'materialize-textarea' %> </div>
 					
 					<div class="footer-div" >
 						<strong> Estado: </strong> <%= task_simple.state.capitalize%>
