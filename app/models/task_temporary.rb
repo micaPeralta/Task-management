@@ -29,7 +29,7 @@ class TaskTemporary < Task
 	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
 	validates :date_begin, presence: true
 	validates :date_end, presence: true
-	
+
 	validates_date :date_begin, :before =>   lambda{|m| m.date_end}
                             
    	validates_date :date_end, :after =>   lambda{|m| m.date_begin}
@@ -40,8 +40,11 @@ class TaskTemporary < Task
 	end
 
 	def self.expired
-		#TaskTemporary.where(self.date_begin)
+		TaskTemporary.where(date_begin: Date::current)
 	end
 
+	def self.set_expired
+		
+	end
 
 end

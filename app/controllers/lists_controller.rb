@@ -24,8 +24,8 @@ class ListsController < ApplicationController
   def show
     @task_simples=@list.task_simples
     @task= Task.new
-    @task_temporaries=@list.task_temporaries
-    @task_longs=TaskLongDecorator.decorate_collection( @list.task_longs)
+    @task_temporaries= TaskTemporaryDecorator.decorate_collection( @list.task_temporaries)
+    @task_longs=@list.task_longs
    
   end
 
@@ -78,6 +78,7 @@ private
 
   def tasks_expired
 
-   # @tasks_expired= TaskTemporary.
+    TaskTemporary.expired.update_all(state: 'Expirada')
+
   end
 end

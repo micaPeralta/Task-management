@@ -1,4 +1,4 @@
-class TaskLongDecorator < Draper::Decorator
+class TaskTemporaryDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

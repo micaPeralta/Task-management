@@ -43,7 +43,7 @@ class TasksController < ApplicationController
  	def update
 
  		respond_to do |format|
-	      if @task.update(tasks_params)
+	      if @task.update!(tasks_params)
 	      		format.html {redirect_to list_path(@task.list) , notice: 'Task was successfully updated.' }
 	      		format.json {render json: @task, status: :ok}
 	      else
@@ -62,10 +62,10 @@ class TasksController < ApplicationController
 	  end
 	
 	  def set_task
-	  	 if params[:type] == 'TaskLong'
-	  	 	 @task= Task.find(params[:id]).decorate
+	  	 if params[:type] != 'TaskTemporary'
+	  	 	@task= Task.find(params[:id])
 	  	 else 
-	   	 	@task= Task.find(params[:id])
+	   	 	 @task= Task.find(params[:id]).decorate
 	   	 end
 	
 	  end

@@ -16,17 +16,13 @@ class List < ApplicationRecord
 	has_many :task_temporaries
 	has_many :task_longs
 	
+	before_create :assign_slug
 
 	validates :name, 
 		presence: true,
 		uniqueness: true,
 		format: { with: /[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/,message: "only allows letters" }
 
-
-
-	#callbacks
- 	
- 	before_create :assign_slug
 
  	def last_update
 
