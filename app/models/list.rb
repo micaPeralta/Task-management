@@ -20,7 +20,7 @@ class List < ApplicationRecord
 	validates :name, 
 		presence: true,
 		uniqueness: true,
-		format: { with: /\A[a-zA-Z]+\z/,message: "only allows letters" }
+		format: { with: /[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/,message: "only allows letters" }
 
 
 

@@ -42,8 +42,12 @@
 					  <%=  best_in_place  [@list,task_temporary], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> </div>
 					<div class="footer-div">
 						<strong> Estado: </strong> <%= task_temporary.state  %>
-						<strong>Progreso: </strong> <%= task_temporary.progress%>%
-				
+						
+						 <strong >Fecha Inicio:</strong> <%= task_temporary.date_begin %>
+					
+						 <strong >Fecha Fin: </strong> <%= task_temporary.date_end %>		    
+			    
+			 
 					</div>
 				
 				</td>

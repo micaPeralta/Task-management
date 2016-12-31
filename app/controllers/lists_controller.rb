@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   
 
   before_action :set_list, only:[:destroy, :update, :show, :edit]
+  before_action :tasks_expired , only:[:show]
 
   def index
    
@@ -25,6 +26,7 @@ class ListsController < ApplicationController
     @task= Task.new
     @task_temporaries=@list.task_temporaries
     @task_longs=TaskLongDecorator.decorate_collection( @list.task_longs)
+   
   end
 
   def create
@@ -74,4 +76,8 @@ private
     params.require(:list).permit(:name)
   end
 
+  def tasks_expired
+
+   # @tasks_expired= TaskTemporary.
+  end
 end
