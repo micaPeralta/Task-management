@@ -32,11 +32,15 @@ class ListsController < ApplicationController
     n=lists_params['name']
     @list= List.new(name: n.capitalize)
     
-    if @list.save 
-      # cookies[:lasts] += ','+@list.id.to_s
-       redirect_to @list, notice: 'Person was successfully created.' 
-    else 
-      redirect_to lists_url
+    respond_to do |format|
+      if @list.save
+        # cookies[:lasts] += ','+@list.id.to_s
+          format.html  {redirect_to @list, notice: 'Person was successfully created.' }
+
+      else 
+        format.html { redirect_to lists_url }
+        format.json { render json: @list.errors, status: :unprocessable_entity } 
+      end
     end
   end
 
@@ -52,8 +56,9 @@ class ListsController < ApplicationController
     respond_to do |format|
       if @list.update(lists_params)
         format.html { redirect_to @list, notice: 'Person was successfully updated.' }
+        format.json {render json: @list, status: :ok}
       else
-        format.html { render :edit }
+       render :edit 
       end
     end
   end

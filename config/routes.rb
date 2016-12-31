@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :lists do
+  resources :lists, :path => '' do 
+
+
   	resources :task ,except: [:index]
 
   	resources :task_temporary, controller: 'tasks', type: 'TaskTemporary' ,except: [:show]

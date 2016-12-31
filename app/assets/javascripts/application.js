@@ -15,7 +15,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 
-//= require turbolinks
+
 //= require noty/packaged/jquery.noty.packaged.min
 //= require noty/themes/relax
 //= require functions
@@ -26,3 +26,5 @@
 //= require best_in_place.jquery-ui
 
 //= require jquery.autosize
+
+//= require turbolinks

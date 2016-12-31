@@ -26,7 +26,8 @@ load_modal= function(){
      $('.modal').modal();
 }
 $(document).ready(load_modal);
-$(document).on('turbolinks:load',load_modal);
+$(document).on ("ready page:load page:restore",load_modal);
+
 //--------------------------------
 
 //clipboard 

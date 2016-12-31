@@ -3,16 +3,16 @@
    
 
       <%= simple_form_for @list do |f| %>
-          
-          <%=  render 'errors', list: @list %>
+            
+                    <%=  render 'errors', list: @list %>
 
       	   <%= f.hidden_field :authenticity_token, :value => form_authenticity_token %>
            <div class="input-field col s12 m6 l10">
-      	     <%= f.input :name, label: false,:placeholder => 'Crear una nueva lista',:inner_html => { id: 'input-text'} %>
+      	     <%= f.input :name, label: false,:placeholder => 'Nombre de la lista',:inner_html => { id: 'input-text'} %>
            </div>
            <div class="input-field col s12 m6 l2">
            <%=  f.button  :button, 'Borrar', :type => 'reset', :class => 'btn'%>
-      	     <%= f.button :submit, :class => "waves-effect blue darken-3 btn",:value => 'Crear'  %>
+      	     <%= f.button :submit, :class => "waves-effect blue darken-3 btn",:value => 'Enviar'  %>
            </div>
 
        <% end %>
