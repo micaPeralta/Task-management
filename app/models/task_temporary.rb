@@ -17,7 +17,7 @@
 
 class TaskTemporary < Task
    
-
+	#before_validates :set_dates
 
 	validates :description,
 		length: { maximum: 255 }
@@ -34,13 +34,18 @@ class TaskTemporary < Task
                             
    	validates_date :date_end, :after =>   lambda{|m| m.date_begin}
 	
+	def set_dates
+    	self.date_begin= DateTime.strptime(self.date_begin, "%m/%d/%Y").strftime("%Y/%m/%d")
+    	self.date_end= DateTime.strptime(self.date_end, "%m/%d/%Y").strftime("%Y/%m/%d")
+    end
+
 	def to_s 
 		super + ", Porcentaje de avance: #{self.progress}% "
 	
 	end
 
 	def self.expired
-		TaskTemporary.where(date_begin: Date::current)
+		TaskTemporary.where(date_end: Date::current)
 	end
 
 	def self.set_expired

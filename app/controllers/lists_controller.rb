@@ -78,7 +78,7 @@ private
 
   def tasks_expired
 
-    TaskTemporary.expired.update_all(state: 'Expirada')
+    TaskTemporary.expired.update_all(:state => 'Expirada')
 
   end
 end
