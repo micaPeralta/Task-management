@@ -131,7 +131,7 @@ $(document).ready(focus_textarea);
 
 
 //------------------------------
-window.show_success_noty= function(){
+window.show_success_noty = function(){
    noty({
     text  : 'success',
     layout  : 'topRight',

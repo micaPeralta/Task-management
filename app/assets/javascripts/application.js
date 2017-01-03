@@ -27,4 +27,6 @@
 
 //= require jquery.autosize
 
+//= require alert
+
 //= require turbolinks

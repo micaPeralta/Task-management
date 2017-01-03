@@ -26,3 +26,9 @@ hyphens: auto;
 .font-ubuntu{
 	font-family: 'Ubuntu', sans-serif;
 }
+
+#alert-confirm{
+	padding: 2em;
+}
+
+
