@@ -23,3 +23,6 @@ word-break: break-word;
 -moz-hyphens: auto;
 hyphens: auto;
 }
+.font-ubuntu{
+	font-family: 'Ubuntu', sans-serif;
+}

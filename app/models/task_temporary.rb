@@ -40,16 +40,16 @@ class TaskTemporary < Task
     end
 
 	def to_s 
-		super + ", Porcentaje de avance: #{self.progress}% "
+		super +", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
 	
 	end
 
 	def self.expired
-		TaskTemporary.where(date_end: Date::current)
+		where('date_end <= ? ', Date::current)
 	end
 
-	def self.set_expired
-		
+	def self.change_state
+		update_all( state:'Expirada')
 	end
 
 end

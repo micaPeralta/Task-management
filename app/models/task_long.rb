@@ -33,9 +33,10 @@ class TaskLong < Task
 
 
 	def to_s 
-		super + ", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
+		super +  ", Porcentaje de avance: #{self.progress}% "
 	end
 
+	
 
 
 end

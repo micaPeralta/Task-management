@@ -28,20 +28,18 @@
 					<div>
 							<% case task_long.state %>
 						<%  when "Hecha" then %>
-						     <span class="chip " data-badge-caption="" > 
+						     <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Hecha"  data-badge-caption="" > 
 						     	<i class="fa fa-check" aria-hidden="true"></i>
 
 						     </span>
 						<%  when "Pendiente"  then  %>
-							 <span class="chip" data-badge-caption="
-							" >
+							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pendiente"  data-badge-caption="" >
 								<i class="fa fa-thumb-tack" aria-hidden="true"></i>
 
 							</span>
 								</span>
 						<%  when "En_curso"  then  %>
-							 <span class="chip" data-badge-caption="
-							" >
+							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="En curso"  data-badge-caption="" >
 								<i class="fa fa-hourglass-half" aria-hidden="true"></i>
 
 							</span>
@@ -52,7 +50,6 @@
 					</div>
 					<div class="footer-div">
 						
-						<strong> Estado: </strong> <%=  task_long.state %>
 
 						<strong>Progreso: </strong> <%= task_long.progress%>%
 

@@ -3,7 +3,7 @@
 				<td>
 					<% case task_temporary.priority %>
 					<%  when "Alta" then %>
-					     <span class="chip red" data-badge-caption="" >
+					     <span class="chip red " data-badge-caption="" >
 					     	<i class="fa fa-star" aria-hidden="true"></i>
 					      </span>
 					<%  when "Media"  then  %>
@@ -21,19 +21,18 @@
 					<div>
 						<% case task_temporary.state %>
 						<%  when "Hecha" then %>
-						     <span class="chip " data-badge-caption="" > 
+						     <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Hecha"  data-badge-caption="" > 
 						     	<i class="fa fa-check" aria-hidden="true"></i>
 
 						     </span>
 						<%  when "Pendiente"  then  %>
-							 <span class="chip" data-badge-caption="
-							" >
+							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pendiente
+							" data-badge-caption="" >
 								<i class="fa fa-thumb-tack" aria-hidden="true"></i>
 
 							</span>
 						<%  when "Expirada"  then  %>
-							 <span class="chip" data-badge-caption="
-							" >
+							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Expirada" data-badge-caption="">
 								<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 
 							</span>
@@ -41,8 +40,7 @@
 
 					  <%=  best_in_place  [@list,task_temporary], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> </div>
 					<div class="footer-div">
-						<strong> Estado: </strong> <%= task_temporary.state  %>
-						
+												
 						 <strong >Fecha Inicio:</strong> <%= task_temporary.date_begin %>
 					
 						 <strong >Fecha Fin: </strong> <%= task_temporary.date_end %>		    

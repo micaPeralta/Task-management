@@ -2,7 +2,8 @@ class ListsController < ApplicationController
   
 
   before_action :set_list, only:[:destroy, :update, :show, :edit]
-  before_action :tasks_expired , only:[:show]
+  before_action :expire_tasks , only:[:show]
+  before_action :update_state , only:[:show]
 
   def index
    
@@ -23,7 +24,7 @@ class ListsController < ApplicationController
 
   def show
     @task_simples=@list.task_simples
-    @task= Task.new
+    @task= TaskSimple.first
     @task_temporaries= TaskTemporaryDecorator.decorate_collection( @list.task_temporaries)
     @task_longs=@list.task_longs
    
@@ -59,6 +60,7 @@ class ListsController < ApplicationController
       if @list.update(lists_params)
         format.html { redirect_to @list, notice: 'Person was successfully updated.' }
         format.json {render json: @list, status: :ok}
+        format.js 
       else
        render :edit 
       end
@@ -76,9 +78,13 @@ private
     params.require(:list).permit(:name)
   end
 
-  def tasks_expired
+  def expire_tasks
 
-    TaskTemporary.expired.update_all(:state => 'Expirada')
+   @list.task_temporaries.expired.change_state
 
+  end
+
+  def update_state
+   # TaskLong.completed(@list.id)
   end
 end

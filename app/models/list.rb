@@ -38,7 +38,6 @@ class List < ApplicationRecord
       url
  	end
 
- 	#metodos privados.
 	private
 		 
 		def assign_slug

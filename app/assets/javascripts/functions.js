@@ -128,4 +128,25 @@ $(document).ready(focus_textarea);
   
 
   }
+
+
+//------------------------------
+window.show_success_noty= function(){
+   noty({
+    text  : 'success',
+    layout  : 'topRight',
+    theme : 'relax',
+    type  : 'success',
+    animation: {
+      open: 'animated fadeIn', // Animate.css class names
+        close: 'animated fadeOut', // Animate.css class names
+        easing: 'swing', // unavailable - no need
+        speed: 500 // unavailable - no need
+    },
+    maxVisible  :5,
+    killer      : true
   
+  });
+
+}
+

@@ -17,17 +17,18 @@ class TasksController < ApplicationController
   	end	
 
   	def edit
-  		case_task  	
+  		case_task('edit') 	
   	end
 
   	def new 
-  		@task= Task.new
+  		@task=@list.task_simples.build
+  		case_task('new')
   	end
 
   	def create 
 
   		@task= Task.new(tasks_params)
-  		@task.list=@list 
+  		 
     
 	    if @task.save 
 	       redirect_to @task.list, notice: 'Task was successfully created.' 
@@ -62,12 +63,8 @@ class TasksController < ApplicationController
 	  end
 	
 	  def set_task
-	  	 if params[:type] != 'TaskTemporary'
-	  	 	@task= Task.find(params[:id])
-	  	 else 
-	   	 	 @task= Task.find(params[:id]).decorate
-	   	 end
-	
+	  	@task= Task.find(params[:id])
+	  	@task=@task.decorate if params[:type] == 'TaskTemporary'
 	  end
 
 	  def tasks_params()
@@ -75,27 +72,26 @@ class TasksController < ApplicationController
 		  case params[:type]
 
 			  when 'TaskLong'
-			 	 params.require('task_long').permit(:list_id, :type, :date_begin, :date_end,:description,
-			  	:state,:priority)
+			 	 params.require('task_long').permit(:list_id, :type,:state,:priority,:progress )
 			  when 'TaskSimple'
 			 	 params.require('task_simple').permit(:list_id, :type,:description,:state,:priority)
 			  when 'TaskTemporary'
 			  	 params.require('task_temporary').permit(:list_id, :type,:description,
-			  	:state,:priority,:progress)
+			  	:state,:priority, :date_begin, :date_end,:description,)
 
 			  end
 		 	
 	  end
 
-	  def case_task
+	  def case_task(type)
 
 	  	case params['type']
 	  		when 'TaskLong'
-	  			render 'task_longs/edit'
+	  			render "task_longs/#{type}"
 	  		when 'TaskTemporary'
-	  			render 'task_temporaries/edit'
+	  			render "task_temporaries/#{type}"
 	  		when 'TaskSimple'
-	  			render 'task_simples/edit'
+	  			render "task_simples/#{type}"
   		end
 
 	  end
