@@ -1,7 +1,10 @@
+require 'aasm'
 class TaskSimple < Task
+
 	belongs_to :list
 
-	
+	include AASM
+
 	validates :priority,
 		presence: true,
 	 inclusion: { in: %w(Alta Media Baja ),
@@ -10,7 +13,7 @@ class TaskSimple < Task
 	#consultar validacion para las subclases
 	validates :state,
 	 	presence: true,
-	 	inclusion: { in: %w(Pendiente  Hecha  ),
+	 	inclusion: { in: %w(Pendiente  Hecha),
 	 				message:  "El estado debe ser 'Pendiente' ó 'Hecha' "}
 	
 	
@@ -19,5 +22,18 @@ class TaskSimple < Task
 		"Prioridad: #{self.priority}, "+
 		"Estado: #{self.state}"
 	end
+
+	aasm :column => 'state' do 
+		state :Pendiente, :initial => true
+		state :Hecha
+
+		event :finish do 
+		transitions :from => :Pendiente, :to=> :Hecha
+		end
+	end
+
+	
+
+	
 
 end

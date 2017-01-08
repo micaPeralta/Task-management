@@ -3,14 +3,15 @@ Rails.application.routes.draw do
   resources :lists, :path => '' do 
 
 
-  	resources :task ,except: [:index]
+  	resources :tasks ,except: [:index]
 
-  	resources :task_temporary, controller: 'tasks', type: 'TaskTemporary' ,except: [:show]
- 	resources :task_long, controller: 'tasks', type: 'TaskLong' ,except: [:show]
- 	resources :task_simple, controller: 'tasks', type: 'TaskSimple' ,except: [:show]
+  	resources :task_temporaries, controller: 'tasks', type: 'TaskTemporary' ,except: [:show]
+ 	resources :task_longs, controller: 'tasks', type: 'TaskLong' ,except: [:show]
+ 	resources :task_simples, controller: 'tasks', type: 'TaskSimple' ,except: [:show]
   
-
   end
+
+  	patch '/finish/task', to: 'tasks#finish_task'
 
 
   	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

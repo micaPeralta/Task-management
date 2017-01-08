@@ -38,6 +38,10 @@ class List < ApplicationRecord
       url
  	end
 
+ 	def update_tasks_expired
+ 		self.task_temporaries.expired.change_state
+ 	end
+
 	private
 		 
 		def assign_slug

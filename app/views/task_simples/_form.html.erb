@@ -1,5 +1,5 @@
 
-			  	<%= simple_form_for [@task.list,@task] do |f| %>
+			  	<%= simple_form_for [@list,@task] do |f| %>
 			  		
 			  		
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
@@ -9,7 +9,7 @@
 			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
 
 			      	
-			      	<%= f.select :state, [['Pendiente', 'Pendiente'], ['En curso', 'En_curso'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
+			      	<%= f.select :state, [['Pendiente', 'Pendiente'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 					  
 					
 					 <%= f.button :submit, :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>

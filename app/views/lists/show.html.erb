@@ -1,4 +1,3 @@
-	
 	<div class="wow fadeInUp content-card " style="margin-top: 0;">	
 				
 				<div class="row " >
@@ -21,11 +20,11 @@
 
 		                  <i class="mdi-editor-vertical-align-bottom material-icons left " > add</i></a>
 		                          <ul id="dropdown2" class="dropdown-content">
-		                            <li><a href="" class="-text">Tarea simple</a>
+		                            <li><%= link_to  'Tarea Simple', new_list_task_simple_path(@list)  %>
 		                            </li>
-		                            <li><a href="#!" class="-text">Tarea Larga</a>
+		                            <li><%= link_to  'Tarea Larga', new_list_task_long_path(@list)  %>
 		                            </li>
-		                            <li><a href="#!" class="-text">Tarea Temporal</a>
+		                            <li><%= link_to  'Tarea Temporal', new_list_task_temporary_path(@list)  %>
 		                            </li>
 		                          </ul>
 
@@ -50,11 +49,10 @@
 			 	<i id  class="fa fa-clipboard" aria-hidden="true"></i>
 
 			 </div>
-			<%= link_to  new_list_task_path(@list,@task) do %>
-			<i class="material-icons">delete</i>
-						<% end %>
+			
+			
 
-						<%= link_to  'ams',list_task_simple_url(@list,@task)  %>
+						
 			</div>
 		</div>
 			</div>

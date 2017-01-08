@@ -45,7 +45,7 @@ class TaskTemporary < Task
 	end
 
 	def self.expired
-		where('date_end <= ? ', Date::current)
+		where('date_end <= ? ', Date::current).where('state = ?','Pendiente')
 	end
 
 	def self.change_state

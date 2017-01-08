@@ -65,7 +65,7 @@ gem "font-awesome-rails"
 # copiar al clipboard
 gem 'clipboard-rails'
 
-# generacion de atos random para los seeders
+# generacion de datos random para los seeders
 gem 'faker'
 
 #ajustar textarea al contenido
@@ -77,6 +77,9 @@ gem 'draper', github: "audionerd/draper" ,branch: "rails5"
 
 #validacion de fechas
 gem 'validates_timeliness', '~> 4.0'
+
+#maquina de estados
+gem 'aasm'
 
 group :production do
 

@@ -24,7 +24,6 @@ class ListsController < ApplicationController
 
   def show
     @task_simples=@list.task_simples
-    @task= TaskSimple.first
     @task_temporaries= TaskTemporaryDecorator.decorate_collection( @list.task_temporaries)
     @task_longs=@list.task_longs
    
@@ -41,7 +40,7 @@ class ListsController < ApplicationController
           format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
-        format.html { redirect_to lists_url }
+        format.html { render :index }
         format.json { render json: @list.errors, status: :unprocessable_entity } 
       end
     end
@@ -80,7 +79,7 @@ private
 
   def expire_tasks
 
-   @list.task_temporaries.expired.change_state
+      @list.update_tasks_expired
 
   end
 
