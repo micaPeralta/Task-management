@@ -73,7 +73,6 @@ a:active
 	width: 80%; 
 	background-color: #fff; 
 	margin: auto; 
-	margin-top: 5%; 
 	position: relative; 
 	padding: 50px;
     border-top-left-radius: 2px;
@@ -323,7 +322,6 @@ a:active
 {
 	.content-card 
 	{
-        margin-top: 5%;
 		width:90%;
 		padding:20px;
 	}
@@ -385,7 +383,6 @@ a:active
 	
 	.content-card 
 	{
-		margin-top:5%;
 		width:95%;
 		padding:20px;
 		box-shadow: 10em;

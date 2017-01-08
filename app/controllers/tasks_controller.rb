@@ -17,22 +17,21 @@ class TasksController < ApplicationController
   	end	
 
   	def edit
-  		case_task('edit') 	
-  	end
+  			render_view('edit')
+   	end
 
   	def new 
-  		
+  			
   		 	case params['type']
 	  		when 'TaskLong'
 	  			@task=@list.task_longs.build
-	  			render "task_longs/new"
 	  		when 'TaskTemporary'
 	  			@task=TaskTemporary.new
-	  			render "task_temporaries/new"
 	  		when 'TaskSimple'
 	  			@task=TaskSimple.new
-	  			render "task_simples/new"
-  		end
+  			end
+
+  			render_view('new')
   	end
 
   	def create 
@@ -42,7 +41,7 @@ class TasksController < ApplicationController
 		    if @task.save
 		      format.html {redirect_to @list, notice: 'Task was successfully created.'} 
 		    else 
-		      format.html { case_task('new') }  
+		      format.html { render_view('new') }  
 		    end
 		end
   	end
@@ -81,6 +80,10 @@ class TasksController < ApplicationController
 	  	@list=List.find_by_url(params[:list_id])
 	  end
 
+	  def render_view(operation)
+	  	render "#{params['type'].pluralize.underscore}/#{operation}"
+	  end 
+	  
 	  def tasks_params()
 
 		  case params[:type]
@@ -96,20 +99,6 @@ class TasksController < ApplicationController
 			  end
 		 	
 	  end
-
-	  def case_task(operation)
-
-	  	case params['type']
-	  		when 'TaskLong'
-	  			render "task_longs/#{operation}"
-	  		when 'TaskTemporary'
-	  			render "task_temporaries/#{operation}"
-	  		when 'TaskSimple'
-	  			render "task_simples/#{operation}"
-  		end
-
-	  end
-
 
 end
 
