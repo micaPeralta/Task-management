@@ -2,18 +2,18 @@
 			 
 			  	<%= simple_form_for ([@list,@task]) do |f| %>
 			  		
-			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
+			  	
 
-			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
+			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"}, required: true %>
 			      	
-			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
+			      	 <%= f.select :priority, Task.priorities.keys, :label => "Prioridad" ,prompt: "Seleccione" %>
 
-			      	
+			     
 			      	<%= f.select :state, [['Pendiente', 'Pendiente'], ['En curso', 'En_curso'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 				
 						<div class="input-field">
 						 <p class="range-field">
-							<%= f.input :progress ,as: :range %>
+							<%= f.input :progress ,as: :range, label:"Progreso" %>
 						</p>
 						</div>
 					

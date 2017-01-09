@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-	before_action :set_task, only:[:show, :edit, :update, :destroy]
+	before_action :set_task, only:[:show, :edit, :update, :destroy, :finish]
 	before_action :set_list, only: [:show, :edit, :update, :destroy,:create,:new]
  	
 
@@ -37,7 +37,7 @@ class TasksController < ApplicationController
   	def create 
   		@task=@list.tasks.new(tasks_params)
   	   
-  	   respond_to do |format|
+  	   respond_t do |format|
 		    if @task.save
 		      format.html {redirect_to @list, notice: 'Task was successfully created.'} 
 		    else 
@@ -55,7 +55,7 @@ class TasksController < ApplicationController
 	      		format.html {redirect_to list_path(@task.list) , notice: 'Task was successfully updated.' }
 	      		format.json {render json: @task, status: :ok}
 	      else
-	          format.html {case_task('edit')}
+	          format.html { render_view('edit')}
 	          format.json {render json: @task.errors, status: :unprocessable_entity } 
 	      end
 
@@ -64,8 +64,13 @@ class TasksController < ApplicationController
  	end 
 
 
- 	def finish_task
-   
+ 	def finish
+   		if @task.finish!
+	   		respond_to do | format|
+	   			format.js  
+	   		end
+	   	end
+
  	end
 	
 	private 

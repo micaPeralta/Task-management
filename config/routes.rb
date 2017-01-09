@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   
   end
 
-  	patch '/finish/task', to: 'tasks#finish_task'
 
+  	patch '/finish/task/:id', to: 'tasks#finish'
 
   	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  	root 'lists#index'

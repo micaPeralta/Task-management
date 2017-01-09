@@ -31,4 +31,6 @@ hyphens: auto;
 	padding: 2em;
 }
 
-
+.input-field label{
+	position: inherit !important;
+}
