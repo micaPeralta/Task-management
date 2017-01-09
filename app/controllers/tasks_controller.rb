@@ -37,7 +37,7 @@ class TasksController < ApplicationController
   	def create 
   		@task=@list.tasks.new(tasks_params)
   	   
-  	   respond_t do |format|
+  	   respond_to do |format|
 		    if @task.save
 		      format.html {redirect_to @list, notice: 'Task was successfully created.'} 
 		    else 

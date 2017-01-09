@@ -2,7 +2,7 @@
 			 
 			  	<%= simple_form_for ([@list,@task]) do |f| %>
 			  		
-			  	
+			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
 			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"}, required: true %>
 			      	
