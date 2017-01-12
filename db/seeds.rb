@@ -17,7 +17,7 @@ Faker::Config.locale='es'
 					url: Faker::Internet.slug(name , '-'))
 	2.times do 
 		TaskSimple.create!( description:Faker::Lorem.paragraph,
-				  state:['Pendiente','Hecha'].sample,
+				  state:'Pendiente',
 				  priority:rand(0..2),
 				  list: tdl)
 	end
@@ -25,7 +25,7 @@ Faker::Config.locale='es'
 	2.times do 
 		
 		t=TaskTemporary.create!( description:Faker::Lorem.characters(50),
-				  state:['Pendiente','Hecha','Expirada'].sample,
+				  state:'Pendiente',
 				  priority:rand(0..2),
 				  list: tdl,
 				  date_begin: Faker::Date.between(9.days.ago,Date.today),
@@ -34,10 +34,10 @@ Faker::Config.locale='es'
 
 	2.times do 
 		TaskLong.create!( description:Faker::Lorem.paragraph,
-				  state:['Pendiente','En_curso','Hecha'].sample,
+				  state:'Pendiente',
 				  priority:rand(0..2),
 				  list: tdl,
-				  progress: rand(0..100) )
+				  progress: 0 )
 	
 	end
 

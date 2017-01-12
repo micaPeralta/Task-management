@@ -51,7 +51,16 @@ RSpec.describe taskTemporary type: :model do
 
 	describe 'Ordenamiento de tareas' do
 
+		let(:task1){FactoryGirl.build(:task)}
+		let(:task2){FactoryGirl.build(:task)}
+		let(:task3){FactoryGirl.build(:task)}
+		let(:task4){FactoryGirl.build(:task)}
+
+  		let(:list){FactoryGirl.build(:list)}
+
 		it 'De diferentes tipos, con diferentes prioridades' do 
+
+			list.tasks.addAll(%( task1 task3 task4 task2))
 
 		end
 	end

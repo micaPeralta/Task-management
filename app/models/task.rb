@@ -21,12 +21,12 @@ class Task < ApplicationRecord
 
 
 	validates :description, 
-		presence: true
+		presence: { message: 'Debe ingresar la descripción '}
 	
 	validates :priority,
-		presence: true,
-	 inclusion: { in: %w(Alta Media Baja ),
-				 message: "%La prioridad de debe ser 'Alta' , 'Media' o 'Baja'" }
+		presence: { message: 'Debe ingresar la prioridad'}, 
+	 	inclusion: { in: %w(Alta Media Baja ),
+				 message: "La prioridad de debe ser 'Alta' , 'Media' o 'Baja'" }
 	
 	
 	self.default_scope {order ('tasks.priority')}

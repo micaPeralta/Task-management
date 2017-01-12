@@ -19,14 +19,14 @@ class TaskLong < Task
 
 
 	validates :progress, 
-		presence: true,
+		presence: {message: 'Debes ingresar el progreso'},
 		:inclusion => { :in => 0..100,
 						message: "Progreso inválido [0-100]"},
-		numericality: { only_integer: true}	
+		numericality: { only_integer: true, message:'El progreso  debe ser un número entero'}	
 
        
 	validates :state,
-	 	presence: true,
+	 	presence: { message:' Debes ingresar el estado'},
 	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
 	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
 	
