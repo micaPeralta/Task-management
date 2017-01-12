@@ -10,7 +10,7 @@
 #
 
 FactoryGirl.define do
-  factory :to_do_list do
+  factory :list do
     n= Faker::Lorem.sentence(3,true)
     name n
     url  Faker::Internet.slug(n , '-')

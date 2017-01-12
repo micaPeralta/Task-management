@@ -16,7 +16,6 @@
 
 class Task < ApplicationRecord
 	belongs_to :list
-	 accepts_nested_attributes_for :list
 
 	enum priority: {Baja:2 ,Media:1 ,Alta:0}
 
@@ -31,6 +30,9 @@ class Task < ApplicationRecord
 	
 	
 	self.default_scope {order ('tasks.priority')}
+
+	
+	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count}
 
 	def to_s 
 		"#Descripcion: #{self.description}, "+

@@ -36,7 +36,6 @@ class TaskLong < Task
 		super +  ", Porcentaje de avance: #{self.progress}% "
 	end
 
-	
 
 
 end

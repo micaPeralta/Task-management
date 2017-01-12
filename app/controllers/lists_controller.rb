@@ -3,7 +3,6 @@ class ListsController < ApplicationController
 
   before_action :set_list, only:[:destroy, :update, :show, :edit]
   before_action :expire_tasks , only:[:show]
-  before_action :update_state , only:[:show]
 
   def index
    
@@ -78,12 +77,8 @@ private
   end
 
   def expire_tasks
-
       @list.update_tasks_expired
-
   end
 
-  def update_state
-   # TaskLong.completed(@list.id)
-  end
+ 
 end

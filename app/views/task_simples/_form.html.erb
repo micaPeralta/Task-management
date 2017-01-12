@@ -1,6 +1,7 @@
 
 			  	<%= simple_form_for [@list,@task] do |f| %>
 			  		
+			  		<%=  render 'errors', task: @task %>
 			  		
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
@@ -12,7 +13,8 @@
 			      	<%= f.select :state, [['Pendiente', 'Pendiente'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 					  
 					
-					 <%= f.button :submit, :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
+					
+					 <%= f.submit 'Enviando...', :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
 					 <% end %>
 
 		     	

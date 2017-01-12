@@ -15,26 +15,15 @@
 #  updated_at    :datetime         not null
 #
 
-require 'rails_helper'
+FactoryGirl.define do
 
-RSpec.describe Task, type: :model do
-  
-  	let(:task){FactoryGirl.build(:task)}
-  	let(:list){FactoryGirl.build(:list)}
-	
-	describe '#create' do
 
-		it 'No debe tener campos en blanco' do
-			expect(task.valid?).to be_falsy
-		end
-
-		it 'con datos validos' do
-			task.description= 'Una descripcion'
-			task.priority='Alta'
-			task.state='Hecha'
-			task.to_do_list= list
-			expect(task.valid?).to be true
-
-		end
-	end
+  factory :taskTemporary do
+  		description Faker::Lorem.characters(50)
+  		state ['Pendiente','Hecha','Expirada'].sample
+		priority rand(0..2)
+		list 1
+		date_begin Faker::Date.between(9.days.ago,Date.today)
+		date_end Faker::Date.between(1.days.ago,5.days.from_now)
+  end 
 end

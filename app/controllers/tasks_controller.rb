@@ -30,8 +30,10 @@ class TasksController < ApplicationController
 	  		when 'TaskSimple'
 	  			@task=TaskSimple.new
   			end
-
-  			render_view('new')
+  			respond_to do |format|
+  				format.html{ render_view('new') }
+  				
+  			end 
   	end
 
   	def create 

@@ -34,3 +34,8 @@ hyphens: auto;
 .input-field label{
 	position: inherit !important;
 }
+
+
+.inline{
+	display: inline;
+}

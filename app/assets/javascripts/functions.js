@@ -100,32 +100,26 @@ $(document).ready(focus_textarea);
  $(document).on('turbolinks:load',focus_input );
 
 
-  function showTask(id){
-  	   var task = id
+  function showNew(list){
+  	 
      $.ajax({
-        url: "/tasks/" + task,
-        dataType: "JSON",
+        url: list+"/task_simples/new",
+        contentType: "javascript; charset=utf-8",
+        dataType: "html",
         timeout: 10000,
         beforeSend: function(){
            $("#respuesta").html("Cargando...");
         },
         error: function(){
-           $("#respuesta").html("Error al intentar buscar el empleado. Por favor intente más tarde.");
+           $("#respuesta").html("Error!");
         },
+        
         success: function(res){
-           if(res){
-           	 $('#modal2').modal('open');
-             $("#respuesta").html(res.priority);
-             $('#description').val(res.description);
-             $('#myselect')
-             $('#myselect').append('<option value=1 selected="true">'+ res.priority +'</option>');
-			
-           }else{
-              $("#respuesta").html("El legajo no le pertenece a ningún empleado.");
-           }
+            $('#respuesta').html(res);
+                
         }
-     })
-  
+        
+    });
 
   }
 
