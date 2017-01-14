@@ -18,15 +18,15 @@
                   </div>  
                 </div>
 
-               <%= render 'form', list: @list %>
+               <%= render 'form'%>
               
                 
 
               </div>
-	<div class="wow fadeInUp content-works "> 
-		<%= render(@lists) || render('empty-collection') %>
-  </div>
-			
+            	<div class="wow fadeInUp content-works "> 
+            		<%= render(@lists) or render partial:('empty-collection') %>
+              </div>
+            			
 		
 		
 	

@@ -51,7 +51,6 @@ class TaskTemporary < Task
 
 	
 
-
 	def to_s 
 		super +", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
 	

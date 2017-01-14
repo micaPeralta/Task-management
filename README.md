@@ -1,6 +1,27 @@
-# TRABAJO INTEGRADOR - TTPS OPCIÓN RUBY
+# Task Management
 
 
 
 
- heroku -> https://fierce-crag-18362.herokuapp.com/
+ heroku -> https://tasks-management.herokuapp.com/
+
+
+ Instalación 
+```	
+git clone https://github.com/micaPeralta/Task-management.git
+cd Task-management
+bundle insstall 
+bundle exec rails db:setup
+```
+
+# Ejecución
+
+```
+bundle exec rails s
+```
+
+# Correr tests
+```
+bundle exec rspec 
+```
+

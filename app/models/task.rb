@@ -34,6 +34,10 @@ class Task < ApplicationRecord
 	
 	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count}
 
+	after_initialize do |user|
+    	self.state  ||= 'Pendiente' 
+  	end
+
 	def to_s 
 		"#Descripcion: #{self.description}, "+
 		"Prioridad: #{self.priority}, "+

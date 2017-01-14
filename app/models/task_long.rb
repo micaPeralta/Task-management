@@ -30,6 +30,9 @@ class TaskLong < Task
 	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
 	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
 	
+	after_initialize do |user|
+    	self.progress ||= 0 
+  	end
 
 
 	def to_s 

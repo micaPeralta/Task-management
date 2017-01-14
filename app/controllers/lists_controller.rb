@@ -4,21 +4,13 @@ class ListsController < ApplicationController
   before_action :set_list, only:[:destroy, :update, :show, :edit]
   before_action :expire_tasks , only:[:show]
 
+
   def index
    
     @list= List.new 
     #@lists= Array.new
-    @lists=ListDecorator.new(List.all)
-=begin
-    if (!cookies[:lasts].blank?)
-      cookies[:lasts][0]=""
-      lasts=cookies[:lasts].split(',').last(5)
-      @lists= List.find(lasts)
-    else 
-      cookies[:lasts]=""
-    end
-=end
-	
+    @lists = ListDecorator.new(List.find(last_lists_browser).last(5))
+   
   end
 
   def show
@@ -28,21 +20,22 @@ class ListsController < ApplicationController
    
   end
 
-  def create
-  	
-    n=lists_params['name']
-    @list= List.new(name: n.capitalize)
+  def create  	
+ 
+    @list= List.new(list_params)
     
     respond_to do |format|
       if @list.save
-        # cookies[:lasts] += ','+@list.id.to_s
+        last_lists_browser << @list.id
           format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
+        @lists = ListDecorator.new(List.find(last_lists_browser).last(5))
         format.html { render :index }
         format.json { render json: @list.errors, status: :unprocessable_entity } 
       end
     end
+  
   end
 
 
@@ -55,7 +48,7 @@ class ListsController < ApplicationController
 
   def update 
     respond_to do |format|
-      if @list.update(lists_params)
+      if @list.update(list_params)
         format.html { redirect_to @list, notice: 'Person was successfully updated.' }
         format.json {render json: @list, status: :ok}
         format.js 
@@ -72,7 +65,7 @@ private
     @list= List.find_by_url(params[:id]).decorate
   end
 
-  def lists_params
+  def list_params
     params.require(:list).permit(:name)
   end
 
@@ -80,5 +73,8 @@ private
       @list.update_tasks_expired
   end
 
+  def last_lists_browser
+    session[:lasts] ||= []
+  end
  
 end

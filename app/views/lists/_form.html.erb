@@ -2,11 +2,9 @@
   <div class="row">
    
 
-      <%= simple_form_for @list , remote: true do |f| %>
+      <%= simple_form_for @list do |f| %>
             
-                    <%=  render 'errors', list: @list %>
-
-      	   <%= f.hidden_field :authenticity_token, :value => form_authenticity_token %>
+     	 
            <div class="input-field col s12 m6 l8">
       	     <%= f.input :name, label: false,:placeholder => 'Nombre de la lista',:inner_html => { id: 'input-text'} %>
            </div>

@@ -62,6 +62,8 @@ RSpec.describe taskTemporary type: :model do
 
 			list.tasks.addAll(%( task1 task3 task4 task2))
 
+			
+
 		end
 	end
 
