@@ -244,6 +244,7 @@ DEPENDENCIES
   clipboard-rails
   coffee-rails (~> 4.2)
   draper!
+  execjs
   factory_girl_rails (~> 4.0)
   faker
   font-awesome-rails
