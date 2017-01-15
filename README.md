@@ -1,9 +1,7 @@
 # Task Management
 
-![Image of Yaktocat](https://github.com/micaPeralta/Task-management/blob/master/app/assets/images/post.it.png)
 
-
- Checkea esto ! -> https://tasks-management.herokuapp.com/
+ Demo -> https://tasks-management.herokuapp.com/
 
 
 ## Instalación 
