@@ -19,16 +19,20 @@
  ```
  cd Task-management
  bundle install 
+
  ```
 3. Corra las migraciones de la base de datos , junto con los seeders provistos.
  ```
  bundle exec rails db:setup
+
  ```
 
 ## Ejecución
 1. Correr el servidor
+
 ```
 bundle exec rails s
+
 ```
 2. Coloque en el navegador la siguiente direccion:  http://localhost:3000
 
@@ -36,5 +40,6 @@ bundle exec rails s
 
 ```
 bundle exec rspec 
+
 ```
 
