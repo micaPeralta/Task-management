@@ -34,7 +34,7 @@
 bundle exec rails s
 
 ```
-2. Coloque en el navegador la siguiente direccion:  http://localhost:3000
+2. Coloque en el navegador la siguiente direccion:  [http://localhost:3000](http://localhost:3000)
 
 ## Correr tests
 
