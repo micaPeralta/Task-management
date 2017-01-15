@@ -32,7 +32,7 @@ class Task < ApplicationRecord
 	self.default_scope {order ('tasks.priority')}
 
 	
-	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count}
+	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count }
 
 	after_initialize do |user|
     	self.state  ||= 'Pendiente' 

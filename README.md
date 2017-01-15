@@ -1,7 +1,12 @@
 # Task Management
+	
+	Este proyecto consiste en  un servicio on-line de autogestión de listas de tareas.El uso de la aplicación es sin autenticación, permitiendo a cualquier persona crear listas y gestionar tareas, sin necesidad de registrarse.
+
+ 	Demo -> https://tasks-management.herokuapp.com/
+
+ 	##Datos y consideraciónes
 
 
- Demo -> https://tasks-management.herokuapp.com/
 
 ## Requerimientos 
   + Ruby 2.3.1

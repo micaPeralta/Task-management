@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   
+  include CookieHelper 
 
   before_action :set_list, only:[:destroy, :update, :show, :edit]
   before_action :expire_tasks , only:[:show]
@@ -8,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    #@lists= Array.new
-    @lists = ListDecorator.new(List.find(last_lists_browser).last(5))
+    #@lists=List.all
+    @lists = ListDecorator.new(List.find(lists_browser).last(5))
    
   end
 
@@ -26,11 +27,11 @@ class ListsController < ApplicationController
     
     respond_to do |format|
       if @list.save
-        last_lists_browser << @list.id
+         cookie_add_data(@list.id)
           format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
-        @lists = ListDecorator.new(List.find(last_lists_browser).last(5))
+        @lists = ListDecorator.new(List.find(lists_browser).last(5))
         format.html { render :index }
         format.json { render json: @list.errors, status: :unprocessable_entity } 
       end
@@ -73,8 +74,5 @@ private
       @list.update_tasks_expired
   end
 
-  def last_lists_browser
-    session[:lasts] ||= []
-  end
- 
+
 end

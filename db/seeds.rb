@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#por ahora solo crea listas con tareas normales
-#agregar listas con diferentes tareas
+
 
 Faker::Config.locale='es'
 
@@ -29,7 +28,7 @@ Faker::Config.locale='es'
 				  priority:rand(0..2),
 				  list: tdl,
 				  date_begin: Faker::Date.between(9.days.ago,Date.today),
-				  date_end: Faker::Date.between(1.days.ago,5.days.from_now)	)			  
+				  date_end: Faker::Date.between(1.days.from_now,10.days.from_now)	)			  
 	end
 
 	2.times do 
