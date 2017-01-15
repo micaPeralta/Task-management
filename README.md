@@ -19,7 +19,7 @@
  ```
  cd Task-management
  bundle install 
- 
+
  ```
 3. Corra las migraciones de la base de datos , junto con los seeders provistos.
  ```
