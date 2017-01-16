@@ -1,12 +1,8 @@
 # Task Management
-	
-	Este proyecto consiste en  un servicio on-line de autogestión de listas de tareas.El uso de la aplicación es sin autenticación, permitiendo a cualquier persona crear listas y gestionar tareas, sin necesidad de registrarse.
 
- 	Demo -> https://tasks-management.herokuapp.com/
+Este proyecto consiste en  un servicio on-line de autogestión de listas de tareas.El uso de la aplicación es sin autenticación, 	permitiendo a cualquier persona crear listas y gestionar tareas, sin necesidad de registrarse.
 
- 	##Datos y consideraciónes
-
-
+Demo -> https://tasks-management.herokuapp.com
 
 ## Requerimientos 
   + Ruby 2.3.1
@@ -15,12 +11,13 @@
   
 ## Instalación 
 
-1.Clone el repositorio
+ 1. Clone el repositorio
  ```	
  git clone https://github.com/micaPeralta/Task-management.git
-
- ```
-2. Ubíquese  en la carpeta del proyecto e instale las dependencias
+ ```  
+ 
+ 2. Ubíquese  en la carpeta del proyecto e instale las dependencias
+ 
  ```
  cd Task-management
  bundle install 
@@ -43,8 +40,8 @@
 
 ## Correr tests
 
-	```
-	bundle exec rspec 
+ ```
+ bundle exec rspec 
 
-	```
+ ```
 
