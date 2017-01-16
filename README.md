@@ -23,7 +23,7 @@ Demo -> https://tasks-management.herokuapp.com
  bundle install 
 
  ```
-3. Corra las migraciones de la base de datos , junto con los seeders provistos.
+ 3. Corra las migraciones de la base de datos , junto con los seeders provistos.
  ```
  bundle exec rails db:setup
 
