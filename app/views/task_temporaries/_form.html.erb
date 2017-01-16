@@ -8,10 +8,6 @@
 			      	
 			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
 
-			      	
-			      	<%= f.select :state, [['Pendiente', 'Pendiente'], ['Hecha', 'Hecha'],['Expirada','Expirada']],prompt: "Seleccione", label: "Estado"  %>
-					  
-					
 
 						<%= f.input :date_begin ,as: :string,input_html:{ class: 'datepicker',
 						data_value: '' } %>

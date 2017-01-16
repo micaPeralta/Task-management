@@ -17,6 +17,9 @@
 class Task < ApplicationRecord
 	belongs_to :list
 
+
+	include AASM
+	
 	enum priority: {Baja:2 ,Media:1 ,Alta:0}
 
 
@@ -34,7 +37,7 @@ class Task < ApplicationRecord
 	
 	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count }
 
-	after_initialize do |user|
+	after_initialize do 
     	self.state  ||= 'Pendiente' 
   	end
 

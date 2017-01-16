@@ -49,7 +49,7 @@
 			 	<i id  class="fa fa-clipboard" aria-hidden="true"></i>
 
 			 </div>
-		
+				<button> cipiar</button>		
 
 						
 			</div>
@@ -62,7 +62,7 @@
 		 	<table>
 		 		<thead> 
 			 		<tr>
-			 			<th>Prioridad</th>
+			 			<th width="10%">Prioridad</th>
 			 			<th>
 				 			<i class="fa fa-clock-o" aria-hidden='true'></i>
 				 			Tareas Temporales
@@ -73,7 +73,7 @@
 		 		</thead>
 		 		<tbody>
 
-			 			<%= render @task_temporaries or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>	 			
+			 			<%= render @task_temporaries or render('empty_tasks')%>	 			
 			 		
 		 		</tbody>
 		 	</table>				
@@ -81,7 +81,7 @@
 			<table>
 				<thead>
 					<tr>	
-						<th>Prioridad</th>					
+						<th width="10%">Prioridad</th>					
 						<th>
 							<i class="fa fa-arrows-h" aria-hidden='true'></i>
 							Tareas Largas
@@ -90,7 +90,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<%= render @task_longs or content_tag(:tr,content_tag(:td, 'Elementos no disponibles')) %>
+					<%= render @task_longs or render('empty_tasks')%>
 				</tbody>
 
 
@@ -100,7 +100,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Prioridad</th>
+						<th width="10%">Prioridad</th>
 						<th>
 						<i class="fa fa-file-text-o" aria-hidden='true'></i>
 						Tareas Comunes</th>
@@ -110,7 +110,7 @@
 				</thead>
 
 				<tbody>
-						<%= render @task_simples or content_tag(:tr,content_tag(:td, 'Elementos no disponibles'))%>
+						<%= render @task_simples or  render('empty_tasks') %>
 					
 				</tbody>
 

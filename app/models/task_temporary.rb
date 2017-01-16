@@ -17,7 +17,6 @@
 
 class TaskTemporary < Task
    
-	include AASM
 
 	validates :description,
 		length: { maximum: 255, message:'La descripción debe contener menos de 256 caracteres' }
@@ -51,17 +50,9 @@ class TaskTemporary < Task
 		end
 	end
 
-	
-
-	def to_s 
-		super +", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
-	
-	end
 
 	#mostrar solo tareas dentro de la fecha 
 	self.default_scope { where('date_end > ?', Date.current ) }
-
-	
 
 	def self.expired
 		where('date_end <= ? ', Date::current)
@@ -71,4 +62,8 @@ class TaskTemporary < Task
 		update_all( state:'Expirada')
 	end
 
+	def to_s 
+		super +", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
+	
+	end
 end

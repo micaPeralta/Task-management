@@ -9,7 +9,7 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    #@lists=List.all
+    #lists=List.all
     @lists = ListDecorator.new(List.find(lists_browser).last(5))
    
   end
@@ -28,7 +28,7 @@ class ListsController < ApplicationController
     respond_to do |format|
       if @list.save
          cookie_add_data(@list.id)
-          format.html  {redirect_to @list, notice: 'Person was successfully created.' }
+         format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
         @lists = ListDecorator.new(List.find(lists_browser).last(5))

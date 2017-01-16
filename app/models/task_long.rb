@@ -30,9 +30,38 @@ class TaskLong < Task
 	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
 	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
 	
+
+	aasm :column => 'state' do 
+		state :Pendiente, :initial => true
+		state :En_curso
+		state :Hecha
+		
+
+		event :finish do 
+		transitions :from => :En_curso, :to => :Hecha
+		end
+
+		event :init do 
+		transitions :from => :Pendiente, :to => :En_curso 
+			
+		end
+
+	end
 	after_initialize do |user|
     	self.progress ||= 0 
   	end
+
+
+   
+
+
+	def pending_valid?  		
+		self.progress > 0 and self.progress < 100  and may_finish?
+	end
+
+	def made_valid?
+		self.progress == 100
+	end
 
 
 	def to_s 
