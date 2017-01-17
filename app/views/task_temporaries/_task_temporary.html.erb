@@ -23,13 +23,13 @@
 							
 							<% case task_temporary.state %>
 								<%  when "Hecha" then %>
-								     <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Hecha"  data-badge-caption="" > 
+								     <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip=<%= t('made')%>"  data-badge-caption="" > 
 								     	<i class="fa fa-check" aria-hidden="true"></i>
 
 								     </span>
 								<%  when "Pendiente"  then  %>
-									 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pendiente
-									" data-badge-caption="" >
+									 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip=<%= t('pending')%>
+									  data-badge-caption="" >
 										<i class="fa fa-thumb-tack" aria-hidden="true"></i>
 
 									</span>
@@ -45,9 +45,9 @@
 					  <%=  best_in_place  [@list,task_temporary], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> </div>
 					<div class="footer-div">
 												
-						 <strong >Fecha Inicio:</strong> <%= task_temporary.date_begin %>
+						 <strong ><%= t('date-begin')%>:</strong> <%= task_temporary.date_begin %>
 					
-						 <strong >Fecha Fin: </strong> <%= task_temporary.date_end %>		    
+						 <strong ><%= t('date-end')%>: </strong> <%= task_temporary.date_end %>		    
 			    
 			 
 					</div>
@@ -56,12 +56,12 @@
 
 				<td width="100px">
 
-						<%= link_to  "/finish/task/#{task_temporary.id}", :remote=> true , method: :patch,data: { confirm: '¿ Estás seguro ? '} do %>
+						<%= link_to  "/finish/task/#{task_temporary.id}", :remote=> true , method: :patch,data: { confirm: t('confirm')} do %>
 							<i class="fa fa-check-square-o fa-lg" aria-hidden='true '></i>
 						<%end %>
 
 						<a href= "<%= edit_list_task_temporary_path(@list,task_temporary)%>" ><i class="material-icons">edit</i></a>
-						 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: '¿ Quieres borrar ? ' },:remote => true  do %>
+						 <%= link_to list_task_temporary_path(@list,task_temporary), method: :delete, data: { confirm: t('confirm') },:remote => true  do %>
 				 		<i class="material-icons">delete</i>
 						<% end %>
 

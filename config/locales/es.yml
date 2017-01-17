@@ -1,0 +1,45 @@
+es:
+  subtitle: "Gestioná tus tareas de manera rápida y sencilla"
+  list-empty: "Todavía no has creado ninguna lista"
+  delete: "Borrar"
+  view-more: 'Ver mas'
+  list-name: 'Nombre de la lista'
+
+  creation-date: 'Fecha de creación'
+  last-update: 'Última modificación'
+  copy-url: 'Copiar url'
+  priority: 'Prioridad'
+  rename-list: 'Renombrar lista'
+
+  tasks-longs: 'Tareas largas'
+  tasks-simples: 'Tareas simples'
+  tasks-temporaries: "Tareas Temporales"
+  tasks-simple: "Tarea simple"
+  tasks-temporary: "Tarea temporal"
+  task-long: "Tarea larga"
+
+  create-task: "Crear tarea"
+  edit-task: 'Editar tarea'
+  rename: 'Renombrar'
+  return: "Volver"
+
+  helpers:
+    submit: 
+        create: "Enviar"
+        submit: 'Enviando...'
+        update: 'Enviar'
+
+  cancel: 'Cancelar'
+  select: 'Seleccione'
+  progress: 'Progreso'
+  description: 'Descripción'
+  date-begin: "Fecha inicio"
+  date-end: 'Fecha fin'
+  no-elements: 'No hay elementos'
+
+  
+  pending: 'Pendiente'
+  made: 'Hecha'
+  in-progress: 'En curso'
+  expired: 'Expirada'
+  confirm: ' ¿Estas seguro?'

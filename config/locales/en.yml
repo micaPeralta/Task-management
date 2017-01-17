@@ -19,5 +19,52 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
 en:
-  hello: "Hello world"
+  subtitle: "Manage your tasks quickly and easily"
+  list-empty: "Sorry, you have not created any list"
+  delete: "Delete"
+  send: 'Send'
+
+  view-more: "See more"
+  list-name: "List name"
+
+  creation date: 'creation date'
+  last-update: 'Last update'
+  copy-url: 'Copy url'
+  priority: 'Priority'
+  rename-list: 'Rename list'
+
+  tasks-longs: 'Long assignments'
+  tasks-simples: 'Simple tasks'
+  tasks-temporaries: "Temporary tasks"
+  task-simple: 'Simple task'
+  task-temporary: 'Temporary task'
+  task-long: "Long task"
+
+  create-task: "Create task"
+  rename: "Rename"
+  return: "Return"
+  edit-task: 'Edit Task'
+
+
+  helpers:
+    submit: 
+        create: "Send"
+        submit: 'Sending...'
+        update: "Send"
+
+  cancel: 'Cancel'
+  select: 'Select'
+  progress: 'Progress'
+  description: 'Description'
+  date-begin: 'Date begin'
+  date-end: 'Date end'
+  no-elements: 'No elements'
+
+   
+  pending: 'Pending'
+  made: 'Made'
+  in-progress: 'In progress'
+  expired: 'Expired'
+  confirm: ¿Are you sure?

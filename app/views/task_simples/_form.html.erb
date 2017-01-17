@@ -7,14 +7,14 @@
 
 			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
 			      	
-			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
+			      	 <%= f.select :priority, Task.priorities.keys,prompt: t('select'), label: "Prioridad" %>
 
 			      	
 			      	<%= f.select :state, [['Pendiente', 'Pendiente'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 					  
 					
 					
-					 <%= f.submit 'Enviando...', :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
+					 <%= f.submit  :class => "right waves-effect blue darken-3 btn"%>
 					 <% end %>
 
 		     	

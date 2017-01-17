@@ -4,7 +4,7 @@ Este proyecto consiste en  un servicio on-line de autogestión de listas de tare
 
 Demo -> https://tasks-management.herokuapp.com
 
-## Requerimientos 
+## Version 
   + Ruby 2.3.1
   + Bundle 1.13.6
   
@@ -20,7 +20,7 @@ Demo -> https://tasks-management.herokuapp.com
  
  ```
  cd Task-management
- bundle install 
+ bundle install --without=production
 
  ```
  3. Corra las migraciones de la base de datos , junto con los seeders provistos.

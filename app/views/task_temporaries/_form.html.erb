@@ -4,20 +4,20 @@
 			  		
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %> 
 			  		
-			 	  	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
+			 	  	 <%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"} %>
 			      	
-			      	 <%= f.select :priority, Task.priorities.keys,prompt: "Seleccione", label: "Prioridad" %>
+			      	 <%= f.select :priority, Task.priorities.keys,prompt:t('select'), label: "Prioridad" %>
 
 
-						<%= f.input :date_begin ,as: :string,input_html:{ class: 'datepicker',
+						<%= f.input :date_begin ,as: :string,label: t('date-begin'),input_html:{ class: 'datepicker',
 						data_value: '' } %>
 
 
-						<%= f.input :date_end ,as: :string,input_html:{ class: 'datepicker',
+						<%= f.input :date_end ,as: :string,label: t('date-end'),input_html:{ class: 'datepicker',
 							data_value: ''} %>
 
 
 
 					
-					 <%= f.submit 'Enviando...', :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
+					 <%= f.submit  :class => "right waves-effect blue darken-3 btn" %>
 					 <% end %>

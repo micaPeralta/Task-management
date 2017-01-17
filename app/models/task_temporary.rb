@@ -32,7 +32,7 @@ class TaskTemporary < Task
 	
 	validates_date :date_begin, :before =>   lambda{|m| m.date_end},before_message: 'La fecha de inicio debe ser menor a la fecha de fin'
    	validates_date :date_end, :after =>   lambda{|m| m.date_begin}, after_message: ' La fecha de fin debe ser mayor a la fecha de inicio'
-   	#validates_date :date_end, :after =>  Date.current, after_message: ' La fecha de fin debe ser mayor a la fecha actual'
+   	validates_date :date_end, :after =>  Date.current, after_message: ' La fecha de fin debe ser mayor a la fecha actual'
 
 	
 

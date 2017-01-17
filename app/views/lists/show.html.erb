@@ -10,21 +10,21 @@
 						</div>
 
 						<div class="col s3"  >
-						<a class="tooltipped btn-floating waves-effect waves-light" href="<%= lists_path %>" data-position="bottom" data-delay="50" data-tooltip="Volver">	<i id="edit" class="material-icons ">replay</i>	</a>
+						<a class="tooltipped btn-floating waves-effect waves-light" href="<%= lists_path %>" data-position="bottom" data-delay="50" data-tooltip= <%=t('return')%>>	<i id="edit" class="material-icons ">replay</i>	</a>
 						
-						<a class="tooltipped  btn-floating waves-effect waves-light" href="#modalListEditName" data-position="bottom" data-delay="50" data-tooltip="Cambiar nombre">	<i id="edit" class="material-icons ">edit</i></a>
+						<a class="tooltipped  btn-floating waves-effect waves-light" href="#modalListEditName" data-position="bottom" data-delay="50" data-tooltip=<%=t('rename')%> >	<i id="edit" class="material-icons ">edit</i></a>
 							
 
 		                  <a class="tooltipped  dropdown-button btn-floating waves-effect waves-light " href="#!" data-activates="dropdown2"
-		                  data-tooltip="Crear tarea" >
+		                  data-tooltip=<%=t('create-task')%> >
 
 		                  <i class="mdi-editor-vertical-align-bottom material-icons left " > add</i></a>
 		                          <ul id="dropdown2" class="dropdown-content">
-		                            <li><%= link_to  'Tarea Simple', new_list_task_simple_path(@list)  %>
+		                            <li><%= link_to t('task-simple'), new_list_task_simple_path(@list)  %>
 		                            </li>
-		                            <li><%= link_to  'Tarea Larga', new_list_task_long_path(@list)  %>
+		                            <li><%= link_to  t('task-long'), new_list_task_long_path(@list)  %>
 		                            </li>
-		                            <li><%= link_to  'Tarea Temporal', new_list_task_temporary_path(@list)  %>
+		                            <li><%= link_to  t('task-temporary'), new_list_task_temporary_path(@list)  %>
 		                            </li>
 		                          </ul>
 
@@ -37,15 +37,15 @@
 			<div class="row">
 						<div class="col s12"> 
 			<div class="col s4">
-				<strong>Fecha de creación:</strong> <%= @list.created_at%> 
+				<strong><%=t('creation-date')%>:</strong> <%= @list.created_at%> 
 			</div>
 			<div class="col s4">
-				<strong>Última modificación:</strong>
+				<strong><%=t('last-update')%>:</strong>
 				<%= @list.last_update%>  <br>
 			</div>
 			<div class="col s4">
 			 <div class="chip" id="clipboard-btn" data-clipboard-text="<%= request.url %>">
-			 	Copiar url
+			 	<%=t('copy-url')%>
 			 	<i id  class="fa fa-clipboard" aria-hidden="true"></i>
 
 			 </div>
@@ -62,10 +62,10 @@
 		 	<table>
 		 		<thead> 
 			 		<tr>
-			 			<th width="10%">Prioridad</th>
+			 			<th width="10%"><%=t('priority')%></th>
 			 			<th>
 				 			<i class="fa fa-clock-o" aria-hidden='true'></i>
-				 			Tareas Temporales
+				 			<%=t('tasks-temporaries')%>
 			 			</th>
 			 			<tr>
 			 		</tr>
@@ -81,10 +81,10 @@
 			<table>
 				<thead>
 					<tr>	
-						<th width="10%">Prioridad</th>					
+						<th width="10%"><%=t('priority')%></th>					
 						<th>
 							<i class="fa fa-arrows-h" aria-hidden='true'></i>
-							Tareas Largas
+							<%=t('tasks-longs')%>
 						</th>
 						<th></th>
 					</tr>
@@ -100,10 +100,10 @@
 			<table>
 				<thead>
 					<tr>
-						<th width="10%">Prioridad</th>
+						<th width="10%"><%=t('priority')%></th>
 						<th>
 						<i class="fa fa-file-text-o" aria-hidden='true'></i>
-						Tareas Comunes</th>
+						<%=t('tasks-simples')%></th>
 						<th></th>
 
 					</tr>
@@ -133,13 +133,13 @@
   <!-- Modal  edit name -->
 		  <div id="modalListEditName" class="modal bottom-sheet">
 		    <div class="modal-content">
-		      <h4>Renombrar tarea</h4>
+		      <h4><%=t('rename-list')%></h4>
 		        	
 				<%= render 'form', list: @list%>
 
 		    </div>
 		    <div class="modal-footer">
-		      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+		      <a class=" modal-action modal-close waves-effect waves-green btn-flat"><%=t('cancel')%></a>
 		   
 		    </div>
 		  </div>

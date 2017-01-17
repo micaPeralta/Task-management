@@ -6,12 +6,12 @@
             
      	 
            <div class="input-field col s12 m6 l8">
-      	     <%= f.input :name, label: false,:placeholder => 'Nombre de la lista',:inner_html => { id: 'input-text'} %>
+      	     <%= f.input :name, label: false,:placeholder => t('list-name'),:inner_html => { id: 'input-text'} %>
            </div>
            <div class="input-field col s12 m6 l4" style="display: flex;" >
-           <%=  f.button  :button, 'Borrar', :type => 'reset', :class => 'btn'%>
+           <%=  f.button  :button, t('delete'), :type => 'reset', :class => 'btn'%>
       	   
-           <%= f.submit 'Enviando...', :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
+           <%= f.submit :class => "right waves-effect blue darken-3 btn"%>
         
            </div>
 

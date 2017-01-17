@@ -6,21 +6,21 @@
 
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
-			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"}, required: true %>
+			      	 <%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"}, required: true %>
 			      	
-			      	 <%= f.select :priority, Task.priorities.keys, :label => "Prioridad" ,prompt: "Seleccione" %>
+			      	 <%= f.select :priority, Task.priorities.keys, :label => "Prioridad" ,prompt: t('select') %>
 
 			 
 				
 						<div class="input-field">
 						 <p class="range-field">
-							<%= f.input :progress ,as: :range, label:"Progreso" %>
+							<%= f.input :progress ,as: :range, label:t('progress') %>
 						</p>
 						</div>
 					
 
 
-					 <%= f.submit 'Enviando...', :class => "right waves-effect blue darken-3 btn",:value => 'Enviar' %>
+					 <%= f.submit  :class => "right waves-effect blue darken-3 btn" %>
 					 <% end %>
 
 		     	
