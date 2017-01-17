@@ -13,7 +13,7 @@
 #  date_end      :date
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-
+require 'aasm'
 class Task < ApplicationRecord
 	belongs_to :list
 
@@ -24,12 +24,12 @@ class Task < ApplicationRecord
 
 
 	validates :description, 
-		presence: { message: 'Debe ingresar la descripción '}
+		presence: { message: :presence_msj }
 	
 	validates :priority,
-		presence: { message: 'Debe ingresar la prioridad'}, 
+		presence: { message: :presence_msj },
 	 	inclusion: { in: %w(Alta Media Baja ),
-				 message: "La prioridad de debe ser 'Alta' , 'Media' o 'Baja'" }
+				 message: :inclusion_msj }
 	
 	
 	self.default_scope {order ('tasks.priority')}

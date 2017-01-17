@@ -19,16 +19,15 @@ class TaskLong < Task
 
 
 	validates :progress, 
-		presence: {message: 'Debes ingresar el progreso'},
+		presence: { message: :presence_msj },
 		:inclusion => { :in => 0..100,
-						message: "Progreso inválido [0-100]"},
-		numericality: { only_integer: true, message:'El progreso  debe ser un número entero'}	
+						message: :inclusion_msj },
+		numericality: { only_integer: true, message: :numericality_msj}	
 
        
 	validates :state,
-	 	presence: { message:' Debes ingresar el estado'},
 	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
-	 				message:  "El estado debe ser 'Pendiente','En_curso' ó 'Hecha'' "}
+					message:  :inclusion_msj}
 	
 
 	aasm :column => 'state' do 

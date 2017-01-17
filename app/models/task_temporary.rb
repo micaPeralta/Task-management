@@ -19,11 +19,10 @@ class TaskTemporary < Task
    
 
 	validates :description,
-		length: { maximum: 255, message:'La descripción debe contener menos de 256 caracteres' }
+		length: { maximum: 255, message: :lenght_msj }
 
 
 	validates :state,
-	 	presence: {message: 'Debes ingresar el estado'},
 	 	inclusion: { in: %w(Pendiente Hecha Expirada ),
 	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
 	

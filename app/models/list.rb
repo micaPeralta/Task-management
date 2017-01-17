@@ -19,9 +19,9 @@ class List < ApplicationRecord
 	before_create :assign_slug
 
 	validates :name, 
-		presence: { message: 'Debe ingresar el nombre de la lista'},
-		uniqueness: { message: 'El nombre ya existe, no se admiten duplicados'},
-		format: { with: /[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/,message: "El nombre solo debe contener letras" }
+		presence: { message: :presence_msj },
+		uniqueness: { message: :uniqueness_msj},
+		format: { with: /[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/,message: :format_msj }
 
 
  	def last_update

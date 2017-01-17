@@ -63,7 +63,7 @@ class ListsController < ApplicationController
 private
 
   def set_list
-    @list= List.find_by_url(params[:id]).decorate
+       @list= List.find_by_url(params[:id]).decorate
   end
 
   def list_params
