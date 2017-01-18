@@ -1,0 +1,46 @@
+en: 
+ activerecord:
+    errors:
+      messages:  
+       uniqueness_msj: "Sorry, Duplicates are not supported"
+      
+      models:
+        list:
+          attributes:
+            name:
+              presence_msj: "You must enter a name"
+              format_msj: "The name must only contain letters"
+        
+        task_long:
+          attributes:
+            progress:
+              presence_msj: 'You must enter progress'
+              inclusion_msj: "Invalid progress [0-100]"
+              numericality_msj: 'Progress must be an integer'
+            state:
+              presence_msj: 'You must enter the status'
+              inclusion_msj: "The status must be 'Pending', 'In_current' or 'Done'"
+        task_temporary:
+          attributes:
+            date-begin:
+               presence_msj: 'You must enter the begin date'
+               before_msj: 'The start date must be less than the end date'
+            date-end:
+              presence_msj: 'You must enter the end date'
+              after_act_msj: 'The end date must be greater than the current date'
+              after_msj: 'The end date must be greater than the start date'
+            description:
+               lenght_msj: 'The description must contain less than 256 characters'
+        task_simple:
+          attributes:
+            state:
+               presence_msj: 'You must enter the status'
+               inclusion_msj: "The status must be 'Pending' or 'Done'"
+        task:
+          attributes:
+            description:
+              presence_msj: "You must enter a description"
+            priority: 
+              presence_msj: 'Must enter priority'
+              inclusion_msj: "The priority should be 'High', 'Medium' or 'Low'"
+            

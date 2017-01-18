@@ -26,12 +26,12 @@ class TaskTemporary < Task
 	 	inclusion: { in: %w(Pendiente Hecha Expirada ),
 	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
 	
-	validates :date_begin, presence: { message: 'Debe ingresar la fecha de inicio'}
-	validates :date_end, presence: { message: 'Debe ingresar la fecha de fin'}
+	validates :date_begin, presence: { message: :presence_msj}
+	validates :date_end, presence: { message: :presence_msj }
 	
-	validates_date :date_begin, :before =>   lambda{|m| m.date_end},before_message: 'La fecha de inicio debe ser menor a la fecha de fin'
-   	validates_date :date_end, :after =>   lambda{|m| m.date_begin}, after_message: ' La fecha de fin debe ser mayor a la fecha de inicio'
-   	validates_date :date_end, :after =>  Date.current, after_message: ' La fecha de fin debe ser mayor a la fecha actual'
+	validates_date :date_begin, :before =>   lambda{|m| m.date_end},before_message: :before_msj
+   	validates_date :date_end, :after =>   lambda{|m| m.date_begin}, after_message: :after_msj
+   	validates_date :date_end, :after =>  Date.current, after_message: :after_act_msj
 
 	
 

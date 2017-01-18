@@ -1,0 +1,43 @@
+es:
+  activerecord:
+      errors:
+        messages:
+         uniqueness_msj: 'Lo siento, No se admiten duplicados'
+
+        models:
+            list:
+              attributes:
+                name:
+                  presence_msj: 'Debe ingresar el nombre de la lista'
+                  formate_msj: "El nombre solo debe contener letras" 
+            task:
+              attributes:
+                description:
+                  presence_msj: 'Debe ingresar una descripción '
+                priority:
+                  presence_msj: 'Debe ingresar la prioridad'
+                  inclusion_msj: "La prioridad de debe ser 'Alta' , 'Media' o 'Baja'"
+                state: 
+                  presence_msj: 'Debes ingresar el estado'
+            task_long: 
+              attributes:
+                progress:
+                  presence_msj: 'Debes ingresar el progreso'
+                  inclusion_msj: "Invalid progress [0-100]"
+                  numericality: 'El progreso  debe ser un número entero'
+                state: 
+                  inclusion_msj: "El estado debe ser 'Pendiente','En_curso' ó 'Hecha' "
+            task_temporary:
+              attributes:
+                date-begin:
+                  presence_msj: 'Debe ingresar la fecha de inicio'
+                  before_msj: 'La fecha de inicio debe ser menor a la fecha de fin'
+                date-end:
+                  presence_msj: 'Debe ingresar la fecha de fin'
+                  after_act_msj: 'La fecha de fin debe ser mayor a la fecha actual'
+                  after_msj: 'La fecha de fin debe ser mayor a la fecha de inicio'
+                description:  
+                  lenght_msj: 'La descripción debe contener menos de 256 caracteres'
+            tasks_simple:
+              attributes:
+                state: "El estado debe ser 'Pendiente' ó 'Hecha' "
