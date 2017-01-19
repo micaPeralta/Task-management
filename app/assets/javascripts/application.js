@@ -28,5 +28,5 @@
 //= require jquery.autosize
 
 //= require alert
-
+//= require materialize.min
 //= require turbolinks

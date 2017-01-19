@@ -66,7 +66,7 @@ private
   def set_list
 
        @list= List.find_by_url(params[:id]) or raise  ActiveRecord::RecordNotFound      
-       @list.decorate
+       @list=@list.decorate
     
   end
 
