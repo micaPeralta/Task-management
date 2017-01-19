@@ -39,8 +39,7 @@ Demo -> https://tasks-management.herokuapp.com
 2. Coloque en el navegador la siguiente dirección:  [http://localhost:3000](http://localhost:3000)
 
 
-3. A modo de prueba se ha creado una lista llamada 'Lista 0'
- a la que se puede acceder mediante la siguiente url: [http://localhost:3000/lista-0](http://localhost:3000/lista-0)
+3. A modo de prueba se han creado 6 listas llamada 'Lista x' donde 'x' va des 0 a 5  a las que se puede acceder mediante la  url: http://localhost:3000/lista-x
 
 ## Correr tests unitarios
 

@@ -65,7 +65,7 @@ private
 
   def set_list
 
-       @list= List.find_by_url(params[:id]) or raise  ActionController::RoutingError       
+       @list= List.find_by_url(params[:id]) or raise  ActiveRecord::RecordNotFound      
        @list.decorate
     
   end

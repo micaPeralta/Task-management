@@ -54,7 +54,6 @@ set_clipboard= function(){
 }
 
 $(document).ready(set_clipboard);
-$(document).on ("ready page:load page:restore",set_clipboard);
 $(document).on ("turbolinks:load",set_clipboard);
 
 //----------Cargar-selects-materialize--------------------------- 
