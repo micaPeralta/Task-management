@@ -33,6 +33,19 @@
       
 
   <body>
+
+        <div class="fixed-action-btn toolbar">
+            <a class="btn-floating btn-large ">
+            <i class="fa fa-language" aria-hidden="true"></i>
+
+            </a>
+            <ul>
+              <li class="waves-effect waves-light"><a href="/?locale=es">Español</a></li>
+              <li class="waves-effect waves-light"><a href="/?locale=en">English</a></li>
+             
+            </ul>
+        </div>
+
       <div class="container" style="width: 100%">
               <!-- COVER IMAGE AND FLOATING BUTTON -->
               <div class="cover-image"></div> 
@@ -40,12 +53,14 @@
 
                  <div id="list" class="wow fadeInUp content-works"> </div>
               <div class="row">
+
                    <%= yield %>
-              
+           
               </div>
-            
+           
                <!-- Footer -->  
               <div class="empty-space">
+
                 <div class="wow fadeInUp">
                   <div class="wow fadeInUp detail-item watermark credits">
                       <span class="text-description credits-text"  style="color: #fff; font-weight: 700"> 

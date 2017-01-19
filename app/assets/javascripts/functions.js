@@ -12,14 +12,15 @@ $('.datepicker').pickadate({
     today: 'Hoy',
     clear: 'Limpiar',
     close: 'Cerrar',
-    format:'dd/mm/yyyy'
+    format:'dd/mm/yyyy',
+    closeOnSelect: true
   })
 
 }
 $( document ).ready(set_datepicker); 
 $(document).on('turbolinks:load',set_datepicker );
 
-
+//-------------------------------------------------------
 // cargar modal
 load_modal= function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -30,9 +31,9 @@ $(document).on ("ready page:load page:restore",load_modal);
 
 //--------------------------------
 
-//clipboard 
-$(document).ready(function(){  
 
+//---------------clipboard------------------------------
+set_clipboard= function(){
   var clipboard = new Clipboard('#clipboard-btn');
   console.log(clipboard);
 
@@ -48,17 +49,22 @@ $(document).ready(function(){
       console.error('Action:', e.action);
       console.error('Trigger:', e.trigger);
   });
-});
 
-//------------------------------
-//Cargar selects 
+
+}
+
+$(document).ready(set_clipboard);
+$(document).on ("ready page:load page:restore",set_clipboard);
+$(document).on ("turbolinks:load",set_clipboard);
+
+//----------Cargar-selects-materialize--------------------------- 
 var show_selects = function(){
-     $('select').material_select();
+     //$('select').material_select();
 }
  $(document).ready(show_selects);
  $(document).on('turbolinks:load',show_selects );
 
- //-------------------------------
+ //------------Best-in-Place-------------------
 
 var load_best_in_place=function(){
   $(".best_in_place").best_in_place();
@@ -66,7 +72,7 @@ var load_best_in_place=function(){
 $(document).on("ready page:change", load_best_in_place);
   
 
-// ajustar selects al contenido
+//------------ajustar selects al contenido--------------
 
 var resize_textarea = function(){
    $('textarea').autosize();
@@ -77,9 +83,9 @@ $(document).on("ready page:change", resize_textarea);
  $(document).on('turbolinks:load', resize_textarea );
 
 
-//---------------------------------
 
-// focus del textarea
+
+//-------------------focus del textarea--------------
 var focus_textarea= function() {
     var data = $('textarea').val();
     $('textarea').focus().val('').val(data);
@@ -89,42 +95,21 @@ $(document).ready(focus_textarea);
  $(document).on("ready page:change",focus_textarea);
  $(document).on('turbolinks:load',focus_textarea );
 
-// focus del input
+//-------------------focus del input-----------------
 var focus_input= function() {
     var data = $('#input-text').val();
     $('#input-text').focus().val('').val(data);
 }
 
 $(document).ready(focus_textarea); 
- $(document).on("ready page:change",focus_input);
+ $(document).on("ready page:load page:restore",focus_input);
  $(document).on('turbolinks:load',focus_input );
 
 
-  function showNew(list){
-  	 
-     $.ajax({
-        url: list+"/task_simples/new",
-        contentType: "javascript; charset=utf-8",
-        dataType: "html",
-        timeout: 10000,
-        beforeSend: function(){
-           $("#respuesta").html("Cargando...");
-        },
-        error: function(){
-           $("#respuesta").html("Error!");
-        },
-        
-        success: function(res){
-            $('#respuesta').html(res);
-                
-        }
-        
-    });
-
-  }
 
 
-//------------------------------
+
+//-----------Mostrar notificacion-------------------
 window.show_success_noty = function(){
    noty({
     text  : 'success',

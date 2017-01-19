@@ -44,13 +44,12 @@
 				<%= @list.last_update%>  <br>
 			</div>
 			<div class="col s4">
-			 <div class="chip" id="clipboard-btn" data-clipboard-text="<%= request.url %>">
-			 	<%=t('copy-url')%>
-			 	<i id  class="fa fa-clipboard" aria-hidden="true"></i>
 
-			 </div>
-				<button> cipiar</button>		
-
+			<a href="" class="chip " id="clipboard-btn" data-clipboard-text="<%= request.url %>" >
+					<%=t('copy-url')%>
+				<i id  class="fa fa-clipboard" aria-hidden="true"></i>
+			</a>
+						
 						
 			</div>
 		</div>

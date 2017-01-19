@@ -9,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    #lists=List.all
-    @lists = ListDecorator.new(List.find(lists_browser).last(2))
+    @lists=List.all
+    #@lists = ListDecorator.new(List.find(lists_browser).last(5))
 
   end
 
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
     
     respond_to do |format|
       if @list.save
-         update_cookie()
+         update_cookie
          format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
@@ -64,7 +64,10 @@ private
 
 
   def set_list
-       @list= List.find_by_url(params[:id]).decorate
+
+       @list= List.find_by_url(params[:id]) or raise  ActionController::RoutingError       
+       @list.decorate
+    
   end
 
   def list_params

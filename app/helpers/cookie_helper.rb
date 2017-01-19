@@ -1,7 +1,7 @@
 module	CookieHelper
 
 		NAME = :lists
-		MAX  = 2
+		MAX  = 5
 
 		
 			def lists_browser()
