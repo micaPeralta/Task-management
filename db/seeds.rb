@@ -9,6 +9,32 @@
 
 
 Faker::Config.locale='es'
+#Lista 0
+list0=List.create!(name:'Lista 0')
+	2.times do 
+			TaskSimple.create!( description:Faker::Lorem.paragraph,
+					  state:'Pendiente',
+					  priority:rand(0..2),
+					  list: list0)
+		end
+	2.times do 
+			
+			TaskTemporary.create!( description:Faker::Lorem.characters(50),
+					  state:'Pendiente',
+					  priority:rand(0..2),
+					  list: list0,
+					  date_begin: Faker::Date.between(9.days.ago,Date.today),
+					  date_end: Faker::Date.between(1.days.from_now,10.days.from_now)	)			  
+		end
+
+		2.times do 
+			TaskLong.create!( description:Faker::Lorem.paragraph,
+					  state:'Pendiente',
+					  priority:rand(0..2),
+					  list: list0,
+					  progress: 0 )
+		
+		end
 
 5.times do |i|
 	name=Faker::Name.title  
@@ -23,7 +49,7 @@ Faker::Config.locale='es'
 
 	2.times do 
 		
-		t=TaskTemporary.create!( description:Faker::Lorem.characters(50),
+		TaskTemporary.create!( description:Faker::Lorem.characters(50),
 				  state:'Pendiente',
 				  priority:rand(0..2),
 				  list: tdl,

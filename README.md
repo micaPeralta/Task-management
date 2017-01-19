@@ -36,9 +36,13 @@ Demo -> https://tasks-management.herokuapp.com
 	bundle exec rails s
 
 	```
-2. Coloque en el navegador la siguiente direccion:  [http://localhost:3000](http://localhost:3000)
+2. Coloque en el navegador la siguiente dirección:  [http://localhost:3000](http://localhost:3000)
 
-## Correr tests
+
+3. A modo de prueba se ha creado una lista llamada 'Lista 0'
+ a la que se puede acceder mediante la siguiente url: [http://localhost:3000/lista-0](http://localhost:3000/lista-0)
+
+## Correr tests unitarios
 
  ```
  bundle exec rspec 

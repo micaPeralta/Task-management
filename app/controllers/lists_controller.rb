@@ -10,8 +10,8 @@ class ListsController < ApplicationController
    
     @list= List.new 
     #lists=List.all
-    @lists = ListDecorator.new(List.find(lists_browser).last(5))
-   
+    @lists = ListDecorator.new(List.find(lists_browser).last(2))
+
   end
 
   def show
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
     
     respond_to do |format|
       if @list.save
-         cookie_add_data(@list.id)
+         update_cookie()
          format.html  {redirect_to @list, notice: 'Person was successfully created.' }
 
       else 
@@ -62,6 +62,7 @@ class ListsController < ApplicationController
 
 private
 
+
   def set_list
        @list= List.find_by_url(params[:id]).decorate
   end
@@ -72,6 +73,11 @@ private
 
   def expire_tasks
       @list.update_tasks_expired
+  end
+
+  def update_cookie
+     id=cookie_add_data(@list.id)
+     List.delete(id)
   end
 
 

@@ -25,7 +25,7 @@ RSpec.describe taskTemporary type: :model do
 		let(:taskTemporary){FactoryGirl.build(:taskTemporary)}
   		let(:list){FactoryGirl.build(:list)}
 	
-		it 'Sin ningún dato' do
+		it 'Debe fallar ' do
 			expect(taskTemporary.valid?).to be_falsy
 		end
 
