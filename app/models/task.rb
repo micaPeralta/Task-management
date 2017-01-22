@@ -31,12 +31,14 @@ class Task < ApplicationRecord
 	 	inclusion: { in: %w(Alta Media Baja ),
 				 message: :inclusion_msj }
 	
-	
+	# ordenar por defecto las tareas por prioridad 
 	self.default_scope {order ('tasks.priority')}
 
-	
+	# contar solo las tareas que no esten expiradas
 	scope :countOnlyActive, ->{ where('state != ?' , 'Expirada').count }
 
+
+	# valores por defecto
 	after_initialize do 
     	self.state  ||= 'Pendiente' 
   	end

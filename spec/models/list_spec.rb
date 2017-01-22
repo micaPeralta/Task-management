@@ -15,7 +15,7 @@ RSpec.describe List, type: :model do
  
 
 
- describe '#create' do
+describe '#Creacion' do
 	  
 
 	  let(:list1){FactoryGirl.build(:list)}
@@ -26,14 +26,14 @@ RSpec.describe List, type: :model do
 		expect(list1.valid?).to be_falsy
 	  end 
 
-	  it 'Con nombre que respete la unicidad de los slugs'do 
+	  it 'Debe respetarse la unicidad de los slugs'do 
 	  	list1.name='una lista cualquiera'
 	  	list1.save
 	  	list2.name='otra lista cualquiera'
 	  	expect(list2.valid?).to be true
 	  end
 
-	  it 'Con nombre que cause un conflicto de unicidad de los slugs'do 
+	  it 'Debe haber un  conflicto con la  unicidad de los slugs'do 
 	  	list1.name='una lista cualquiera'
 	  	list1.save
 	  	list2.name='una lista cualquiera'
@@ -41,5 +41,31 @@ RSpec.describe List, type: :model do
 	  end
 
 
+	end
+
+describe 'Ordenamiento de tareas' do
+
+		let(:task1){FactoryGirl.build(:taskTemporary)}
+		let(:task2){FactoryGirl.build(:taskSimple)}
+		let(:task3){FactoryGirl.build(:taskLong)}
+		let(:task4){FactoryGirl.build(:taskTemporary)}
+
+  		let(:list){FactoryGirl.build(:list)}
+
+		it 'De diferentes tipos, con diferentes prioridades' do 
+ 			task1.update(priority:'Alta')
+ 			task2.update(priority:'Media')
+ 			task3.update(priority:'Baja')
+ 			task4.update(priority:'Media')
+ 			#Lista desordenada => [ Alta, Baja,Media,Media]
+			list.tasks= [task1,task3,task2,task4]
+
+			# Lista Ordenada > [ Alta,Media, Media, Baja]
+			list_ordered= [task1,task4,task2,task3]
+			expect(list.tasks).to match_array list_ordered
+
+			
+
+		end
 	end
 end

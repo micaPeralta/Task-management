@@ -27,8 +27,7 @@ load_modal= function(){
      $('.modal').modal();
 }
 $(document).ready(load_modal);
-$(document).on ("ready page:load page:restore",load_modal);
-
+$(document).on('turbolinks:load',set_datepicker );
 //--------------------------------
 
 
@@ -58,7 +57,7 @@ $(document).on ("turbolinks:load",set_clipboard);
 
 //----------Cargar-selects-materialize--------------------------- 
 var show_selects = function(){
-     //$('select').material_select();
+     $('select').material_select();
 }
  $(document).ready(show_selects);
  $(document).on('turbolinks:load',show_selects );

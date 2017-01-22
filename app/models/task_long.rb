@@ -46,6 +46,8 @@ class TaskLong < Task
 		end
 
 	end
+
+	#valores por defecto
 	after_initialize do |user|
     	self.progress ||= 0 
   	end

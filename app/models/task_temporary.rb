@@ -50,7 +50,7 @@ class TaskTemporary < Task
 	end
 
 
-	#mostrar solo tareas dentro de la fecha 
+	#mostrar solo tareas dentro de la fecha válida antes de que expire 
 	self.default_scope { where('date_end > ?', Date.current ) }
 
 	def self.expired

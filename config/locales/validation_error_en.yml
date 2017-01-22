@@ -3,6 +3,7 @@ en:
     errors:
       messages:  
        uniqueness_msj: "Sorry, Duplicates are not supported"
+       presence_msj: 'can't be blank'
       
       models:
         list:
@@ -22,10 +23,10 @@ en:
               inclusion_msj: "The status must be 'Pending', 'In_current' or 'Done'"
         task_temporary:
           attributes:
-            date-begin:
+            date_begin:
                presence_msj: 'You must enter the begin date'
                before_msj: 'The start date must be less than the end date'
-            date-end:
+            date_end:
               presence_msj: 'You must enter the end date'
               after_act_msj: 'The end date must be greater than the current date'
               after_msj: 'The end date must be greater than the start date'

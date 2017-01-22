@@ -29,10 +29,10 @@ es:
                   inclusion_msj: "El estado debe ser 'Pendiente','En_curso' ó 'Hecha' "
             task_temporary:
               attributes:
-                date-begin:
+                date_begin:
                   presence_msj: 'Debe ingresar la fecha de inicio'
                   before_msj: 'La fecha de inicio debe ser menor a la fecha de fin'
-                date-end:
+                date_end:
                   presence_msj: 'Debe ingresar la fecha de fin'
                   after_act_msj: 'La fecha de fin debe ser mayor a la fecha actual'
                   after_msj: 'La fecha de fin debe ser mayor a la fecha de inicio'
