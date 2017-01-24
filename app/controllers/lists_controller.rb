@@ -9,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    @lists=List.all
-    #@lists = ListDecorator.new(List.find(lists_browser).last(5))
+    #@lists=List.all
+    @lists = ListDecorator.new(List.find(lists_browser).last(5))
 
   end
 
