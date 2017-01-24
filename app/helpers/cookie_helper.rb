@@ -13,31 +13,40 @@ module	CookieHelper
 			end
 
 			def cookie_add_data(data)
-				cookies.permanent.signed[NAME] += ' '+data.to_s
+				cookies.permanent[NAME] += ' '+data.to_s
 				if content_array.size > MAX
-				 return cookie_delete_data(data.to_s)
+				  cookie_delete_first(data.to_s)
 				end
 				nil
 			end
 
-			def cookie_delete_data(data)
+			def cookie_delete_first(data)
 				
 					a=content_array
-					eliminate=a.shift
-					cookies.permanent.signed[NAME]=a.join(' ')
-					return eliminate
+					a.shift
+					cookies.permanent[NAME]= a.join(' ')
+					
 				
+				
+			end
+
+			def cookie_delete_data(data)
+				
+					eliminate=cookies.permanent[NAME]
+					eliminate.slice!(" "+data.to_s)
+					cookies.permanent[NAME]=eliminate
+							
 				
 			end
 
 			private 
 
 			def content_array
-				cookies.permanent.signed[NAME].split(' ')
+				cookies.permanent[NAME].split(' ')
 			end
 
 			def init
-				 cookies.permanent.signed[NAME] = " "
+				 cookies.permanent[NAME] = ""
 			     return []
 			end
 
