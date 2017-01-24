@@ -17,7 +17,7 @@ class List < ApplicationRecord
 	has_many :task_longs
 	
 
-	before_create :normalize_name
+	#before_create :normalize_name
 	before_create :assign_slug
 
 	validates :name, 

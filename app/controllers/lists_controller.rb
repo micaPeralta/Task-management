@@ -46,7 +46,6 @@ class ListsController < ApplicationController
     id=@list.id
     respond_to do |format|
       if  @list.destroy
-
           cookie_delete_data(id)
           format.js {}
       else

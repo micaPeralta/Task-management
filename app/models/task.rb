@@ -30,6 +30,8 @@ class Task < ApplicationRecord
 		presence: { message: :presence_msj },
 	 	inclusion: { in: %w(Alta Media Baja ),
 				 message: :inclusion_msj }
+	validates :state,
+		presence: { message: :presence_msj }
 	
 	# ordenar por defecto las tareas por prioridad 
 	self.default_scope {order ('tasks.priority')}
