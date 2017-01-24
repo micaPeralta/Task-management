@@ -17,21 +17,20 @@
 
 class TaskTemporary < Task
    
-
 	validates :description,
-		length: { maximum: 255, message: :lenght_msj }
+	length: { maximum: 256, message: :lenght_msj }
 
 
 	validates :state,
-	 	inclusion: { in: %w(Pendiente Hecha Expirada ),
-	 				message:  "El estado debe ser 'Pendiente', 'Hecha' ó 'Expirada' "}
+	 	inclusion: { in: %w(Pendiente Hecha Expirada),
+	 				message:  :inclusion_msj }
 	
-	validates :date_begin, presence: { message: :presence_msj}
+	validates :date_begin, presence: { message: :presence_msj }
 	validates :date_end, presence: { message: :presence_msj }
 	
 	validates_date :date_begin, :before =>   lambda{|m| m.date_end},before_message: :before_msj
    	validates_date :date_end, :after =>   lambda{|m| m.date_begin}, after_message: :after_msj
-   	validates_date :date_end, :after =>  Date.current, after_message: :after_act_msj
+   	validates_date :date_end, :on_or_after => lambda{ Date.current }, after_message: :after_act_msj
 
 	
 

@@ -9,7 +9,7 @@ es:
               attributes:
                 name:
                   presence_msj: 'Debe ingresar el nombre de la lista'
-                  formate_msj: "El nombre solo debe contener letras" 
+                  formate_msj: "El nombre no debe ser un numero"
             task:
               attributes:
                 description:

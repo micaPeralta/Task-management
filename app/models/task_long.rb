@@ -26,7 +26,7 @@ class TaskLong < Task
 
        
 	validates :state,
-	 	inclusion: { in: %w(Pendiente En_curso Hecha ),
+	 	inclusion: { in: %w(Pendiente En_curso Hecha),
 					message:  :inclusion_msj}
 	
 

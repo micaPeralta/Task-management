@@ -9,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    #@lists=List.all
-    @lists = ListDecorator.new(List.find(lists_browser).last(5))
+    @lists=List.all
+    #@lists = ListDecorator.new(List.find(lists_browser).last(5))
 
   end
 
@@ -43,6 +43,17 @@ class ListsController < ApplicationController
 
 
   def destroy
+    id=@list.id
+    respond_to do |format|
+      if  @list.destroy
+
+          cookie_delete_data(id)
+          format.js {}
+      else
+
+      end
+    end
+  
    
   end
 

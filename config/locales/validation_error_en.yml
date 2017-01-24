@@ -3,14 +3,13 @@ en:
     errors:
       messages:  
        uniqueness_msj: "Sorry, Duplicates are not supported"
-       presence_msj: 'can't be blank'
       
       models:
         list:
           attributes:
             name:
               presence_msj: "You must enter a name"
-              format_msj: "The name must only contain letters"
+              format_msj: "The name can not be a number"
         
         task_long:
           attributes:
@@ -20,9 +19,11 @@ en:
               numericality_msj: 'Progress must be an integer'
             state:
               presence_msj: 'You must enter the status'
-              inclusion_msj: "The status must be 'Pending', 'In_current' or 'Done'"
+              inclusion_msj: "The status must be 'Pendiente', 'En_curso' or 'Hecha'"
         task_temporary:
           attributes:
+            state:
+              inclusion_msj: "The status must be 'Pendiente', 'En_curso' or 'Hecha'"
             date_begin:
                presence_msj: 'You must enter the begin date'
                before_msj: 'The start date must be less than the end date'
@@ -36,12 +37,12 @@ en:
           attributes:
             state:
                presence_msj: 'You must enter the status'
-               inclusion_msj: "The status must be 'Pending' or 'Done'"
+               inclusion_msj: "The status must be 'Pendiente' or 'Hecha'"
         task:
           attributes:
             description:
               presence_msj: "You must enter a description"
             priority: 
               presence_msj: 'Must enter priority'
-              inclusion_msj: "The priority should be 'High', 'Medium' or 'Low'"
+              inclusion_msj: "The priority should be 'Alta', 'Media' or 'Baja'"
             

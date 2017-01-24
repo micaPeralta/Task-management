@@ -1,15 +1,27 @@
-<div class="screenshot-item  col s12 m6 l6 contener-texto" >
+<div id="<%=list.id%>" class="screenshot-item  col s12 m6 l6 contener-texto" >
 
 	<div class="row" style="margin-bottom: 0px">
         <div class="col s12 ">
           <div class="card  darken-1">
             <div class="card-content ">
              <p> <%= list.name %><p>
-             
+             <span class="right"></span>
             </div>
             <div class="card-action">
-              <%= link_to t('view-more'),list %>
-              <span class="chip right"><%=list.tasks.countOnlyActive%></span>
+             <span class="chip no-margin" ><%=list.tasks.countOnlyActive%></span>
+
+             <span class="right">
+              
+               <%= link_to list, method: :delete, data: { confirm:t('confirm') },:remote => true  do %>
+                 Eliminar
+                <% end %>
+               
+               
+               <%= link_to t('view-more'),list %>
+             </span>
+            
+           
+
             </div>
           </div>
         </div>

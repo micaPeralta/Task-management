@@ -13,15 +13,17 @@ require 'rails_helper'
 
 RSpec.describe List, type: :model do
  
+  it { should validate_presence_of(:name).with_message("You must enter a name") }
+ 
 
 
-describe '#Creacion' do
+	describe '#Creacion' do
 	  
 
 	  let(:list1){FactoryGirl.build(:list)}
   	  let(:list2){FactoryGirl.build(:list)}
 
-	  it 'debe fallar la validacion precencia del campo name' do 
+	  it 'Debe fallar la validacion precencia del campo name' do 
 		list1.name=''
 		expect(list1.valid?).to be_falsy
 	  end 
@@ -43,7 +45,7 @@ describe '#Creacion' do
 
 	end
 
-describe 'Ordenamiento de tareas' do
+	describe 'Ordenamiento de tareas' do
 
 		let(:task1){FactoryGirl.build(:taskTemporary)}
 		let(:task2){FactoryGirl.build(:taskSimple)}

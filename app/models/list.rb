@@ -10,12 +10,14 @@
 #
 
 class List < ApplicationRecord
-
+	
 	has_many :tasks ,dependent: :destroy
 	has_many :task_simples 
 	has_many :task_temporaries
 	has_many :task_longs
 	
+
+	before_create :normalize_name
 	before_create :assign_slug
 
 	validates :name, 
@@ -43,7 +45,11 @@ class List < ApplicationRecord
  	end
 
 	private
-		 
+		
+		def normalize_name
+      		self.name = name.downcase.titleize
+    	end
+		
 		def assign_slug
 		    self.url = name.parameterize
 		end

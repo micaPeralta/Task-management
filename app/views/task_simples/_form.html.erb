@@ -5,7 +5,7 @@
 			  		
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
-			      	 <%= f.input :description, as: :text, label: "Descripción",:placeholder => 'Descripción', input_html: {id: "description",class: "materialize-textarea"} %>
+			      	 <%= f.input :description, as: :text, label: :description , input_html: {id: "description",class: "materialize-textarea"} %>
 			      	
 			      	 <%= f.select :priority, Task.priorities.keys,prompt: t('select'), label: "Prioridad" %>
 
