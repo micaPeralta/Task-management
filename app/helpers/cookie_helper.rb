@@ -15,7 +15,7 @@ module	CookieHelper
 			def cookie_add_data(data)
 				cookies.permanent[NAME] += ' '+data.to_s
 				if content_array.size > MAX
-				  cookie_delete_first(data.to_s)
+				  return cookie_delete_first(data.to_s)
 				end
 				nil
 			end
@@ -23,8 +23,10 @@ module	CookieHelper
 			def cookie_delete_first(data)
 				
 					a=content_array
-					a.shift
-					cookies.permanent[NAME]= a.join(' ')
+					eliminado=a.shift
+					cookies.permanent[NAME]= ' '+a.join(' ')
+
+					return eliminado
 					
 				
 				
@@ -36,13 +38,14 @@ module	CookieHelper
 					eliminate.slice!(" "+data.to_s)
 					cookies.permanent[NAME]=eliminate
 							
-				
 			end
 
 			private 
 
 			def content_array
+				# cookies[:lists]= '+23+24+56+87'
 				cookies.permanent[NAME].split(' ')
+
 			end
 
 			def init
