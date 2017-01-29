@@ -101,7 +101,7 @@ class TasksController < ApplicationController
 			 	 params.require('task_simple').permit( :type,:description,:state,:priority)
 			  when 'TaskTemporary'
 			  	 params.require('task_temporary').permit( :type,:description,
-			  	:state,:priority, :date_begin, :date_end,:description,)
+			  	:state,:priority, :date_begin, :date_end)
 
 			  end
 		 	

@@ -67,7 +67,7 @@ var show_selects = function(){
 var load_best_in_place=function(){
   $(".best_in_place").best_in_place();
 } 
-$(document).on("ready page:change", load_best_in_place);
+$(document).on('turbolinks:load', load_best_in_place);
   
 
 //------------ajustar selects al contenido--------------
@@ -77,7 +77,7 @@ var resize_textarea = function(){
 }
 
 $(document).ready(resize_textarea);
-$(document).on("ready page:change", resize_textarea);
+//$(document).on("ready page:change", resize_textarea);
  $(document).on('turbolinks:load', resize_textarea );
 
 
@@ -90,7 +90,7 @@ var focus_textarea= function() {
 }
 
 $(document).ready(focus_textarea); 
- $(document).on("ready page:change",focus_textarea);
+ //$(document).on("ready page:change",focus_textarea);
  $(document).on('turbolinks:load',focus_textarea );
 
 //-------------------focus del input-----------------
@@ -100,7 +100,7 @@ var focus_input= function() {
 }
 
 $(document).ready(focus_textarea); 
- $(document).on("ready page:load page:restore",focus_input);
+ //$(document).on("ready page:load page:restore",focus_input);
  $(document).on('turbolinks:load',focus_input );
 
 
@@ -108,12 +108,12 @@ $(document).ready(focus_textarea);
 
 
 //-----------Mostrar notificacion-------------------
-window.show_success_noty = function(){
+window.show_success_noty = function(type,text){
    noty({
-    text  : 'success',
+    text  : text,
     layout  : 'topRight',
     theme : 'relax',
-    type  : 'success',
+    type  : type,
     animation: {
       open: 'animated fadeIn', // Animate.css class names
         close: 'animated fadeOut', // Animate.css class names

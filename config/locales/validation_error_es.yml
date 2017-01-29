@@ -2,7 +2,7 @@ es:
   activerecord:
       errors:
         messages:
-         uniqueness_msj: 'Lo siento, No se admiten duplicados'
+         uniqueness_msj: 'Lo siento, no se admiten duplicados'
 
         models:
             list:

@@ -4,10 +4,5 @@ class ApplicationController < ActionController::Base
  
   include LocaleHelper
 
-   #rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
-
-   #def record_not_found
-    #render :text => "404: Resource not found", :status => 404
-  	#end
 
 end

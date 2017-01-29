@@ -22,9 +22,11 @@ class List < ApplicationRecord
 
 	validates :name, 
 		presence: { message: :presence_msj },
-		uniqueness: { message: :uniqueness_msj},
+		uniqueness: { :case_sensitive =>false ,message: :uniqueness_msj },
 		format: { with: /[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/,message: :format_msj }
 
+	#validates :url,
+	#	uniqueness: { message: :uniqueness_msj}
 
  	def last_update
 
@@ -34,6 +36,7 @@ class List < ApplicationRecord
 	    else
 	      return self.updated_at
 	    end
+	    
  	end
 
  	def to_param

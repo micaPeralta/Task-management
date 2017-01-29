@@ -194,7 +194,7 @@ a:active
 .text-title
 {
 	font-size: 3.5em;
-	font-weight: 300;
+	font-weightf: 300;
 	color: #555;
 }
 
@@ -348,22 +348,22 @@ a:active
 	}
 }
 
-@media (min-width: 600px) and (max-width: 770px) 
+@media (min-width: 600px) and (max-width: 830px) 
 {
 	#logo {
  		width: 15%;
  		height: 15%;
-}
+	}
 	.title-container .text-title
 	{
 		font-size: 2em;
 	}
 }
-@media (max-width: 580px) 
+@media (max-width: 599px) 
 {
 	#logo {
  		display: none;
-}
+	}
 	.title-container .text-title
 	{
 		font-size: 2em;
