@@ -14,7 +14,7 @@ es:
   tasks-longs: 'Tareas largas'
   tasks-simples: 'Tareas simples'
   tasks-temporaries: "Tareas Temporales"
-  tasks-simple: "Tarea simple"
+  task-simple: "Tarea simple"
   tasks-temporary: "Tarea temporal"
   task-long: "Tarea larga"
 
