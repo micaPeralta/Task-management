@@ -2,7 +2,7 @@
 <div class="wow content-card " style="margin-top: 0;">	
 	
 
-	 <a class=" btn-floating waves-effect waves-light right"   data-delay="50" href="<%= list_path(@list) %>" >	<i  class="material-icons ">replay</i>	</a>
+	 <a class=" btn-floating waves-effect waves-light right"   data-delay="50" href="<%= list_path(@list) %>" >	<i id="edit" class="fa fa-arrow-left" aria-hidden='true'></i>	</a>
  	 <h4><%=t('create-task')%></h4>
 
 		 <%= render 'task_simples/form'  %>			

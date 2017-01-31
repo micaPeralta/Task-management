@@ -1,51 +1,16 @@
 
 			<tr id="<%=task_long.id %>">
 				<td>
-					 	<% case task_long.priority %>
-						<%  when "Alta" then %>
-						     <span class="chip red" data-badge-caption="" > 
-						     	<i class="fa fa-star" aria-hidden="true"></i>
-
-						     </span>
-						<%  when "Media"  then  %>
-							 <span class="chip orange" data-badge-caption="
-							" >
-								<i class="fa fa-star-half-o" aria-hidden="true"></i>
-
-							</span>
-						<% when "Baja"  then  %>
-						     <span class="chip gren" data-badge-caption="" >
-						     	<i class="fa fa-star-o" aria-hidden="true"></i>
-
-						      </span>
-					 	<% end %>
-
-					 
-
+					<%= render partial: "partials/priorities/#{task_long.priority.downcase}"  %>
 				</td>
 				<td> 
 
 					<div>
-							<% case task_long.state %>
-						<%  when "Hecha" then %>
-						     <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip=<%= t('made')%>  data-badge-caption="" > 
-						     	<i class="fa fa-check" aria-hidden="true"></i>
+						<div id="state-<%=task_long.id%>" class="inline" >
+							
+							<%= render partial: "partials/states/#{task_long.state.downcase}" %>						
+						</div>
 
-						     </span>
-						<%  when "Pendiente"  then  %>
-							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip= <%= t('pending')%> data-badge-caption="" >
-								<i class="fa fa-thumb-tack" aria-hidden="true"></i>
-
-							</span>
-								</span>
-						<%  when "En_curso"  then  %>
-							 <span class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip=<%= t('in-progress')%>data-badge-caption="" >
-								<i class="fa fa-hourglass-half" aria-hidden="true"></i>
-
-							</span>
-
-				
-					 	<% end %>
 						<%=  best_in_place  [@list,task_long], :description, :as => :textarea ,:inner_class => 'materialize-textarea'%> 
 					</div>
 					<div class="footer-div">
@@ -60,10 +25,10 @@
 			   </td>
 			   <td width="100px">
 			   		
-			    		<a href= "<%= edit_list_task_long_path(@list,task_long)%>" ><i class="material-icons">edit</i></a>
+			    		<a href= "<%= edit_list_task_long_path(@list,task_long)%>" ><i class="fa fa-pencil fa-lg" aria-hidden='true'></i> </a>
 			    	 	
 			    	 	 <%= link_to list_task_long_path(@list,task_long), method: :delete, data: { confirm: t('confirm') },:remote => true  do %>
-			 			<i class="material-icons">delete</i> 
+			 			<i class="fa fa-trash fa-lg" aria-hidden='true'></i> 
 			 			<%end%>
 
 			   </td>

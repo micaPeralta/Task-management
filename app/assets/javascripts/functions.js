@@ -27,7 +27,7 @@ load_modal= function(){
      $('.modal').modal();
 }
 $(document).ready(load_modal);
-$(document).on('turbolinks:load',set_datepicker );
+$(document).on('turbolinks:load',load_modal );
 //--------------------------------
 
 
@@ -99,13 +99,20 @@ var focus_input= function() {
     $('#input-text').focus().val('').val(data);
 }
 
-$(document).ready(focus_textarea); 
+$(document).ready(focus_input); 
  //$(document).on("ready page:load page:restore",focus_input);
- $(document).on('turbolinks:load',focus_input );
+ $(document).on('turbolinks:load',focus_input);
 
 
+//-----------dropdown-button-materialize-----------------------
+set_dropdown=function(){
 
-
+  $('.dropdown-button').dropdown({
+    hover:true
+  })
+}
+$(document).ready(set_dropdown); 
+$(document).on('turbolinks:load',set_dropdown);
 
 //-----------Mostrar notificacion-------------------
 window.show_success_noty = function(type,text){

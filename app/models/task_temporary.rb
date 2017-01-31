@@ -64,4 +64,6 @@ class TaskTemporary < Task
 		super +", Fecha inicio: #{self.date_begin}, Fecha de finalizacion: #{self.date_end}"
 	
 	end
+
+
 end
