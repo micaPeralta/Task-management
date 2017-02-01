@@ -24,6 +24,8 @@
    	box-sizing: border-box;
 }
 
+
+}
 :host 
 {
 	position:absolute;
@@ -243,7 +245,7 @@ a:active
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex; 
-    aliign-items: flex-end;
+    align-items: flex-end;
     -webkit-align-items: flex-end;
     justify-content: center;
     -webkit-justify-content: center;

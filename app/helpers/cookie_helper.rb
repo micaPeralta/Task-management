@@ -1,6 +1,6 @@
 module	CookieHelper
-
-		NAME = :lists
+		
+		NAME = :ids
 		MAX  = 5
 
 		
@@ -16,10 +16,10 @@ module	CookieHelper
 
 			def cookie_add_data(data)
 				#si se pasó del nro maximo permitido de listas
-				# retorna el id de la lista eliminada
+				# elimina la 1ra lista y returna su id
 
 				cookies.permanent[NAME] += ' '+data.to_s
-				if content_array.size > MAX
+				if content_array.size > stored_maximum
 				  return cookie_delete_first(data.to_s)
 				end
 				nil

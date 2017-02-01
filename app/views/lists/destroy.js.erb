@@ -1,2 +1,5 @@
-$('#<%=@list.id%>').remove();
+$('#<%=@list.id%>').hide('slow',function(){
+	$(this).remove
+})
+
 show_success_noty('success', 'Success!');

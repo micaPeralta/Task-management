@@ -1,10 +1,11 @@
  
 <div class="wow  content-card " style="margin-top: 0;">	
 	
+	<a class=" btn-floating waves-effect waves-light right" href="<%= list_path(@task.list) %>"  data-delay="50" >
+		<i id="edit" class="fa fa-arrow-left" aria-hidden='true'></i>
+	</a>
 
-	 <a class=" btn-floating waves-effect waves-light right" href="<%= list_path(@task.list) %>"  data-delay="50" >	<i id="edit" class="fa fa-arrow-left" aria-hidden='true'></i>	</a>
- 	 <h4><%= t('edit-task')%></h4>
-
-		 <%= render 'task_simples/form' ,task:@task %>			
+ 	<h4><%= t('edit-task')%></h4>
+	<%= render 'task_simples/form' ,task:@task %>			
 	
- </div>
+ </div> 

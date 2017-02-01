@@ -9,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    #@lists=List.all
-    @lists = ListDecorator.new(List.find(lists_browser))
+    @lists=List.all
+    #@lists = List.where(id: lists_browser)
 
   end
 
@@ -31,7 +31,7 @@ class ListsController < ApplicationController
          format.html  {redirect_to @list, notice: 'List was successfully created.' }
 
       else 
-        @lists = ListDecorator.new(List.find(lists_browser).last(5))
+        @lists = List.where(id: lists_browser)
         format.html { render :index }
         format.json { render json: @list.errors, status: :unprocessable_entity } 
       end
@@ -92,6 +92,12 @@ private
   def update_cookie
      id=cookie_add_data(@list.id)
      List.delete(id)
+  end
+
+  def stored_maximum
+    #método usado en CookiesHelper
+    #define la cantidad de listas que deberan guardarse
+    7
   end
 
 

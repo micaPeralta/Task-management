@@ -127,6 +127,7 @@ window.show_success_noty = function(type,text){
         easing: 'swing', // unavailable - no need
         speed: 500 // unavailable - no need
     },
+    closeWith: ['hover'],
     maxVisible  :5,
     killer      : true
   
