@@ -47,12 +47,15 @@ ul {
 .no-margin{
 	margin: 0px;
 }
+
 .center-text{
 	text-align: center;
 }
+
 .shadow{
 	text-shadow: 4px 4px 4px #aaa;
 }
+
 .font-pacifico{
 	font-family: 'Pacifico' , cursive;
 }
