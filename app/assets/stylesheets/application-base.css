@@ -24,8 +24,6 @@
    	box-sizing: border-box;
 }
 
-
-}
 :host 
 {
 	position:absolute;
@@ -137,7 +135,6 @@ a:active
 /*.screenshot-item
 {
     width: 48%;
-
 }
 */
 
@@ -245,7 +242,7 @@ a:active
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex; 
-    align-items: flex-end;
+    aliign-items: flex-end;
     -webkit-align-items: flex-end;
     justify-content: center;
     -webkit-justify-content: center;
@@ -309,12 +306,12 @@ a:active
 {
     .content-card, .content-works
     {
-        width: 80%;
+        width: 80%
     }
 
     .desktop-fab-container
     {
-        width: 10%;
+        width: 10%
     }
 
 }
@@ -345,7 +342,7 @@ a:active
 		
 	.works-card
 	{
-		width: 33.33%;
+		width: 33.33%
 	}
 }
 
