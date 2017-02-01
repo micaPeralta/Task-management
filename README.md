@@ -4,10 +4,10 @@ Este proyecto consiste en  un servicio on-line de autogestión de listas de tare
 
 Demo -> https://tasks-management.herokuapp.com
 
-## Version 
+## Dependencias
   + Ruby 2.3.1
   + Bundle 1.13.6
-  
+  + Rails 5.0.0.1
   
 ## Instalación 
 

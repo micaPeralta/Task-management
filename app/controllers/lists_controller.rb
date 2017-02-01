@@ -9,8 +9,8 @@ class ListsController < ApplicationController
   def index
    
     @list= List.new 
-    @lists=List.all
-    #@lists = List.where(id: lists_browser)
+    #@lists=List.all
+    @lists = List.where(id: lists_browser)
 
   end
 
