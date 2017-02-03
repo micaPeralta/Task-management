@@ -17,6 +17,8 @@
 
 class TaskLong < Task
 
+	before_create :update_state
+	before_update :update_state
 
 	validates :progress, 
 		presence: { message: :presence_msj },
@@ -56,14 +58,18 @@ class TaskLong < Task
    
 
 
-	def pending_valid?  		
-		self.progress > 0 and self.progress < 100  and may_finish?
+	def init_valid?  		
+		self.progress > 0 and self.progress < 100 and may_init?
 	end
 
 	def made_valid?
-		self.progress == 100
+		self.progress == 100 and may_finish?
 	end
 
+	def update_state
+		self.init if init_valid? 
+		self.finish if made_valid?	 
+	end
 
 	def to_s 
 		super +  ", Porcentaje de avance: #{self.progress}% "

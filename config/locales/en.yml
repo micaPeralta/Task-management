@@ -58,6 +58,8 @@ en:
   select: 'Select'
   progress: 'Progress'
   description: 'Description'
+  priority: 'Priority'
+  state: 'Estate'
   date-begin: 'Date begin'
   date-end: 'Date end'
   no-elements: 'No elements'

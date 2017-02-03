@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+	
 	before_action :set_task, only:[:show, :edit, :update, :destroy, :finish]
 	before_action :set_list, only: [:show, :edit, :update, :destroy,:create,:new]
 

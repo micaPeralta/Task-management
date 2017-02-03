@@ -33,6 +33,8 @@ es:
   select: 'Seleccione'
   progress: 'Progreso'
   description: 'Descripción'
+  priority: 'Prioridad'
+  state: 'Estado'
   date-begin: "Fecha inicio"
   date-end: 'Fecha fin'
   no-elements: 'No hay elementos'

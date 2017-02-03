@@ -3,16 +3,17 @@
 			  		
 			  		<%=  render 'errors', task: @task %>
 			  		
-			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
-
-			      	 <%= f.input :description, as: :text, label: :description , input_html: {id: "description",class: "materialize-textarea"} %>
+			  		
+			      	 <%= f.input :description, as: :text, label: t('description') , input_html: {id: "description",class: "materialize-textarea", :autofocus => true} %>
 			      	
+			      	<label><%= t('priority') %></label>
 			      	 <%= f.select :priority, Task.priorities.keys,prompt: t('select'), label: "Prioridad" %>
 
-			      	
+			    
 			      	<%= f.select :state, [['Pendiente', 'Pendiente'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
 					  
-					
+					<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type}   %>
+
 					
 					 <%= f.submit  :class => "right waves-effect blue darken-3 btn"%>
 					 <% end %>

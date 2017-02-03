@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   include CookieHelper 
 
   before_action :set_list, only:[:destroy, :update, :show, :edit]
+  #cambiar el etado a la tarea expirada y no mostrarla
   before_action :expire_tasks , only:[:show]
 
 
@@ -95,7 +96,7 @@ private
   end
 
   def stored_maximum
-    #método usado en CookiesHelper
+    #metodo usado en CookiesHelper
     #define la cantidad de listas que deberan guardarse
     7
   end
