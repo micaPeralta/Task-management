@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TaskSimple, type: :model do
 
-  let(:taskSimple){FactoryGirl.build(:taskSimple)}
+  let(:taskSimple){FactoryGirl.create(:taskSimple, :list => FactoryGirl.create(:list))}
 
   
 	describe 'estado' do

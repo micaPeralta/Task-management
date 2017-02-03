@@ -19,9 +19,9 @@ require 'rails_helper'
 
 RSpec.describe TaskTemporary, type: :model do
 
-	let(:taskTemporary){FactoryGirl.build(:taskTemporary)}
-  	let(:list){FactoryGirl.build(:list)}
 
+  	let(:taskTemporary){FactoryGirl.create(:taskTemporary, :list => FactoryGirl.create(:list) )}
+  	
 
 		it { should belong_to(:list) }
 
@@ -45,7 +45,6 @@ RSpec.describe TaskTemporary, type: :model do
 			taskTemporary.description= 'Una descripcion'
 			taskTemporary.priority='Alta'
 			taskTemporary.state='Hecha'
-			taskTemporary.list= list
 			expect(taskTemporary.valid?).to be true
 
 

@@ -108,7 +108,7 @@ $(document).ready(focus_input);
 set_dropdown=function(){
 
   $('.dropdown-button').dropdown({
-    hover:true
+   // hover:true
   })
 }
 $(document).ready(set_dropdown); 

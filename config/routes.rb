@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   	resources :tasks ,except: [:index]
 
-  	resources :task_temporaries, controller: 'tasks', type: 'TaskTemporary' ,except: [:show]
- 	resources :task_longs, controller: 'tasks', type: 'TaskLong' ,except: [:show]
- 	resources :task_simples, controller: 'tasks', type: 'TaskSimple' ,except: [:show]
+  	resources :task_temporaries, controller: 'tasks', type: 'TaskTemporary' ,except: [:show,:index]
+ 	resources :task_longs, controller: 'tasks', type: 'TaskLong' ,except: [:show,:index]
+ 	resources :task_simples, controller: 'tasks', type: 'TaskSimple' ,except: [:show,:index]
   
   end
 

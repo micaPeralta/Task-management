@@ -4,8 +4,7 @@ require 'rails_helper'
 
 RSpec.describe TaskLong, type: :model do
 
-	let(:taskLong){FactoryGirl.build(:taskLong)}
-  	let(:list){FactoryGirl.build(:list)}
+	let(:taskLong){FactoryGirl.create(:taskLong, :list => FactoryGirl.create(:list))}
 
 
 	describe 'Progreso' do
@@ -41,9 +40,9 @@ RSpec.describe TaskLong, type: :model do
 
 		it { should validate_inclusion_of(:state).in_array(%w(Pendiente En_curso Hecha)).with_message("The status must be 'Pendiente', 'En_curso' or 'Hecha'") } 
 
-  		it { should validate_presence_of(:state).with_message("You must enter the status") }
+  	it { should validate_presence_of(:state).with_message("You must enter the status") }
 
-  		describe 'Cambios de estado' do
+  	describe 'Cambios de estado' do
 
   			describe '#finish' do 
   				
@@ -78,6 +77,32 @@ RSpec.describe TaskLong, type: :model do
   				end
 
   			end
+
+        describe 'cuando se cambia el progreso debe cambiar el estado'  do
+
+          it 'progreso mayor a 0 y menor a cien' do
+           
+            taskLong.update(progress: 45)
+            expect(taskLong.state).to eq 'En_curso'
+
+          end
+
+           it 'progreso igual a 100 con estado pendiente' do
+           
+            taskLong.update(progress: 100)
+            expect(taskLong.state).to eq 'Pendiente'
+            
+          end
+
+          it 'progreso igual a 100 con estado En_curso' do
+            #debe pasar primero por el estado 'En_curso'
+            taskLong.update(progress: 34)
+            taskLong.update(progress: 100)
+            expect(taskLong.state).to eq 'Hecha'
+            
+          end
+
+        end 
 
   		end
 
