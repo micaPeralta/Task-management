@@ -17,7 +17,7 @@ class List < ApplicationRecord
 	has_many :task_longs
 	
 
-	#before_create :normalize_name
+	before_create :normalize_name
 	before_create :assign_slug
 
 	validates :name, 
@@ -50,7 +50,7 @@ class List < ApplicationRecord
 	private
 		
 		def normalize_name
-      		self.name = name.downcase.titleize
+      		self.name = name.downcase.capitalize
     	end
 		
 		def assign_slug

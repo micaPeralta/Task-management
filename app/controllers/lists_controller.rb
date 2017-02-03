@@ -98,7 +98,7 @@ private
   def stored_maximum
     #metodo usado en CookiesHelper
     #define la cantidad de listas que deberan guardarse
-    7
+    5
   end
 
 

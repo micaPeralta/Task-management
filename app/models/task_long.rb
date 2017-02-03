@@ -55,21 +55,21 @@ class TaskLong < Task
   	end
 
 
-   
-
-
 	def init_valid?  		
 		self.progress > 0 and self.progress < 100 and may_init?
 	end
+
 
 	def made_valid?
 		self.progress == 100 and may_finish?
 	end
 
+
 	def update_state
 		self.init if init_valid? 
 		self.finish if made_valid?	 
 	end
+	
 
 	def to_s 
 		super +  ", Porcentaje de avance: #{self.progress}% "
