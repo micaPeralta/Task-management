@@ -18,7 +18,7 @@ module	CookieHelper
 				#si se pasó del nro maximo permitido de listas
 				# elimina la 1ra lista y returna su id
 
-				cookies.permanent[NAME] += ' '+data.to_s
+				cookies.permanent.signed[NAME] += ' '+data.to_s
 				if content_array.size > stored_maximum
 				  return cookie_delete_first(data.to_s)
 				end
@@ -30,7 +30,7 @@ module	CookieHelper
 				
 					a=content_array
 					eliminado=a.shift
-					cookies.permanent[NAME]= ' '+a.join(' ')
+					cookies.permanent.signed[NAME]= ' '+a.join(' ')
 
 					return eliminado
 				
@@ -38,9 +38,9 @@ module	CookieHelper
 
 			def cookie_delete_data(data)
 				
-					to_eliminate=cookies.permanent[NAME]
+					to_eliminate=cookies.signed.permanent[NAME]
 					to_eliminate.slice!(" "+data.to_s)
-					cookies.permanent[NAME]=to_eliminate
+					cookies.permanent.signed[NAME]=to_eliminate
 							
 			end
 
@@ -48,12 +48,12 @@ module	CookieHelper
 
 			def content_array
 			
-				cookies.permanent[NAME].split(' ')
+				cookies.permanent.signed[NAME].split(' ')
 
 			end
 
 			def init
-				 cookies.permanent[NAME] = ""
+				 cookies.permanent.signed[NAME] = ""
 			     return []
 			end
 

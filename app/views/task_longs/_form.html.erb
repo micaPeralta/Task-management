@@ -2,12 +2,13 @@
 			 
 			  	<%= simple_form_for ([@list,@task]) do |f| %>
 			  		
-			  		 <%=  render 'errors', task: @task %>
+			  		<%=  render 'errors', task: @task %>
 
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %>
 
-			      	 <%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"}, required: true %>
+			      	<%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"}, required: true %>
 			      	
+			      	<label ><%=t('priority') %> </label>
 			      	 <%= f.select :priority, Task.priorities.keys, :label => "Prioridad" ,prompt: t('select') %>
 
 			 

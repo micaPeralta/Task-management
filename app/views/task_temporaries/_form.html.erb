@@ -4,16 +4,16 @@
 			  		
 			  		<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type }  %> 
 			  		
-			 	  	 <%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"} %>
-			      	
-			      	 <%= f.select :priority, Task.priorities.keys,prompt:t('select'), label: "Prioridad" %>
+			 	  	<%= f.input :description, as: :text, label:t('description'), input_html: {id: "description",class: "materialize-textarea"} %>
+			      	<label ><%=t('priority') %> </label>
+			      	<%= f.select :priority, Task.priorities.keys,prompt:t('select'), label: "Prioridad" %>
 
 
-						<%= f.input :date_begin ,as: :string,label: t('date-begin'),input_html:{ class: 'datepicker',
+					<%= f.input :date_begin ,as: :string,label: t('date-begin'),input_html:{ class: 'datepicker',
 						data_value: '' } %>
 
 
-						<%= f.input :date_end ,as: :string,label: t('date-end'),input_html:{ class: 'datepicker',
+					<%= f.input :date_end ,as: :string,label: t('date-end'),input_html:{ class: 'datepicker',
 							data_value: ''} %>
 
 

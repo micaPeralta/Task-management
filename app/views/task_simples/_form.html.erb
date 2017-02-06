@@ -10,8 +10,6 @@
 			      	 <%= f.select :priority, Task.priorities.keys,prompt: t('select'), label: "Prioridad" %>
 
 			    
-			      	<%= f.select :state, [['Pendiente', 'Pendiente'],['Hecha','Hecha']],prompt: "Seleccione", label: "Estado"  %>
-					  
 					<%= f.input :type, :as => :hidden, :input_html => { :value => @task.type}   %>
 
 					
