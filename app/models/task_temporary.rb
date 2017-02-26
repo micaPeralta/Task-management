@@ -30,7 +30,7 @@ class TaskTemporary < Task
 	
 	validates_date :date_begin, :before =>   lambda{|m| m.date_end},before_message: :before_msj
    	validates_date :date_end, :after =>   lambda{|m| m.date_begin}, after_message: :after_msj
-   	validates_date :date_end, :on_or_after => lambda{ Date.current }, after_message: :after_act_msj
+   	validates_date :date_end, :on_or_after => lambda{ Date.current }, on_or_after_message: :after_act_msj
 
 	
 
